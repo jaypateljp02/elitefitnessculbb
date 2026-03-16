@@ -208,7 +208,7 @@ function ROICalculator() {
                         </div>
                         <div className="relative py-4">
                             <input
-                                type="range" min="3000" max="15000" step="500"
+                                type="range" min="3000" max="15000" step="1000"
                                 value={sqft}
                                 onChange={(e) => setSqft(Number(e.target.value))}
                                 className="w-full h-2 bg-gray-800 rounded-lg appearance-none cursor-pointer"

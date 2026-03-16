@@ -1,4 +1,3 @@
-import PageWrapper from '../components/PageWrapper'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 import { Dumbbell, Zap, Heart, Waves, Coffee, Info, X, Orbit, ZoomIn, ChevronLeft, ChevronRight, PlayCircle, MapPin, ArrowLeft } from 'lucide-react'
@@ -439,9 +438,8 @@ function GalleryMode({ initialCategory }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             className="absolute inset-0 w-full h-full bg-[#050508] z-0 overflow-y-auto overscroll-contain"
-            data-lenis-prevent="true"
         >
-            <div className="pt-40 sm:pt-48 pb-16 px-4">
+            <div className="pt-20 pb-16 px-4">
                 <div className="max-w-7xl mx-auto">
                     {/* Categories */}
                     <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -559,7 +557,7 @@ export default function Explore() {
     }
 
     return (
-        <PageWrapper>
+        <>
             <AnimatePresence>
                 {!hasEntered && <CinematicPortal onEnter360={handleEnter360} onEnterGallery={handleEnterGallery} />}
             </AnimatePresence>
@@ -569,7 +567,7 @@ export default function Explore() {
 
                     {/* Back Button */}
                     <button
-                        onClick={() => navigate(-1)}
+                        onClick={() => { window.history.length > 1 ? navigate(-1) : navigate('/') }}
                         className="fixed top-6 left-6 z-[110] flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all duration-300"
                         style={{ background: 'rgba(5,5,15,0.7)', backdropFilter: 'blur(20px)' }}
                     >
@@ -611,7 +609,7 @@ export default function Explore() {
                     </AnimatePresence>
 
                     {/* Mode Content Wrapper */}
-                    <div className="relative w-full h-full mt-4">
+                    <div className="relative w-full h-full">
                         <AnimatePresence mode="wait">
                             {mode === '360' ? (
                                 <VirtualTourMode
@@ -631,6 +629,6 @@ export default function Explore() {
                     </div>
                 </div>
             )}
-        </PageWrapper>
+        </>
     )
 }

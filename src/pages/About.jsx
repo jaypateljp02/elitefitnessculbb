@@ -64,7 +64,7 @@ function LuxuryStats() {
     const stats = [
         { num: '2,000', unit: 'SQ. FT.', label: 'PRIVATE STUDIO', desc: 'A meticulously curated strength and conditioning space. No crowds, no waiting.' },
         { num: '10+', unit: 'COACHES', label: 'EXPERT SPECIALISTS', desc: 'A hand-picked team of Level 3 certified experts focused on your biomechanics.' },
-        { num: '2+', unit: 'YEARS', label: 'EXCELLENT RESULTS', desc: 'Consistently delivering deep transformations for Hindjewadi\'s professionals.' },
+        { num: '10+', unit: 'YEARS', label: 'EXCELLENT RESULTS', desc: 'Consistently delivering deep transformations for Hindjewadi\'s professionals.' },
     ]
 
     return (
@@ -122,13 +122,13 @@ function FoundersCorner() {
 
                     <div className="prose prose-invert prose-lg mt-8 text-gray-300 font-light leading-relaxed">
                         <p>
-                            "I built Elite Fitness Clubb because Hinjewadi needed a place where fitness isn't just a commodity to be sold, but a craft to be mastered.
+                            "Elite Fitness Clubb was established with a singular vision: to transcend the conventional gym experience. Hinjewadi demanded a space where fitness is approached not as a routine, but as an exact science and a dedicated craft."
                         </p>
                         <p className="mt-4">
-                            We are small by choice so we can be elite in our attention. With a hand-picked, Special Forces-level team of 10+ experts, we don't just watch you work out. We engineer your biomechanics, we focus on every single rep, we strategize every meal, and we guarantee every transformation.
+                            "We operate with intended exclusivity to guarantee uncompromising quality. With our hand-picked team of specialists, we do not merely supervise – we engineer your biomechanics, strategize your nutrition, and unequivocally guarantee your transformation. We demand excellence, because our members deserve nothing less."
                         </p>
                         <p className="mt-4 font-normal text-white italic">
-                            This isn't just a gym; it's my promise to you."
+                            "This is our standard. This is the Elite promise."
                         </p>
                     </div>
 

@@ -66,29 +66,15 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Services */}
-                    <div>
-                        <h3 className="text-white font-heading font-bold text-lg mb-6">Services</h3>
-                        <ul className="space-y-3.5">
-                            {['Personal Training', 'Group Classes', 'Weight Loss', 'Strength Training', 'Yoga & Zumba', 'Nutrition Plan', 'Ice Bath Recovery'].map((item) => (
-                                <li key={item}>
-                                    <Link to="/services" className="text-gray-500 hover:text-elite-purple transition-all text-sm hover:pl-1 duration-300">
-                                        {item}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
                     {/* Contact Info */}
-                    <div>
+                    <div className="md:col-span-2 lg:col-span-1">
                         <h3 className="text-white font-heading font-bold text-lg mb-6">Contact Us</h3>
                         <ul className="space-y-5">
                             <li className="flex gap-3 text-sm">
                                 <div className="w-9 h-9 rounded-lg bg-elite-purple/10 border border-elite-purple/20 flex items-center justify-center shrink-0">
                                     <MapPin size={16} className="text-elite-purple" />
                                 </div>
-                                <span className="text-gray-500">2nd floor, Laxmi Chowk, Elite Fitness Clubb,<br />above Shlok Hospital, Hinjawadi, Pune,<br />Maharashtra 411057</span>
+                                <span className="text-gray-500">2nd floor, Laxmi Chowk, Elite Fitness Clubb,<br />above KFC, Phase 1, Hinjawadi, Pune,<br />Maharashtra 411057</span>
                             </li>
                             <li className="flex gap-3 text-sm">
                                 <div className="w-9 h-9 rounded-lg bg-elite-purple/10 border border-elite-purple/20 flex items-center justify-center shrink-0">

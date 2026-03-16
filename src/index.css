@@ -20,12 +20,22 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
     background-color: #050508;
     color: #E0E0E0;
     /* no pure white — soft grey for premium dark mode */
-    overflow-x: hidden;
+    /* overflow-x: hidden; */ /* Removed as per instruction */
     cursor: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Wrapper for layout stability */
+#root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* Restore default cursor on mobile/touch */

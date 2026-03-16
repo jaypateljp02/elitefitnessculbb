@@ -349,7 +349,7 @@ function FranchiseModels() {
                         </div>
                         <div className="p-[2px] rounded-2xl bg-gradient-to-br from-yellow-400 via-yellow-600 to-yellow-800" style={{ boxShadow: '0 0 30px rgba(234, 179, 8, 0.2)' }}>
                             <div className="bg-[#050508] rounded-[14px] p-8 h-full text-center relative overflow-hidden">
-                                <div className="absolute top-0 right-0 bg-gradient-to-r from-yellow-500 to-yellow-700 text-black text-[10px] font-bold px-8 py-1 transform translate-x-6 translate-y-4 rotate-45">RECOMMENDED</div>
+                                <div className="absolute top-0 right-0 bg-gradient-to-r from-yellow-500 to-yellow-700 text-black text-[10px] sm:text-xs font-bold px-8 py-1.5 transform translate-x-8 translate-y-4 rotate-45 origin-center">RECOMMENDED</div>
                                 <h4 className="text-2xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-600 mb-2 uppercase tracking-widest">GOLD TIER</h4>
                                 <div className="text-4xl font-heading font-black text-white mb-4">₹1 Crore</div>
                                 <p className="text-gray-400 text-sm">The flagship investment. Massive floor space, ultimate luxury amenities, and maximum market dominance.</p>

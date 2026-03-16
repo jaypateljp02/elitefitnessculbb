@@ -32,10 +32,10 @@ function ContactHero() {
 
 function ContactCards() {
   const contactInfo = [
-    { icon: MapPin, title: 'VISIT US', info: 'Wakad Road, Hinjewadi Phase 1, Pune, MH', detail: 'Elite Fitness Clubb' },
-    { icon: Phone, title: 'CALL US', info: '+91 8888 161216', link: 'tel:+918888161216', detail: 'Available Mon-Sat' },
+    { icon: MapPin, title: 'VISIT US', info: '2nd floor, Laxmi Chowk, Elite Fitness Clubb, above KFC, Phase 1, Hinjawadi, Maharashtra 411057', detail: '' },
+    { icon: Phone, title: 'CALL US', info: '+91 8888 161216', link: 'tel:+918888161216', detail: 'Mon-Sat' },
     { icon: Mail, title: 'EMAIL US', info: 'info@elitefitness.club', link: 'mailto:info@elitefitness.club', detail: 'We Reply Within 24 Hrs' },
-    { icon: Clock, title: 'HOURS', info: 'Mon-Sat: 5AM - 11PM', detail: 'Sun: 6AM - 10PM' },
+    { icon: Clock, title: 'HOURS', info: 'Mon-Sat: 5AM - 11PM', detail: '' },
   ]
 
   return (
@@ -166,7 +166,7 @@ function ContactFormMap() {
               </div>
               <div>
                 <h4 className="font-heading font-black text-white text-sm uppercase tracking-wide">Elite Fitness Clubb</h4>
-                <p className="text-xs text-gray-400 font-light mt-0.5">Wakad Road, Hinjewadi Phase 1</p>
+                <p className="text-xs text-gray-400 font-light mt-0.5">2nd floor, Laxmi Chowk, above KFC</p>
               </div>
             </div>
           </motion.div>

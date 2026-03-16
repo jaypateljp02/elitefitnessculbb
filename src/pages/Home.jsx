@@ -127,7 +127,7 @@ function Hero() {
                         initial={{ opacity: 0, y: 60, filter: 'blur(8px)' }}
                         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                         transition={{ delay: 0.6, duration: 0.8 }}
-                        className="relative text-5xl sm:text-7xl lg:text-[7rem] xl:text-[10rem] font-heading font-black leading-[0.9] tracking-tight"
+                        className="relative text-[2.5rem] sm:text-7xl lg:text-[7rem] xl:text-[9rem] font-heading font-black leading-[0.9] tracking-tight"
                     >
                         <span
                             className="relative inline-block"

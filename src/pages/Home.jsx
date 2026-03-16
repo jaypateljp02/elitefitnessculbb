@@ -604,8 +604,6 @@ function FranchiseCTA() {
 function Testimonials() {
     const [showAll, setShowAll] = useState(false)
     const testimonials = [
-        { name: '[Owner Name Placeholder]', role: 'Best Club Owner', text: 'Building Elite Fitness Clubb was about creating a sanctuary for true transformation. We refuse to compromise on quality, bringing the absolute best infrastructure and coaching to Hinjewadi. — [Owner Signature Placeholder]', rating: 5, initials: 'CO', color: '#EC4899' },
-        { name: '[Person Name Placeholder]', role: 'Best Gym Person', text: 'I have trained at numerous facilities, but the standard established at Elite Fitness is unmatched. The combination of elite equipment and an electric atmosphere forces you to bring your best. — [Signature Placeholder]', rating: 5, initials: 'GP', color: '#8B5CF6' },
         { name: 'Rahul Sharma', role: 'Member · 2 Years', text: 'Elite Fitness completely transformed my approach to fitness. The trainers here don\'t just count reps — they build real programs. Lost 12 kgs and gained confidence I never thought possible.', rating: 5, initials: 'RS', color: '#8B5CF6' },
         { name: 'Priya Patel', role: 'Weight Loss Journey', text: 'I lost 15 kgs in 6 months with their personal training program. The diet consultation made all the difference. The trainers genuinely care about your progress.', rating: 5, initials: 'PP', color: '#EC4899' },
         { name: 'Amit Deshmukh', role: 'Strength Athlete', text: 'Equipment quality is top-notch — Hammer Strength racks, premium dumbbells, the works. The vibe just hits different. Nothing in Hinjewadi even comes close.', rating: 5, initials: 'AD', color: '#6366F1' },

@@ -151,29 +151,14 @@ export default function HolographicCard({ plan, isAnnual }) {
                         <h3 className="text-2xl font-heading font-black tracking-widest uppercase mb-2 text-[#E0E0E0]">{plan.name}</h3>
                         <p className="text-gray-400 text-xs mb-8 font-light min-h-[32px]">{plan.description}</p>
 
-                        {/* Price Display */}
+                        {/* Price Display / Seasonal Offers */}
                         <div className="mb-6 flex flex-col gap-1">
-                            <div className="flex items-start">
-                                <sup className="text-2xl font-bold text-gray-500 mt-3 mr-1">₹</sup>
-                                <span className="text-6xl font-heading font-black italic tracking-tighter pb-2 pr-4 leading-none" style={{ background: plan.popular ? 'linear-gradient(135deg, #EC4899, #8B5CF6)' : plan.isElite ? 'linear-gradient(135deg, #a78bfa, #e879f9)' : 'linear-gradient(135deg, #E0E0E0, #a0a0a0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', filter: plan.popular ? 'drop-shadow(0 0 15px rgba(236,72,153,0.3))' : plan.isElite ? 'drop-shadow(0 0 10px rgba(139,92,246,0.5))' : 'none' }}>
-                                    <AnimatedCounter value={currentPrice} />
-                                </span>
-                                <span className="text-gray-500 text-sm font-light mt-auto mb-2 ml-1">/mo</span>
+                            <div className="text-xl font-heading font-black italic tracking-tighter" style={{ background: plan.popular ? 'linear-gradient(135deg, #EC4899, #8B5CF6)' : plan.isElite ? 'linear-gradient(135deg, #a78bfa, #e879f9)' : 'linear-gradient(135deg, #E0E0E0, #a0a0a0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', filter: plan.popular ? 'drop-shadow(0 0 15px rgba(236,72,153,0.3))' : plan.isElite ? 'drop-shadow(0 0 10px rgba(139,92,246,0.5))' : 'none' }}>
+                                EXCLUSIVE SEASONAL OFFERS
                             </div>
-
-                            {/* Value Math Subtext */}
-                            <AnimatePresence mode="wait">
-                                {isAnnual ? (
-                                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="text-[10px] font-bold tracking-widest text-[#E0E0E0] uppercase mt-1">
-                                        BILLED ₹{totalAnnual.toLocaleString('en-IN')} YR.
-                                        <span className="text-emerald-400 ml-1">SAVE ₹{exactSavings.toLocaleString('en-IN')}!</span>
-                                    </motion.div>
-                                ) : (
-                                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-[10px] text-gray-600 font-medium tracking-widest mt-1 min-h-[15px]">
-                                        BILLED MONTHLY
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
+                            <div className="text-[10px] text-gray-500 font-medium tracking-widest mt-1 uppercase">
+                                Contact us for customized pricing
+                            </div>
                         </div>
 
                         {/* Value List (Positive only) */}

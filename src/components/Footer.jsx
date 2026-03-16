@@ -88,7 +88,7 @@ export default function Footer() {
                                 <div className="w-9 h-9 rounded-lg bg-elite-purple/10 border border-elite-purple/20 flex items-center justify-center shrink-0">
                                     <MapPin size={16} className="text-elite-purple" />
                                 </div>
-                                <span className="text-gray-500">Hinjewadi, Pune,<br />Maharashtra, India</span>
+                                <span className="text-gray-500">2nd floor, Laxmi Chowk, Elite Fitness Clubb,<br />above Shlok Hospital, Hinjawadi, Pune,<br />Maharashtra 411057</span>
                             </li>
                             <li className="flex gap-3 text-sm">
                                 <div className="w-9 h-9 rounded-lg bg-elite-purple/10 border border-elite-purple/20 flex items-center justify-center shrink-0">
@@ -106,7 +106,6 @@ export default function Footer() {
                         <div className="mt-6 p-4 rounded-xl bg-white/3 border border-white/5">
                             <h4 className="text-white text-sm font-semibold mb-1">Opening Hours</h4>
                             <p className="text-gray-500 text-xs">Mon-Sat: 5:00 AM - 11:00 PM</p>
-                            <p className="text-gray-500 text-xs">Sunday: 6:00 AM - 10:00 PM</p>
                         </div>
                     </div>
                 </div>

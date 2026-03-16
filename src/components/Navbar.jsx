@@ -18,7 +18,7 @@ const navLinks = [
     { name: 'ABOUT US', path: '/about' },
     { name: 'MEMBERSHIP', path: '/membership' },
     { name: 'EXPLORE', path: '/explore', badge: '360°' },
-    { name: 'FRANCHISE', path: '/franchise', badge: 'BIZ' },
+    { name: 'FRANCHISE BUSINESS', path: '/franchise', badge: 'BIZ' },
     { name: 'CONTACT', path: '/contact' },
 ]
 

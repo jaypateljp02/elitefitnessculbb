@@ -296,6 +296,73 @@ function ProcessTimeline() {
 }
 
 /* =======================================
+   FRANCHISE MODELS & PRICING
+   ======================================= */
+function FranchiseModels() {
+    return (
+        <section className="py-16 sm:py-24 px-4 relative noise-bg" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(139,92,246,0.06) 0%, transparent 60%)' }}>
+            <div className="relative z-10 max-w-7xl mx-auto">
+                <SectionHeading subtitle="INVESTMENT MODELS" title={<>CHOOSE YOUR <span className="gradient-text">BLUEPRINT</span></>} description="Flexible models designed to maximize your ROI while matching your operational capability." />
+
+                <div className="grid md:grid-cols-2 gap-8 mt-12 sm:mt-16">
+                    {/* FOCO Model */}
+                    <div className="glass-card-strong p-8 sm:p-10 relative overflow-hidden group hover:border-elite-purple/50 transition-colors duration-500">
+                        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <Crown size={120} className="text-elite-purple" />
+                        </div>
+                        <h3 className="text-3xl font-heading font-black text-white mb-2 tracking-widest uppercase">FOCO <span className="text-sm text-elite-purple font-bold tracking-widest">(Franchise Owned, Company Operated)</span></h3>
+                        <p className="text-gray-400 mb-8 font-light leading-relaxed">You invest. We operate. Enjoy completely passive income while our elite management team handles day-to-day operations, marketing, and staff training to ensure maximum ROI.</p>
+
+                        <div className="space-y-4 mb-8">
+                            <div className="flex items-center gap-3"><CheckCircle2 size={18} className="text-elite-pink" /><span className="text-gray-300 font-light">100% Passive Investment</span></div>
+                            <div className="flex items-center gap-3"><CheckCircle2 size={18} className="text-elite-pink" /><span className="text-gray-300 font-light">Expert Company Management</span></div>
+                            <div className="flex items-center gap-3"><CheckCircle2 size={18} className="text-elite-pink" /><span className="text-gray-300 font-light">Guaranteed Standard of Excellence</span></div>
+                        </div>
+                    </div>
+
+                    {/* FOFO Model */}
+                    <div className="glass-card-strong p-8 sm:p-10 relative overflow-hidden group hover:border-elite-pink/50 transition-colors duration-500">
+                        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                            <Building size={120} className="text-elite-pink" />
+                        </div>
+                        <h3 className="text-3xl font-heading font-black text-white mb-2 tracking-widest uppercase">FOFO <span className="text-sm text-elite-pink font-bold tracking-widest">(Franchise Owned, Franchise Operated)</span></h3>
+                        <p className="text-gray-400 mb-8 font-light leading-relaxed">Take the helm. We provide the blueprint, the brand, and the initial setup, but you control the day-to-day operations. Ideal for passionate owner-operators looking for higher active margins.</p>
+
+                        <div className="space-y-4 mb-8">
+                            <div className="flex items-center gap-3"><CheckCircle2 size={18} className="text-elite-purple" /><span className="text-gray-300 font-light">Higher Profit Margins</span></div>
+                            <div className="flex items-center gap-3"><CheckCircle2 size={18} className="text-elite-purple" /><span className="text-gray-300 font-light">Direct Operational Control</span></div>
+                            <div className="flex items-center gap-3"><CheckCircle2 size={18} className="text-elite-purple" /><span className="text-gray-300 font-light">Comprehensive Initial Training</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Investment Tiers */}
+                <div className="mt-16 sm:mt-24">
+                    <SectionHeading subtitle="CAPITAL REQUIREMENT" title={<>INVESTMENT <span className="gradient-text">TIERS</span></>} />
+                    <div className="grid sm:grid-cols-2 gap-8 mt-12 max-w-4xl mx-auto">
+                        <div className="p-[2px] rounded-2xl bg-gradient-to-br from-gray-400 to-gray-600">
+                            <div className="bg-[#050508] rounded-[14px] p-8 h-full text-center">
+                                <h4 className="text-2xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-500 mb-2 uppercase tracking-widest">SILVER TIER</h4>
+                                <div className="text-4xl font-heading font-black text-white mb-4">₹75 Lakhs</div>
+                                <p className="text-gray-400 text-sm">Perfect for establishing a premium presence in high-density tier-2 markets or compact premium spaces in metros.</p>
+                            </div>
+                        </div>
+                        <div className="p-[2px] rounded-2xl bg-gradient-to-br from-yellow-400 via-yellow-600 to-yellow-800" style={{ boxShadow: '0 0 30px rgba(234, 179, 8, 0.2)' }}>
+                            <div className="bg-[#050508] rounded-[14px] p-8 h-full text-center relative overflow-hidden">
+                                <div className="absolute top-0 right-0 bg-gradient-to-r from-yellow-500 to-yellow-700 text-black text-[10px] font-bold px-8 py-1 transform translate-x-6 translate-y-4 rotate-45">RECOMMENDED</div>
+                                <h4 className="text-2xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-600 mb-2 uppercase tracking-widest">GOLD TIER</h4>
+                                <div className="text-4xl font-heading font-black text-white mb-4">₹1 Crore</div>
+                                <p className="text-gray-400 text-sm">The flagship investment. Massive floor space, ultimate luxury amenities, and maximum market dominance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+/* =======================================
    HOLOGRAPHIC BENEFITS
    ======================================= */
 function HolographicBenefits() {
@@ -418,6 +485,7 @@ export default function Franchise() {
     return (
         <PageWrapper>
             <FranchiseHero />
+            <FranchiseModels />
             <ROICalculator />
             <HolographicBenefits />
             <ProcessTimeline />

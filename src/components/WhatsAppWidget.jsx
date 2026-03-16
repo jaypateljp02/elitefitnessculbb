@@ -21,7 +21,7 @@ export default function WhatsAppWidget() {
                     animate={{ opacity: 1, y: 0, rotate: 0 }}
                     exit={{ opacity: 0, y: 30, rotate: 20 }}
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                    className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 pointer-events-auto"
+                    className="fixed bottom-24 right-6 sm:bottom-8 sm:right-8 z-50 pointer-events-auto"
                 >
                     <a
                         href="https://wa.me/918888161216?text=Hi%20Elite!%20I%20would%20like%20to%20know%20more%20about%20starting%20my%20transformation."

@@ -117,9 +117,9 @@ function Hero() {
                         initial={{ opacity: 0, y: 60, filter: 'blur(8px)' }}
                         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                         transition={{ delay: 0.3, duration: 0.8 }}
-                        className="text-5xl sm:text-7xl lg:text-[7rem] xl:text-[9rem] font-heading font-black leading-[0.85] tracking-tight text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                        className="text-4xl sm:text-6xl lg:text-[6rem] xl:text-[8rem] font-heading font-black leading-[0.85] tracking-tight text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]"
                     >
-                        TRAIN HARD.
+                        START YOUR
                     </motion.div>
 
                     {/* Masked text: images play inside these letters */}
@@ -127,7 +127,7 @@ function Hero() {
                         initial={{ opacity: 0, y: 60, filter: 'blur(8px)' }}
                         animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                         transition={{ delay: 0.6, duration: 0.8 }}
-                        className="relative text-6xl sm:text-8xl lg:text-[9rem] xl:text-[12rem] font-heading font-black leading-[0.9] tracking-tight"
+                        className="relative text-5xl sm:text-7xl lg:text-[7rem] xl:text-[10rem] font-heading font-black leading-[0.9] tracking-tight"
                     >
                         <span
                             className="relative inline-block"
@@ -142,7 +142,7 @@ function Hero() {
                                 transition: 'background-image 1.5s ease-in-out',
                             }}
                         >
-                            ELITE
+                            FITNESS JOURNEY
                         </span>
                         <span className="text-white">.</span>
                     </motion.div>
@@ -278,10 +278,10 @@ function Hero() {
    ======================================= */
 function StatsBar() {
     const stats = [
-        { number: 500, suffix: '+', label: 'Active Members', icon: Users, from: -100 },
+        { number: 1100, suffix: '+', label: 'Active Members', icon: Users, from: -100 },
         { number: 10, suffix: '+', label: 'Expert Trainers', icon: Shield, from: 100 },
-        { number: 2, suffix: '+', label: 'Years Excellence', icon: Trophy, from: -80 },
-        { number: 2000, suffix: '', label: 'Sq. Ft. Space', icon: Target, from: 0 },
+        { number: 10, suffix: '+', label: 'Years Excellence', icon: Trophy, from: -80 },
+        { number: 6000, suffix: '', label: 'Sq. Ft. Space', icon: Target, from: 0 },
     ]
 
     return (
@@ -343,8 +343,8 @@ function AboutPreview() {
                 <motion.div initial={{ opacity: 0, x: 60 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
                     <span className="tag-elite mb-6 inline-block">ABOUT US</span>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black mb-8 leading-tight uppercase">More Than<br />Just a <span className="gradient-text">Gym</span></h2>
-                    <p className="text-gray-400 text-lg leading-relaxed mb-6 font-light">Elite Fitness Clubb is a premium fitness destination designed for those who demand the best. Our state-of-the-art facility features modern equipment, expert trainers, and an electrifying neon-lit atmosphere.</p>
-                    <p className="text-gray-500 leading-relaxed mb-10 font-light">From strength training to yoga, from personal coaching to group classes — we have everything you need to transform your body and mind.</p>
+                    <p className="text-gray-400 text-lg leading-relaxed mb-6 font-light">Elite Fitness Clubb represents the zenith of premium fitness infrastructure. Conceived for those who refuse to compromise, our facility unites cutting-edge technology, elite-tier coaching, and an ambiance engineered for true transformation.</p>
+                    <p className="text-gray-500 leading-relaxed mb-10 font-light">Whether you seek unparalleled strength development, holistic mindfulness in yoga, or dynamic energy in our group arenas—we provide the absolute best to forge a superior you.</p>
                     <div className="grid grid-cols-2 gap-4 mb-10">
                         {[{ icon: Dumbbell, text: 'Premium Equipment' }, { icon: Users, text: 'Expert Trainers' }, { icon: Zap, text: 'Electric Atmosphere' }, { icon: Heart, text: 'Strong Community' }].map((item, i) => (
                             <motion.div
@@ -610,6 +610,8 @@ function FranchiseCTA() {
 function Testimonials() {
     const [showAll, setShowAll] = useState(false)
     const testimonials = [
+        { name: '[Owner Name Placeholder]', role: 'Best Club Owner', text: 'Building Elite Fitness Clubb was about creating a sanctuary for true transformation. We refuse to compromise on quality, bringing the absolute best infrastructure and coaching to Hinjewadi. — [Owner Signature Placeholder]', rating: 5, initials: 'CO', color: '#EC4899' },
+        { name: '[Person Name Placeholder]', role: 'Best Gym Person', text: 'I have trained at numerous facilities, but the standard established at Elite Fitness is unmatched. The combination of elite equipment and an electric atmosphere forces you to bring your best. — [Signature Placeholder]', rating: 5, initials: 'GP', color: '#8B5CF6' },
         { name: 'Rahul Sharma', role: 'Member · 2 Years', text: 'Elite Fitness completely transformed my approach to fitness. The trainers here don\'t just count reps — they build real programs. Lost 12 kgs and gained confidence I never thought possible.', rating: 5, initials: 'RS', color: '#8B5CF6' },
         { name: 'Priya Patel', role: 'Weight Loss Journey', text: 'I lost 15 kgs in 6 months with their personal training program. The diet consultation made all the difference. The trainers genuinely care about your progress.', rating: 5, initials: 'PP', color: '#EC4899' },
         { name: 'Amit Deshmukh', role: 'Strength Athlete', text: 'Equipment quality is top-notch — Hammer Strength racks, premium dumbbells, the works. The vibe just hits different. Nothing in Hinjewadi even comes close.', rating: 5, initials: 'AD', color: '#6366F1' },
@@ -753,7 +755,6 @@ export default function Home() {
             <StatsBar />
             <AboutPreview />
             <Facilities />
-            <MembershipPreview />
             <FranchiseCTA />
             <Testimonials />
             <FinalCTA />

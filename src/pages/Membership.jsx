@@ -212,33 +212,13 @@ export default function Membership() {
                         </h1>
                         <p className="text-gray-400 text-lg max-w-xl mx-auto font-light mb-12">Select your tier to access India's most advanced fitness infrastructure.</p>
 
-                        {/* SPRING TOGGLE */}
+                        {/* Seasonal Note */}
                         <div className="flex flex-col items-center justify-center relative">
-                            <div className="flex items-center gap-2 bg-black/40 p-1.5 rounded-full border border-white/10 backdrop-blur-md relative z-10 w-fit">
-                                <button onClick={() => setIsAnnual(false)} className={`relative px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-colors z-10 ${!isAnnual ? 'text-[#E0E0E0]' : 'text-gray-500'}`}>
-                                    Monthly
-                                    {!isAnnual && <motion.div layoutId="activeTogglePill" className="absolute inset-0 bg-elite-purple/20 border border-elite-purple/40 rounded-full -z-10 shadow-[0_0_20px_rgba(139,92,246,0.3)]" transition={{ type: 'spring', stiffness: 400, damping: 30 }} />}
-                                </button>
-                                <button onClick={() => setIsAnnual(true)} className={`relative px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-colors z-10 ${isAnnual ? 'text-white' : 'text-gray-500'}`}>
-                                    Annually
-                                    {isAnnual && <motion.div layoutId="activeTogglePill" className="absolute inset-0 bg-elite-purple/20 border border-elite-purple/40 rounded-full -z-10 shadow-[0_0_20px_rgba(139,92,246,0.3)]" transition={{ type: 'spring', stiffness: 400, damping: 30 }} />}
-                                </button>
+                            <div className="flex items-center gap-2 bg-black/40 px-6 py-3 rounded-full border border-white/10 backdrop-blur-md relative z-10 w-fit">
+                                <span className="text-xs font-bold tracking-widest uppercase text-elite-pink">
+                                    Seasonal Offers Available!
+                                </span>
                             </div>
-
-                            {/* Reward Badge Bubble */}
-                            <AnimatePresence>
-                                {isAnnual && (
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0, y: 20 }}
-                                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                                        exit={{ opacity: 0, scale: 0 }}
-                                        transition={{ type: 'spring', stiffness: 400, damping: 10, delay: 0.1 }}
-                                        className="absolute -right-4 sm:-right-8 -top-8 px-3 py-1 bg-emerald-500/20 border border-emerald-400/50 rounded-lg text-emerald-400 text-[10px] font-black tracking-widest shadow-[0_0_15px_rgba(52,211,153,0.4)] backdrop-blur-md z-20 transform rotate-12"
-                                    >
-                                        SAVE 20%
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
                         </div>
                     </motion.div>
                 </div>

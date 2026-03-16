@@ -4,7 +4,6 @@ import { useEffect, useState, useRef } from 'react'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import ScrollToTop from './components/ScrollToTop'
 import CustomCursor from './components/CustomCursor'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -15,6 +14,7 @@ import Explore from './pages/Explore'
 import Contact from './pages/Contact'
 
 import WhatsAppWidget from './components/WhatsAppWidget'
+import PhoneCallWidget from './components/PhoneCallWidget'
 
 /* ===== Scroll Progress Bar ===== */
 function ScrollProgress() {
@@ -106,9 +106,8 @@ function App() {
 
             {/* Content (above background layers) */}
             <div className="relative z-10">
-                <ScrollToTop />
                 <Navbar />
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
                     <Routes location={location} key={location.pathname}>
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
@@ -122,6 +121,7 @@ function App() {
                     </Routes>
                 </AnimatePresence>
                 <WhatsAppWidget />
+                <PhoneCallWidget />
                 <Footer />
             </div>
         </div>

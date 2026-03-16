@@ -565,19 +565,20 @@ export default function Explore() {
             {hasEntered && (
                 <div className="fixed inset-0 bg-black z-[90] overflow-hidden">
 
-                    {/* Back Button */}
-                    <button
-                        onClick={() => { window.history.length > 1 ? navigate(-1) : navigate('/') }}
-                        className="fixed top-6 left-6 z-[110] flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all duration-300"
-                        style={{ background: 'rgba(5,5,15,0.7)', backdropFilter: 'blur(20px)' }}
-                    >
-                        <ArrowLeft size={16} />
-                        <span className="text-[10px] font-bold tracking-widest uppercase">BACK</span>
-                    </button>
+                    {/* Top Controls Bar */}
+                    <div className="absolute top-0 left-0 right-0 w-full p-4 sm:p-6 flex flex-wrap justify-between items-start gap-4 z-[110] pointer-events-none bg-gradient-to-b from-black/80 via-black/40 to-transparent pb-10">
+                        
+                        {/* Back Button */}
+                        <button
+                            onClick={() => { window.history.length > 1 ? navigate(-1) : navigate('/') }}
+                            className="pointer-events-auto flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all duration-300 backdrop-blur-md bg-black/40 shrink-0"
+                        >
+                            <ArrowLeft size={16} />
+                            <span className="text-[10px] font-bold tracking-widest uppercase hidden sm:inline">BACK</span>
+                        </button>
 
-                    {/* Glassmorphism Top Toggle */}
-                    <div className="absolute top-6 left-1/2 -translate-x-1/2 z-[100] pointer-events-auto">
-                        <div className="flex p-1 rounded-full border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]" style={{ background: 'rgba(5,5,15,0.7)', backdropFilter: 'blur(20px)' }}>
+                        {/* Center Toggle (360/Gallery) */}
+                        <div className="pointer-events-auto flex p-1 rounded-full border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)] backdrop-blur-md bg-black/40 mx-auto sm:mx-0 order-3 sm:order-2 w-full sm:w-auto justify-center mt-2 sm:mt-0">
                             <button
                                 onClick={() => setMode('360')}
                                 className={`flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase transition-all duration-300 ${mode === '360' ? 'bg-elite-purple text-white shadow-[0_0_15px_rgba(139,92,246,0.5)]' : 'text-gray-400 hover:text-white'}`}
@@ -591,22 +592,24 @@ export default function Explore() {
                                 <ZoomIn size={14} /> GALLERY
                             </button>
                         </div>
-                    </div>
 
-                    {/* Optional: Elite Neon Mode Toggle (only in 360) */}
-                    <AnimatePresence>
-                        {mode === '360' && (
-                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute top-6 right-20 z-[100] flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-xl border border-white/10 pointer-events-auto" style={{ background: 'rgba(5,5,15,0.6)', backdropFilter: 'blur(20px)' }}>
-                                <span className={`text-[9px] sm:text-[10px] font-bold tracking-widest ${neonMode ? 'text-elite-pink' : 'text-gray-500'}`}>ELITE MODE</span>
-                                <button
-                                    onClick={() => setNeonMode(!neonMode)}
-                                    className={`w-10 h-5 sm:w-12 sm:h-6 rounded-full relative transition-colors duration-300 ${neonMode ? 'bg-elite-purple border border-elite-pink' : 'bg-gray-800 border border-gray-600'}`}
-                                >
-                                    <motion.div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white absolute top-1" animate={{ left: neonMode ? 'calc(100% - 1.25rem)' : '0.25rem' }} transition={{ type: 'spring', stiffness: 500, damping: 30 }} />
-                                </button>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                        {/* Optional: Elite Neon Mode Toggle (only in 360) */}
+                        <div className="pointer-events-auto sm:order-3 shrink-0 flex justify-end min-w-[100px]">
+                            <AnimatePresence>
+                                {mode === '360' && (
+                                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-xl border border-white/10 backdrop-blur-md bg-black/40">
+                                        <span className={`text-[9px] sm:text-[10px] font-bold tracking-widest ${neonMode ? 'text-elite-pink' : 'text-gray-500'} hidden sm:inline`}>ELITE</span>
+                                        <button
+                                            onClick={() => setNeonMode(!neonMode)}
+                                            className={`w-10 h-5 sm:w-12 sm:h-6 rounded-full relative transition-colors duration-300 ${neonMode ? 'bg-elite-purple border border-elite-pink' : 'bg-gray-800 border border-gray-600'}`}
+                                        >
+                                            <motion.div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white absolute top-1" animate={{ left: neonMode ? 'calc(100% - 1.25rem)' : '0.25rem' }} transition={{ type: 'spring', stiffness: 500, damping: 30 }} />
+                                        </button>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    </div>
 
                     {/* Mode Content Wrapper */}
                     <div className="relative w-full h-full">

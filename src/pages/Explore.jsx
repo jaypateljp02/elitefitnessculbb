@@ -1,3 +1,4 @@
+import PageWrapper from '../components/PageWrapper'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 import { Dumbbell, Zap, Heart, Waves, Coffee, Info, X, Orbit, ZoomIn, ChevronLeft, ChevronRight, PlayCircle, MapPin, ArrowLeft } from 'lucide-react'
@@ -110,7 +111,8 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 1.1, filter: 'blur(20px)' }}
             transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black overflow-hidden"
+            className="relative z-10 flex items-center justify-center bg-black overflow-hidden"
+            style={{ minHeight: 'calc(100vh - 80px)' }}
         >
             <motion.img
                 animate={{ scale: [1, 1.2], x: [0, -50] }}
@@ -557,7 +559,7 @@ export default function Explore() {
     }
 
     return (
-        <>
+        <PageWrapper>
             <AnimatePresence>
                 {!hasEntered && <CinematicPortal onEnter360={handleEnter360} onEnterGallery={handleEnterGallery} />}
             </AnimatePresence>
@@ -570,7 +572,10 @@ export default function Explore() {
                         
                         {/* Back Button */}
                         <button
-                            onClick={() => { window.history.length > 1 ? navigate(-1) : navigate('/') }}
+                            onClick={() => {
+                            setHasEntered(false)
+                            setMode('360') // reset mode for next entry
+                        }}
                             className="pointer-events-auto flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/15 text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all duration-300 backdrop-blur-md bg-black/40 shrink-0"
                         >
                             <ArrowLeft size={16} />
@@ -632,6 +637,6 @@ export default function Explore() {
                     </div>
                 </div>
             )}
-        </>
+        </PageWrapper>
     )
 }

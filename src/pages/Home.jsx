@@ -130,16 +130,10 @@ function Hero() {
                         className="relative text-[2.5rem] sm:text-7xl lg:text-[7rem] xl:text-[9rem] font-heading font-black leading-[0.9] tracking-tight"
                     >
                         <span
-                            className="relative inline-block"
+                            className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-white via-elite-purple to-elite-pink"
                             style={{
-                                backgroundImage: `url('${heroImages[imgIndex]}')`,
-                                backgroundSize: 'cover',
-                                backgroundPosition: 'center',
-                                WebkitBackgroundClip: 'text',
-                                backgroundClip: 'text',
-                                WebkitTextFillColor: 'transparent',
-                                filter: 'drop-shadow(0 0 50px rgba(139,92,246,0.4))',
-                                transition: 'background-image 1.5s ease-in-out',
+                                filter: 'drop-shadow(0 0 25px rgba(139,92,246,0.8))',
+                                backgroundSize: '150% auto',
                             }}
                         >
                             FITNESS JOURNEY
@@ -334,7 +328,7 @@ function AboutPreview() {
                     </div>
                     <motion.div initial={{ opacity: 0, scale: 0.8, y: 20 }} whileInView={{ opacity: 1, scale: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-8 -right-4 sm:-right-8 p-6 rounded-2xl flex items-center gap-5" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))', backdropFilter: 'blur(24px)', border: '1px solid rgba(139,92,246,0.2)', boxShadow: '0 0 30px rgba(139,92,246,0.1), 0 20px 40px rgba(0,0,0,0.3)' }}>
                         <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #8B5CF6, #EC4899)', boxShadow: '0 0 20px rgba(139,92,246,0.4)' }}><Trophy size={28} className="text-white" /></div>
-                        <div><div className="text-3xl font-heading font-black gradient-text">2+</div><div className="text-gray-400 text-sm font-medium">Years of Excellence</div></div>
+                        <div><div className="text-3xl font-heading font-black gradient-text">10+</div><div className="text-gray-400 text-sm font-medium">Years of Excellence</div></div>
                     </motion.div>
                     <div className="absolute -top-3 -left-3 w-16 h-16 border-l-2 border-t-2 border-elite-purple/40 rounded-tl-2xl" />
                     <div className="absolute -bottom-3 -right-3 w-16 h-16 border-r-2 border-b-2 border-elite-pink/30 rounded-br-2xl" />
@@ -403,7 +397,7 @@ function Facilities() {
             classes: 'md:col-span-1 h-[280px] md:h-[320px]'
         },
         {
-            title: '2,000 SQ. FT. FACILITY',
+            title: '6,000 SQ. FT. FACILITY',
             desc: 'Premium imported equipment in a sprawling, high-energy environment.',
             tag: 'THE GYM FLOOR',
             image: '/asset/3-1.png',

@@ -184,40 +184,6 @@ function ZoneSection({ zone, index }) {
                         ))}
                     </div>
 
-                    {/* Class Timings Tooltip */}
-                    {zone.tooltip && (
-                        <div className="relative mb-5">
-                            <button
-                                onMouseEnter={() => setShowTooltip(true)}
-                                onMouseLeave={() => setShowTooltip(false)}
-                                onClick={() => setShowTooltip(!showTooltip)}
-                                className="text-[10px] font-black tracking-[0.2em] text-emerald-400 uppercase border border-emerald-400/30 bg-emerald-400/5 px-4 py-2 rounded-xl hover:bg-emerald-400/10 transition-all"
-                            >
-                                VIEW CLASS TIMINGS
-                            </button>
-                            <AnimatePresence>
-                                {showTooltip && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 8 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 8 }}
-                                        className="absolute bottom-full left-0 mb-3 p-4 rounded-2xl border border-white/15 z-30 w-72"
-                                        style={{ background: 'rgba(5,5,15,0.95)', backdropFilter: 'blur(16px)' }}
-                                    >
-                                        <h4 className="text-[10px] font-black tracking-[0.2em] text-[#E0E0E0] uppercase mb-2">{zone.tooltip.title}</h4>
-                                        <div className="space-y-2">
-                                            {zone.tooltip.rows.map((r, k) => (
-                                                <div key={k} className="flex justify-between border-b border-white/5 pb-1.5 text-[9px] font-bold tracking-wider">
-                                                    <span className="text-gray-400">{r.day}</span>
-                                                    <span className="text-elite-pink">{r.time}</span>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
-                    )}
 
                     {/* CTAs */}
                     <div className="flex flex-col sm:flex-row gap-3">
@@ -265,7 +231,7 @@ export default function Services() {
                             ENGINEERED FOR YOUR <span className="gradient-text text-glow">TRANSFORMATION</span>
                         </h1>
                         <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto font-light">
-                            2,000 sq. ft. of world-class facilities, powered by expert coaching.
+                            6,000 sq. ft. of world-class facilities, powered by expert coaching.
                         </p>
                     </motion.div>
                 </div>

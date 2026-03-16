@@ -16,49 +16,50 @@ export default function Footer() {
     const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
     return (
-        <footer className="relative bg-elite-dark noise-bg overflow-hidden">
-            {/* Gradient top border */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-elite-purple/50 to-transparent" />
+        <footer className="relative bg-[#020205] overflow-hidden border-t border-white/5 pt-20">
+            {/* Background elements */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-elite-purple/50 to-transparent" />
+            <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-elite-purple/5 blur-[150px] pointer-events-none" />
+            <div className="absolute bottom-[-10%] right-1/4 w-[400px] h-[400px] rounded-full bg-elite-pink/5 blur-[120px] pointer-events-none" />
 
-            {/* Background orbs */}
-            <div className="absolute top-0 left-1/4 w-[400px] h-[400px] rounded-full bg-elite-purple/5 blur-[150px]" />
-            <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full bg-elite-pink/5 blur-[120px]" />
-
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                    {/* Brand */}
-                    <div>
-                        <Link to="/" className="flex items-center gap-3 mb-6 group">
-                            <img src="/asset/Logo.png" alt="Elite Fitness Clubb" className="h-14 w-auto group-hover:drop-shadow-[0_0_15px_rgba(139,92,246,0.4)] transition-all" />
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+                    {/* Brand & Newsletter (Spans 4 cols on desktop) */}
+                    <div className="lg:col-span-5">
+                        <Link to="/" className="flex items-center gap-3 mb-8 group inline-flex">
+                            <img src="/asset/Logo.png" alt="Elite Fitness Clubb" className="h-16 w-auto group-hover:drop-shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all duration-500" />
                             <div>
-                                <span className="text-xl font-heading font-bold gradient-text">ELITE FITNESS</span>
-                                <span className="block text-xs tracking-[0.35em] text-gray-500 uppercase font-medium">Clubb</span>
+                                <span className="text-2xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">ELITE FITNESS</span>
+                                <span className="block text-xs tracking-[0.4em] text-elite-purple uppercase font-bold mt-0.5">Clubb</span>
                             </div>
                         </Link>
-                        <p className="text-gray-500 text-sm leading-relaxed mb-8">
-                            Premium fitness experience with world-class equipment, expert trainers,
-                            and a neon-lit atmosphere that fuels transformation.
+                        <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-sm font-light">
+                            Hinjewadi's premier fitness destination. Experience a blend of world-class infrastructure, elite coaching, and unparalleled luxury.
                         </p>
-                        <div className="flex gap-3">
+
+                        <div className="flex gap-4">
                             {[Instagram, Facebook, Youtube].map((Icon, i) => (
                                 <a
                                     key={i}
                                     href="#"
-                                    className="w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-gray-500 hover:text-elite-purple hover:border-elite-purple/40 hover:bg-elite-purple/10 hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-300"
+                                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-elite-purple/50 hover:bg-elite-purple/20 hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-300 transform hover:-translate-y-1"
                                 >
-                                    <Icon size={18} />
+                                    <Icon size={16} />
                                 </a>
                             ))}
                         </div>
                     </div>
 
-                    {/* Quick Links */}
-                    <div>
-                        <h3 className="text-white font-heading font-bold text-lg mb-6">Quick Links</h3>
-                        <ul className="space-y-3.5">
+                    {/* Quick Links (Spans 3 cols) */}
+                    <div className="lg:col-span-3 lg:pl-10">
+                        <h3 className="text-white font-heading font-black text-lg tracking-widest uppercase mb-8 flex items-center gap-3">
+                            <span className="w-2 h-2 rounded-full bg-elite-pink"></span> Exploration
+                        </h3>
+                        <ul className="space-y-4">
                             {quickLinks.map((link) => (
                                 <li key={link.path}>
-                                    <Link to={link.path} className="text-gray-500 hover:text-elite-purple transition-all text-sm hover:pl-1 duration-300">
+                                    <Link to={link.path} className="text-gray-400 hover:text-elite-pink transition-all text-sm hover:translate-x-2 duration-300 inline-flex items-center gap-2 font-light tracking-wide group">
+                                        <ArrowUp size={12} className="rotate-45 opacity-0 group-hover:opacity-100 transition-opacity text-elite-purple" />
                                         {link.name}
                                     </Link>
                                 </li>
@@ -66,46 +67,56 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Contact Info */}
-                    <div className="md:col-span-2 lg:col-span-1">
-                        <h3 className="text-white font-heading font-bold text-lg mb-6">Contact Us</h3>
-                        <ul className="space-y-5">
-                            <li className="flex gap-3 text-sm">
-                                <div className="w-9 h-9 rounded-lg bg-elite-purple/10 border border-elite-purple/20 flex items-center justify-center shrink-0">
-                                    <MapPin size={16} className="text-elite-purple" />
+                    {/* Contact Info (Spans 4 cols) */}
+                    <div className="lg:col-span-4">
+                        <h3 className="text-white font-heading font-black text-lg tracking-widest uppercase mb-8 flex items-center gap-3">
+                            <span className="w-2 h-2 rounded-full bg-elite-purple"></span> Visit Us
+                        </h3>
+                        <div className="space-y-6">
+                            <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="flex items-start gap-4 group">
+                                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-elite-purple/10 group-hover:border-elite-purple/30 transition-all duration-300 shadow-[0_0_0_rgba(139,92,246,0)] group-hover:shadow-[0_0_20px_rgba(139,92,246,0.2)]">
+                                    <MapPin size={20} className="text-elite-purple" />
                                 </div>
-                                <span className="text-gray-500">2nd floor, Laxmi Chowk, Elite Fitness Clubb,<br />above KFC, Phase 1, Hinjawadi, Pune,<br />Maharashtra 411057</span>
-                            </li>
-                            <li className="flex gap-3 text-sm">
-                                <div className="w-9 h-9 rounded-lg bg-elite-purple/10 border border-elite-purple/20 flex items-center justify-center shrink-0">
-                                    <Phone size={16} className="text-elite-purple" />
+                                <div className="pt-1">
+                                    <h4 className="text-white text-sm font-bold tracking-wide mb-1 group-hover:text-elite-purple transition-colors">Headquarters</h4>
+                                    <p className="text-gray-400 text-sm font-light leading-relaxed">2nd floor, Laxmi Chowk, Elite Fitness Clubb,<br />above KFC, Phase 1, Hinjawadi,<br />Pune, Maharashtra 411057</p>
                                 </div>
-                                <a href="tel:+918888161216" className="text-gray-500 hover:text-white transition-colors">+91 8888 161216</a>
-                            </li>
-                            <li className="flex gap-3 text-sm">
-                                <div className="w-9 h-9 rounded-lg bg-elite-purple/10 border border-elite-purple/20 flex items-center justify-center shrink-0">
-                                    <Mail size={16} className="text-elite-purple" />
+                            </a>
+
+                            <a href="tel:+918888161216" className="flex items-center gap-4 group">
+                                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-elite-pink/10 group-hover:border-elite-pink/30 transition-all duration-300 shadow-[0_0_0_rgba(236,72,153,0)] group-hover:shadow-[0_0_20px_rgba(236,72,153,0.2)]">
+                                    <Phone size={20} className="text-elite-pink" />
                                 </div>
-                                <a href="mailto:info@elitefitness.club" className="text-gray-500 hover:text-white transition-colors">info@elitefitness.club</a>
-                            </li>
-                        </ul>
-                        <div className="mt-6 p-4 rounded-xl bg-white/3 border border-white/5">
-                            <h4 className="text-white text-sm font-semibold mb-1">Opening Hours</h4>
-                            <p className="text-gray-500 text-xs">Mon-Sat: 5:00 AM - 11:00 PM</p>
+                                <div>
+                                    <h4 className="text-gray-500 text-xs font-bold tracking-widest uppercase mb-1">Direct Line</h4>
+                                    <p className="text-gray-300 text-base font-medium group-hover:text-white transition-colors">+91 8888 161216</p>
+                                </div>
+                            </a>
+
+                            <div className="p-5 rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/5 relative overflow-hidden mt-8">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-elite-purple/10 blur-[20px] rounded-full" />
+                                <h4 className="text-white text-xs font-bold tracking-widest uppercase mb-3">
+                                    Operating Hours
+                                </h4>
+                                <div className="flex justify-between items-center text-sm">
+                                    <span className="text-gray-400 font-light">Monday - Saturday</span>
+                                    <span className="text-white font-medium">5:00 AM - 11:00 PM</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* Bottom Bar */}
-            <div className="relative z-10 border-t border-white/5">
+            <div className="relative z-10 border-t border-white/5 bg-black/40">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p className="text-gray-600 text-sm">
-                        © {new Date().getFullYear()} Elite Fitness Clubb. All rights reserved.
+                    <p className="text-gray-500 text-sm font-light">
+                        © {new Date().getFullYear()} Elite Fitness Clubb. Crafted for Excellence.
                     </p>
                     <button
                         onClick={scrollToTop}
-                        className="w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-gray-500 hover:text-elite-purple hover:border-elite-purple/40 hover:bg-elite-purple/10 hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-300"
+                        className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-elite-purple/50 bg-white/5 hover:bg-elite-purple/20 shadow-[0_0_0_rgba(139,92,246,0)] hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-300 transform hover:-translate-y-1"
                     >
                         <ArrowUp size={18} />
                     </button>

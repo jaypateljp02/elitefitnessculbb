@@ -110,7 +110,8 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, scale: 1.1, filter: 'blur(20px)' }}
             transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black overflow-hidden"
+            className="relative z-10 flex items-center justify-center bg-black overflow-hidden"
+            style={{ minHeight: 'calc(100vh - 80px)' }}
         >
             <motion.img
                 animate={{ scale: [1, 1.2], x: [0, -50] }}
@@ -562,10 +563,10 @@ export default function Explore() {
             </AnimatePresence>
 
             {hasEntered && (
-                <div className="fixed inset-0 bg-black z-40 overflow-hidden pt-20">
+                <div className="relative bg-black z-10 overflow-hidden" style={{ height: 'calc(100vh - 80px)', minHeight: '600px' }}>
 
                     {/* Glassmorphism Top Toggle */}
-                    <div className="absolute top-28 sm:top-36 left-1/2 -translate-x-1/2 z-50 pointer-events-auto">
+                    <div className="absolute top-8 sm:top-12 left-1/2 -translate-x-1/2 z-30 pointer-events-auto">
                         <div className="flex p-1 rounded-full border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]" style={{ background: 'rgba(5,5,15,0.7)', backdropFilter: 'blur(20px)' }}>
                             <button
                                 onClick={() => setMode('360')}
@@ -585,7 +586,7 @@ export default function Explore() {
                     {/* Optional: Elite Neon Mode Toggle (only in 360) */}
                     <AnimatePresence>
                         {mode === '360' && (
-                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute top-20 sm:top-6 right-4 sm:right-6 z-50 flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-xl border border-white/10 pointer-events-auto" style={{ background: 'rgba(5,5,15,0.6)', backdropFilter: 'blur(20px)' }}>
+                            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute top-2 sm:top-6 right-4 sm:right-6 z-30 flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-xl border border-white/10 pointer-events-auto" style={{ background: 'rgba(5,5,15,0.6)', backdropFilter: 'blur(20px)' }}>
                                 <span className={`text-[9px] sm:text-[10px] font-bold tracking-widest ${neonMode ? 'text-elite-pink' : 'text-gray-500'}`}>ELITE MODE</span>
                                 <button
                                     onClick={() => setNeonMode(!neonMode)}

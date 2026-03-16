@@ -32,8 +32,8 @@ function HeroBoutique() {
     return (
         <section className="relative pt-36 pb-28 px-4 overflow-hidden min-h-[90vh] flex items-center justify-center">
             <div className="absolute inset-0">
-                <img src="/asset/14.png" alt="Clean Gym Floor" className="w-full h-full object-cover grayscale opacity-30 mix-blend-luminosity" />
-                <div className="absolute inset-0 bg-black/90" />
+                <img src="/asset/14.png" alt="Clean Gym Floor" className="w-full h-full object-cover opacity-40" />
+                <div className="absolute inset-0 bg-black/60" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
                 <div className="absolute inset-0 bg-gradient-to-r from-elite-purple/10 to-elite-pink/10 mix-blend-overlay" />
             </div>
@@ -47,7 +47,7 @@ function HeroBoutique() {
                         <span className="gradient-text text-glow">Elite by Result.</span>
                     </h1>
                     <p className="text-gray-300 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
-                        We didn't build a massive warehouse. We curated a 2,000 sq. ft. private performance studio where you aren't just a membership number—you're the mission.
+                        We didn't build a massive warehouse. We curated a 6,000 sq. ft. private performance studio where you aren't just a membership number—you're the mission.
                     </p>
                 </motion.div>
             </div>
@@ -62,7 +62,7 @@ function HeroBoutique() {
 
 function LuxuryStats() {
     const stats = [
-        { num: '2,000', unit: 'SQ. FT.', label: 'PRIVATE STUDIO', desc: 'A meticulously curated strength and conditioning space. No crowds, no waiting.' },
+        { num: '6,000', unit: 'SQ. FT.', label: 'PREMIUM FACILITY', desc: 'A meticulously curated strength and conditioning space. No crowds, no waiting.' },
         { num: '10+', unit: 'COACHES', label: 'EXPERT SPECIALISTS', desc: 'A hand-picked team of Level 3 certified experts focused on your biomechanics.' },
         { num: '10+', unit: 'YEARS', label: 'EXCELLENT RESULTS', desc: 'Consistently delivering deep transformations for Hindjewadi\'s professionals.' },
     ]

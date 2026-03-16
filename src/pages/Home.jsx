@@ -68,7 +68,7 @@ function Hero() {
     return (
         <section
             ref={heroRef}
-            className="relative h-screen flex items-end justify-center pb-24 overflow-hidden"
+            className="relative h-screen flex items-center justify-center pt-32 pb-8 sm:pb-12 overflow-hidden"
             onMouseMove={handleMouseMove}
         >
             {/* SEO: Hidden accessible h1 */}

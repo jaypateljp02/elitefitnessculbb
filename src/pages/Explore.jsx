@@ -262,6 +262,29 @@ function VirtualTourMode({ neonMode, onSwitchToGallery, initialLoadComplete, set
     const isTouch = useIsTouch()
     const pannerRef = useRef(null)
     const [panX, setPanX] = useState(0)
+    const touchStartX = useRef(0)
+    const touchEndX = useRef(0)
+
+    // Touch swipe handlers for zone navigation
+    const handleTouchStart = (e) => {
+        touchStartX.current = e.touches[0].clientX
+    }
+
+    const handleTouchEnd = (e) => {
+        touchEndX.current = e.changedTouches[0].clientX
+        const diff = touchStartX.current - touchEndX.current
+        const threshold = 50
+
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                // Swiped left → next zone
+                setActiveIndex((prev) => (prev + 1) % tourZones.length)
+            } else {
+                // Swiped right → previous zone
+                setActiveIndex((prev) => (prev - 1 + tourZones.length) % tourZones.length)
+            }
+        }
+    }
 
     // Scanning Facility Loader - Only play once per session
     useEffect(() => {
@@ -304,6 +327,8 @@ function VirtualTourMode({ neonMode, onSwitchToGallery, initialLoadComplete, set
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
             className="absolute inset-0 w-full h-full bg-black z-0 overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
         >
             <AnimatePresence mode="wait">
                 <motion.div
@@ -316,7 +341,7 @@ function VirtualTourMode({ neonMode, onSwitchToGallery, initialLoadComplete, set
                     ref={pannerRef}
                 >
                     <motion.div
-                        drag={!isTouch ? "x" : false}
+                        drag="x"
                         dragConstraints={pannerRef}
                         dragElastic={0.1}
                         animate={isTouch ? { x: panX } : {}}
@@ -565,10 +590,10 @@ export default function Explore() {
             </AnimatePresence>
 
             {hasEntered && (
-                <div className="fixed inset-0 bg-black z-[90] overflow-hidden">
+                <div className={`fixed inset-0 bg-black z-[90] ${mode === 'gallery' ? 'overflow-y-auto' : 'overflow-hidden'}`}>
 
                     {/* Top Controls Bar */}
-                    <div className="absolute top-0 left-0 right-0 w-full p-4 sm:p-6 flex flex-wrap justify-between items-start gap-4 z-[110] pointer-events-none bg-gradient-to-b from-black/80 via-black/40 to-transparent pb-10">
+                    <div className="fixed top-0 left-0 right-0 w-full p-4 sm:p-6 flex flex-wrap justify-between items-start gap-4 z-[110] pointer-events-none bg-gradient-to-b from-black/80 via-black/40 to-transparent pb-10">
                         
                         {/* Back Button */}
                         <button

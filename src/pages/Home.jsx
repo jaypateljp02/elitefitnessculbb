@@ -732,7 +732,7 @@ function FinalCTA() {
                 <h2 className="text-5xl sm:text-7xl lg:text-8xl font-heading font-black mb-8 leading-none uppercase">Start Your <span className="gradient-text text-glow">Fitness Journey</span> Today</h2>
                 <p className="text-gray-300 text-lg mb-12 max-w-xl mx-auto font-light">Don't wait for tomorrow. Your future self will thank you.</p>
                 <Link to="/membership" className="inline-flex items-center gap-3 px-12 py-6 bg-gradient-to-r from-elite-purple via-purple-500 to-elite-pink rounded-full text-xl font-bold btn-glow animate-pulse-glow group">
-                    <Sparkles size={22} /> Join Now <ArrowRight size={22} className="group-hover:translate-x-1.5 transition-transform" />
+                    Join Now <ArrowRight size={22} className="group-hover:translate-x-1.5 transition-transform" />
                 </Link>
             </motion.div>
         </section>

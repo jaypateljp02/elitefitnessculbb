@@ -464,7 +464,7 @@ function GalleryMode({ initialCategory }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 w-full h-full bg-[#050508] z-0 overflow-y-auto overscroll-contain"
+            className="relative w-full min-h-screen bg-[#050508] z-0"
         >
             <div className="pt-20 pb-16 px-4">
                 <div className="max-w-7xl mx-auto">
@@ -642,7 +642,7 @@ export default function Explore() {
                     </div>
 
                     {/* Mode Content Wrapper */}
-                    <div className="relative w-full h-full">
+                    <div className={`relative w-full ${mode === '360' ? 'h-full' : 'min-h-full pt-20'}`}>
                         <AnimatePresence mode="wait">
                             {mode === '360' ? (
                                 <VirtualTourMode

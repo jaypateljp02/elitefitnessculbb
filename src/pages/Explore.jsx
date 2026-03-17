@@ -464,7 +464,7 @@ function GalleryMode({ initialCategory }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="relative w-full min-h-screen bg-[#050508] z-0"
+            className="fixed inset-0 w-full h-full bg-[#050508] z-[91] overflow-y-auto overflow-x-hidden"
         >
             <div className="pt-20 pb-16 px-4">
                 <div className="max-w-7xl mx-auto">
@@ -590,7 +590,7 @@ export default function Explore() {
             </AnimatePresence>
 
             {hasEntered && (
-                <div className={`fixed inset-0 bg-black z-[90] ${mode === 'gallery' ? 'overflow-y-auto' : 'overflow-hidden'}`}>
+                <div className="fixed inset-0 bg-black z-[90] overflow-hidden">
 
                     {/* Top Controls Bar */}
                     <div className="fixed top-0 left-0 right-0 w-full p-4 sm:p-6 flex flex-wrap justify-between items-start gap-4 z-[110] pointer-events-none bg-gradient-to-b from-black/80 via-black/40 to-transparent pb-10">
@@ -642,7 +642,7 @@ export default function Explore() {
                     </div>
 
                     {/* Mode Content Wrapper */}
-                    <div className={`relative w-full ${mode === '360' ? 'h-full' : 'min-h-full pt-20'}`}>
+                    <div className="relative w-full h-full">
                         <AnimatePresence mode="wait">
                             {mode === '360' ? (
                                 <VirtualTourMode

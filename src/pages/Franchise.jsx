@@ -309,8 +309,48 @@ function ProcessTimeline() {
    ENQUIRY FORM
    ======================================= */
 function InvestorForm() {
+    const [formData, setFormData] = useState({ name: '', phone: '', email: '', city: '', capital: '' })
     const [submitted, setSubmitted] = useState(false)
-    const handleSubmit = (e) => { e.preventDefault(); setSubmitted(true); setTimeout(() => setSubmitted(false), 5000) }
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        setIsSubmitting(true)
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: "60276be1-0988-435a-a1cc-9a21ec43d9de",
+                    subject: "New Franchise Investor Inquiry - Elite Fitness",
+                    from_name: "Elite Fitness Website",
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    city: formData.city,
+                    investment_capital: formData.capital,
+                }),
+            })
+
+            const result = await response.json()
+            if (result.success) {
+                setSubmitted(true)
+                setTimeout(() => setSubmitted(false), 5000)
+                setFormData({ name: '', phone: '', email: '', city: '', capital: '' })
+            } else {
+                alert("Something went wrong. Please try again or contact us directly.")
+            }
+        } catch (error) {
+            console.error("Submission failed:", error)
+            alert("Network error. Please try again.")
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
 
     return (
         <section id="enquiry" className="py-16 sm:py-24 px-4 relative">
@@ -327,24 +367,28 @@ function InvestorForm() {
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <div className="grid sm:grid-cols-2 gap-5">
-                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Investor Name</label><input type="text" required className="input-elite" placeholder="John Doe" /></div>
-                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Phone Number</label><input type="tel" required className="input-elite" placeholder="+91 ..." /></div>
+                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Investor Name</label><input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="input-elite" placeholder="John Doe" /></div>
+                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Phone Number</label><input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required className="input-elite" placeholder="+91 ..." /></div>
                             </div>
                             <div className="grid sm:grid-cols-2 gap-5">
-                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Business Email</label><input type="email" required className="input-elite" placeholder="john@company.com" /></div>
-                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Target City</label><input type="text" required className="input-elite" placeholder="e.g. Pune" /></div>
+                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Business Email</label><input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className="input-elite" placeholder="john@company.com" /></div>
+                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Target City</label><input type="text" value={formData.city} onChange={(e) => setFormData({ ...formData, city: e.target.value })} required className="input-elite" placeholder="e.g. Pune" /></div>
                             </div>
                             <div>
                                 <label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Available Investment Capital</label>
-                                <select required className="input-elite appearance-none bg-[#0a0a14]">
+                                <select value={formData.capital} onChange={(e) => setFormData({ ...formData, capital: e.target.value })} required className="input-elite appearance-none bg-[#0a0a14]">
                                     <option value="" disabled className="bg-black">Select an option</option>
                                     <option value="50-1CR" className="bg-black">₹50L - ₹1Cr</option>
                                     <option value="1-2CR" className="bg-black">₹1Cr - ₹2Cr</option>
                                     <option value="2CR+" className="bg-black">₹2Cr+</option>
                                 </select>
                             </div>
-                            <button type="submit" className="w-full py-4 bg-gradient-to-r from-elite-purple to-elite-pink rounded-xl font-bold text-sm tracking-widest btn-glow flex items-center justify-center gap-3 uppercase text-white hover:shadow-[0_0_40px_rgba(139,92,246,0.5)] transition-shadow">
-                                REQUEST PRIVATE DECK <ArrowRight size={16} />
+                            <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-gradient-to-r from-elite-purple to-elite-pink rounded-xl font-bold text-sm tracking-widest btn-glow flex items-center justify-center gap-3 uppercase text-white hover:shadow-[0_0_40px_rgba(139,92,246,0.5)] transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                                {isSubmitting ? (
+                                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                ) : (
+                                    <>REQUEST PRIVATE DECK <ArrowRight size={16} /></>
+                                )}
                             </button>
                         </form>
                     )}

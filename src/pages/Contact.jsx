@@ -72,13 +72,44 @@ function ContactCards() {
 function ContactFormMap() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Note: Connecting this to a real backend service like Web3Forms or Formspree is recommended.
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 5000)
-    setFormData({ name: '', phone: '', email: '', message: '' })
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "60276be1-0988-435a-a1cc-9a21ec43d9de",
+          subject: "New Inquiry from Elite Fitness Contact Page",
+          from_name: "Elite Fitness Website",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      })
+
+      const result = await response.json()
+      if (result.success) {
+        setSubmitted(true)
+        setTimeout(() => setSubmitted(false), 5000)
+        setFormData({ name: '', phone: '', email: '', message: '' })
+      } else {
+        alert("Something went wrong. Please try again or contact us directly.")
+      }
+    } catch (error) {
+      console.error("Submission failed:", error)
+      alert("Network error. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -130,8 +161,12 @@ function ContactFormMap() {
                   <label className="block text-[10px] text-gray-400 mb-2 font-black tracking-[0.15em] uppercase">Your Message</label>
                   <textarea rows="4" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-elite-purple/50 focus:bg-white/10 transition-all font-light resize-none" placeholder="How can we help you?" />
                 </div>
-                <button type="submit" className="w-full mt-4 py-4 bg-gradient-to-r from-elite-purple to-elite-pink rounded-xl font-bold text-xs tracking-[0.2em] btn-glow flex items-center justify-center gap-3 uppercase text-white hover:scale-[1.02] active:scale-[0.98] transition-transform">
-                  <Send size={16} /> SEND MESSAGE
+                <button type="submit" disabled={isSubmitting} className="w-full mt-4 py-4 bg-gradient-to-r from-elite-purple to-elite-pink rounded-xl font-bold text-xs tracking-[0.2em] btn-glow flex items-center justify-center gap-3 uppercase text-white hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed">
+                  {isSubmitting ? (
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  ) : (
+                    <><Send size={16} /> SEND MESSAGE</>
+                  )}
                 </button>
               </div>
             </motion.form>

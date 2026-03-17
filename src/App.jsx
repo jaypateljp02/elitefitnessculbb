@@ -84,13 +84,19 @@ function App() {
             touchMultiplier: 1.5,
         })
 
+        // Expose globally so immersive pages can stop/start it
+        window.lenis = lenis
+
         function raf(time) {
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
         requestAnimationFrame(raf)
 
-        return () => lenis.destroy()
+        return () => {
+            window.lenis = null
+            lenis.destroy()
+        }
     }, [])
 
     return (

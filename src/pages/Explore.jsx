@@ -573,6 +573,16 @@ export default function Explore() {
 
     const navigate = useNavigate()
 
+    // Stop/start Lenis smooth scroll when entering/exiting immersive mode
+    useEffect(() => {
+        if (hasEntered && window.lenis) {
+            window.lenis.stop()
+        }
+        return () => {
+            if (window.lenis) window.lenis.start()
+        }
+    }, [hasEntered])
+
     const handleEnter360 = () => {
         setMode('360')
         setHasEntered(true)
@@ -598,6 +608,7 @@ export default function Explore() {
                         {/* Back Button */}
                         <button
                             onClick={() => {
+                            if (window.lenis) window.lenis.start()
                             setHasEntered(false)
                             setMode('360') // reset mode for next entry
                         }}

@@ -733,7 +733,7 @@ html.lenis body {
 }
 
 .lenis.lenis-stopped {
-    overflow: hidden;
+    overflow: clip;
 }
 
 /* ===== GLOBAL: No pure white — soften all whites ===== */

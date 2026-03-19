@@ -1,17 +1,19 @@
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, lazy, Suspense } from 'react'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import CustomCursor from './components/CustomCursor'
-import Home from './pages/Home'
-import About from './pages/About'
-import Membership from './pages/Membership'
-import Services from './pages/Services'
-import Franchise from './pages/Franchise'
-import Explore from './pages/Explore'
-import Contact from './pages/Contact'
+
+// Lazy-load pages for faster initial load
+const Home = lazy(() => import('./pages/Home'))
+const About = lazy(() => import('./pages/About'))
+const Membership = lazy(() => import('./pages/Membership'))
+const Services = lazy(() => import('./pages/Services'))
+const Franchise = lazy(() => import('./pages/Franchise'))
+const Explore = lazy(() => import('./pages/Explore'))
+const Contact = lazy(() => import('./pages/Contact'))
 
 import WhatsAppWidget from './components/WhatsAppWidget'
 import PhoneCallWidget from './components/PhoneCallWidget'
@@ -112,19 +114,28 @@ function App() {
             {/* Content (above background layers) */}
             <div className="relative z-10">
                 <Navbar />
-                <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
-                    <Routes location={location} key={location.pathname}>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/membership" element={<Membership />} />
-                        <Route path="/services" element={<Services />} />
-                        <Route path="/franchise" element={<Franchise />} />
-                        <Route path="/explore" element={<Explore />} />
-                        <Route path="/gallery" element={<Navigate to="/explore" replace />} />
-                        <Route path="/virtual-tour" element={<Navigate to="/explore" replace />} />
-                        <Route path="/contact" element={<Contact />} />
-                    </Routes>
-                </AnimatePresence>
+                <Suspense fallback={
+                    <div className="min-h-screen flex items-center justify-center">
+                        <div className="flex flex-col items-center gap-4">
+                            <div className="w-10 h-10 border-2 border-elite-purple/30 border-t-elite-purple rounded-full animate-spin" />
+                            <span className="text-gray-500 text-xs font-bold tracking-widest uppercase">Loading...</span>
+                        </div>
+                    </div>
+                }>
+                    <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+                        <Routes location={location} key={location.pathname}>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/membership" element={<Membership />} />
+                            <Route path="/services" element={<Services />} />
+                            <Route path="/franchise" element={<Franchise />} />
+                            <Route path="/explore" element={<Explore />} />
+                            <Route path="/gallery" element={<Navigate to="/explore" replace />} />
+                            <Route path="/virtual-tour" element={<Navigate to="/explore" replace />} />
+                            <Route path="/contact" element={<Contact />} />
+                        </Routes>
+                    </AnimatePresence>
+                </Suspense>
                 <WhatsAppWidget />
                 <PhoneCallWidget />
                 <Footer />

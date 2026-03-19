@@ -1,88 +1,8 @@
 import PageWrapper from '../components/PageWrapper'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
-import { Dumbbell, Zap, Heart, Waves, Coffee, Info, X, Orbit, ZoomIn, ChevronLeft, ChevronRight, PlayCircle, MapPin, ArrowLeft } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import { X, Orbit, ZoomIn, ChevronLeft, ChevronRight, PlayCircle, ArrowLeft } from 'lucide-react'
 
-// Custom hook to detect touch devices
-function useIsTouch() {
-    const [touch, setTouch] = useState(false)
-    useEffect(() => {
-        setTouch('ontouchstart' in window || navigator.maxTouchPoints > 0)
-    }, [])
-    return touch
-}
-
-/* =======================================
-   DATA: VIRTUAL TOUR ZONES
-   ======================================= */
-const tourZones = [
-    {
-        id: 'main',
-        title: 'MAIN TRAINING FLOOR',
-        desc: 'Our expansive 5000 sq ft main floor with premium strength training equipment, free weights, and neon-lit ambiance.',
-        image: '/asset/Pillar 1.jpeg',
-        icon: Dumbbell,
-        hotspots: [
-            { top: '50%', left: '30%', title: 'Hammer Strength Racks', desc: 'Industrial-grade equipment with high-durability and low maintenance costs.' },
-            { top: '65%', left: '70%', title: 'Custom Plate Loaded', desc: 'Ergonomic machines maximizing member retention.' },
-        ],
-        mapDot: { top: '30%', left: '40%' }
-    },
-    {
-        id: 'strength',
-        title: 'STRENGTH ZONE',
-        desc: 'Dedicated heavy lifting area with Olympic platforms, deadlift stations, and specialized equipment.',
-        image: '/asset/Pillar 2.jpeg',
-        icon: Zap,
-        hotspots: [
-            { top: '55%', left: '40%', title: 'Olympic Platforms', desc: 'Custom branded Elite shock-absorbing platforms.' },
-        ],
-        mapDot: { top: '50%', left: '30%' }
-    },
-    {
-        id: 'cardio',
-        title: 'CARDIO SECTION',
-        desc: 'State-of-the-art smart treadmills, ellipticals, rowing machines, and assault bikes.',
-        image: '/asset/Pillar 3.jpeg',
-        icon: Heart,
-        hotspots: [
-            { top: '60%', left: '25%', title: 'Smart Treadmills', desc: 'Connected cardio fleet for high member engagement.' },
-        ],
-        mapDot: { top: '30%', left: '60%' }
-    },
-    {
-        id: 'recovery',
-        title: 'ICE BATH RECOVERY',
-        desc: 'Premium recovery area with ice bath therapy for inflammation and muscle recovery.',
-        image: '/asset/ice bath area.jpeg',
-        icon: Waves,
-        hotspots: [
-            { top: '70%', left: '50%', title: 'Cryotherapy Tubs', desc: 'High-margin premium add-on service for members.' },
-        ],
-        mapDot: { top: '70%', left: '70%' }
-    },
-    {
-        id: 'yoga',
-        title: 'YOGA & MEDITATION',
-        desc: 'Serene studio with wooden flooring, mirrors, and ambient lighting for mindful practice.',
-        image: '/asset/Yoga 1.jpeg',
-        icon: Heart,
-        hotspots: [],
-        mapDot: { top: '75%', left: '40%' }
-    },
-    {
-        id: 'cafe',
-        title: 'LOUNGE & CAFE',
-        desc: 'Relax at our in-gym cafe with protein shakes, smoothies, and healthy snacks.',
-        image: '/asset/Cafe wall image 1.jpeg',
-        icon: Coffee,
-        hotspots: [
-            { top: '50%', left: '60%', title: 'Nutrition Bar', desc: 'Secondary revenue stream generating high daily ROI.' },
-        ],
-        mapDot: { top: '80%', left: '20%' }
-    }
-]
 
 /* =======================================
    DATA: GALLERY
@@ -194,97 +114,11 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
 }
 
 /* =======================================
-   MODE A: 360 COMMAND CENTER
+   MODE A: 360 VIRTUAL TOUR (KUULA EMBED)
    ======================================= */
-function TacticalMiniMap({ activeZone }) {
-    const dotPos = activeZone.mapDot
-    return (
-        <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 z-30 w-40 h-40 sm:w-64 sm:h-64 rounded-2xl p-4 pointer-events-none border border-white/10" style={{ background: 'rgba(5,5,15,0.6)', backdropFilter: 'blur(30px) saturate(1.2)' }}>
-            <div className="text-[10px] font-bold tracking-widest text-elite-purple mb-2 uppercase">Tactical Map</div>
-            <div className="relative w-full h-full bg-elite-purple/5 rounded-xl border border-elite-purple/20 overflow-hidden flex items-center justify-center">
-                <svg viewBox="0 0 100 100" className="w-[90%] h-[90%] opacity-50">
-                    <rect x="10" y="10" width="80" height="80" fill="none" stroke="#8B5CF6" strokeWidth="1" rx="4" opacity="0.4" />
-                    <rect x="15" y="15" width="40" height="35" fill="none" stroke="#8B5CF6" strokeWidth="0.5" rx="2" />
-                    <rect x="60" y="15" width="25" height="45" fill="none" stroke="#EC4899" strokeWidth="0.5" rx="2" />
-                    <rect x="15" y="55" width="40" height="30" fill="none" stroke="#8B5CF6" strokeWidth="0.5" rx="2" />
-                </svg>
-                <motion.div
-                    className="absolute w-3 h-3 bg-elite-pink rounded-full shadow-[0_0_15px_#EC4899]"
-                    initial={false}
-                    animate={{ top: dotPos.top, left: dotPos.left }}
-                    transition={{ type: 'spring', damping: 15, stiffness: 100 }}
-                >
-                    <div className="absolute inset-0 w-full h-full rounded-full bg-elite-pink animate-ping opacity-75" />
-                </motion.div>
-            </div>
-        </div>
-    )
-}
-
-function Hotspot({ data }) {
-    const [open, setOpen] = useState(false)
-    return (
-        <div className="absolute z-20" style={{ top: data.top, left: data.left }}>
-            <button
-                onClick={() => setOpen(!open)}
-                className="relative w-8 h-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-elite-pink flex items-center justify-center bg-black/50 backdrop-blur-md text-elite-pink hover:scale-110 hover:bg-elite-pink/20 transition-all font-bold group"
-                style={{ boxShadow: '0 0 15px rgba(236,72,153,0.4)' }}
-            >
-                {open ? <X size={14} /> : '+'}
-                <div className="absolute inset-0 rounded-full border border-elite-pink animate-ping opacity-40 pointer-events-none" />
-            </button>
-            <AnimatePresence>
-                {open && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 10, scale: 0.9 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.9 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute top-10 left-1/2 -translate-x-1/2 w-64 p-4 rounded-xl border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
-                        style={{ background: 'rgba(10,10,15,0.85)', backdropFilter: 'blur(30px) saturate(1.5)' }}
-                    >
-                        <div className="flex gap-3 mb-2">
-                            <Info size={16} className="text-elite-purple shrink-0 mt-0.5" />
-                            <h4 className="text-sm font-bold tracking-widest uppercase text-[#E0E0E0] leading-tight">{data.title}</h4>
-                        </div>
-                        <p className="text-xs text-gray-400 font-light pl-7">{data.desc}</p>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    )
-}
-
-function VirtualTourMode({ neonMode, onSwitchToGallery, initialLoadComplete, setInitialLoadComplete }) {
-    const [activeIndex, setActiveIndex] = useState(1) // Default to Strength Zone (Most impressive)
+function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoadComplete }) {
     const [isLoading, setIsLoading] = useState(!initialLoadComplete)
-    const activeZone = tourZones[activeIndex]
-    const isTouch = useIsTouch()
-    const pannerRef = useRef(null)
-    const [panX, setPanX] = useState(0)
-    const touchStartX = useRef(0)
-    const touchEndX = useRef(0)
-
-    // Touch swipe handlers for zone navigation
-    const handleTouchStart = (e) => {
-        touchStartX.current = e.touches[0].clientX
-    }
-
-    const handleTouchEnd = (e) => {
-        touchEndX.current = e.changedTouches[0].clientX
-        const diff = touchStartX.current - touchEndX.current
-        const threshold = 50
-
-        if (Math.abs(diff) > threshold) {
-            if (diff > 0) {
-                // Swiped left → next zone
-                setActiveIndex((prev) => (prev + 1) % tourZones.length)
-            } else {
-                // Swiped right → previous zone
-                setActiveIndex((prev) => (prev - 1 + tourZones.length) % tourZones.length)
-            }
-        }
-    }
+    const iframeRef = useRef(null)
 
     // Scanning Facility Loader - Only play once per session
     useEffect(() => {
@@ -293,32 +127,12 @@ function VirtualTourMode({ neonMode, onSwitchToGallery, initialLoadComplete, set
             const timer = setTimeout(() => {
                 setIsLoading(false)
                 setInitialLoadComplete(true)
-            }, 1200)
+            }, 500)
             return () => clearTimeout(timer)
         } else {
             setIsLoading(false)
         }
     }, [initialLoadComplete, setInitialLoadComplete])
-
-    useEffect(() => {
-        if (!isTouch || !window.DeviceOrientationEvent) return
-        const handleOrientation = (e) => setPanX(Math.max(-100, Math.min(100, (e.gamma || 0) * 2)))
-        window.addEventListener('deviceorientation', handleOrientation)
-        return () => window.removeEventListener('deviceorientation', handleOrientation)
-    }, [isTouch])
-
-    // Map zones to gallery categories for the Bridge Button
-    const getGalleryCategoryForZone = (zoneId) => {
-        switch (zoneId) {
-            case 'strength':
-            case 'main':
-                return '💪 ELITE COACHING';
-            case 'cardio':
-                return '🔥 TRANSFORMATIONS';
-            default:
-                return '🧘 THE VIBE';
-        }
-    }
 
     return (
         <motion.div
@@ -326,104 +140,123 @@ function VirtualTourMode({ neonMode, onSwitchToGallery, initialLoadComplete, set
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8 }}
-            className="absolute inset-0 w-full h-full bg-black z-0 overflow-hidden"
-            onTouchStart={handleTouchStart}
-            onTouchEnd={handleTouchEnd}
+            className="absolute inset-0 w-full h-full bg-black z-0 overflow-hidden flex items-center justify-center"
         >
-            <AnimatePresence mode="wait">
-                <motion.div
-                    key={activeIndex}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="relative w-full h-full cursor-grab active:cursor-grabbing overflow-hidden"
-                    ref={pannerRef}
-                >
-                    <motion.div
-                        drag="x"
-                        dragConstraints={pannerRef}
-                        dragElastic={0.1}
-                        animate={isTouch ? { x: panX } : {}}
-                        transition={isTouch ? { type: 'spring', damping: 20, stiffness: 100 } : undefined}
-                        className="absolute top-0 bottom-0 min-w-[150vw] sm:min-w-[120vw] flex items-center justify-center origin-center"
-                        style={{ filter: neonMode ? 'saturate(1.5) contrast(1.1) hue-rotate(-20deg) brightness(0.9)' : 'none', transition: 'filter 0.5s ease' }}
-                    >
-                        <img src={activeZone.image} alt={activeZone.title} className="w-full h-full object-cover pointer-events-none" />
-                        {!isLoading && activeZone.hotspots.map((h, i) => <Hotspot key={i} data={h} />)}
-                    </motion.div>
-                </motion.div>
-            </AnimatePresence>
-            <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.8) 100%)' }} />
+            {/* Ambient Background Glow */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-elite-purple/20 rounded-full blur-[120px] animate-pulse" />
+                <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-elite-pink/15 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-elite-purple/5 rounded-full blur-[150px]" />
+            </div>
 
-            {/* Scanning Facility Loader Overlay */}
-            <AnimatePresence>
-                {isLoading && (
-                    <motion.div
-                        initial={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="absolute inset-0 z-40 bg-black/80 backdrop-blur-xl flex flex-col items-center justify-center pointer-events-none"
-                    >
-                        <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden mb-4">
-                            <motion.div
-                                initial={{ width: "0%" }}
-                                animate={{ width: "100%" }}
-                                transition={{ duration: 1.2, ease: "easeInOut" }}
-                                className="h-full bg-elite-pink"
-                                style={{ boxShadow: '0 0 15px #EC4899' }}
-                            />
-                        </div>
-                        <span className="text-elite-pink font-bold tracking-[0.2em] text-[10px] uppercase animate-pulse">
-                            Scanning Facility...
-                        </span>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {/* Noise texture overlay */}
+            <div className="absolute inset-0 noise-overlay opacity-[0.03] mix-blend-overlay pointer-events-none" />
 
-            {/* Live Counter (Fake Data for FOMO) */}
+            {/* Live Counter */}
             <div className="absolute top-24 sm:top-28 left-6 z-30 flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 backdrop-blur-md">
                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="text-[10px] font-bold text-emerald-400 tracking-wider">🟢 14 MEMBERS TRAINING</span>
             </div>
 
-            {/* Bottom Info & 360 Bridge to Gallery */}
-            <div className="absolute bottom-32 sm:bottom-8 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex flex-col items-center">
+            {/* Main Tour Container */}
+            <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-8 flex flex-col items-center h-full">
+
+                {/* Tour Title Bar */}
                 <motion.div
-                    key={activeIndex}
+                    initial={{ y: -20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.6 }}
+                    className="flex items-center gap-3 mb-4 sm:mb-6"
+                >
+                    <div className="w-10 h-10 rounded-full bg-elite-purple/20 border border-elite-purple/30 flex items-center justify-center animate-pulse" style={{ boxShadow: '0 0 20px rgba(139,92,246,0.3)' }}>
+                        <Orbit size={20} className="text-elite-purple" />
+                    </div>
+                    <div>
+                        <h2 className="text-lg sm:text-2xl font-heading font-black tracking-widest text-white uppercase">
+                            <span className="gradient-text">360°</span> VIRTUAL TOUR
+                        </h2>
+                        <p className="text-[10px] sm:text-xs text-gray-500 tracking-widest font-light uppercase">Drag to explore • Pinch to zoom • Click hotspots</p>
+                    </div>
+                </motion.div>
+
+                {/* Kuula Iframe Wrapper */}
+                <motion.div
+                    initial={{ scale: 0.95, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative w-full flex-1 min-h-0 rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10"
+                    style={{
+                        boxShadow: '0 0 80px rgba(139,92,246,0.15), 0 0 40px rgba(236,72,153,0.1), 0 20px 60px rgba(0,0,0,0.8)',
+                    }}
+                >
+                    {/* Decorative corner accents */}
+                    <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-elite-purple/40 rounded-tl-2xl sm:rounded-tl-3xl pointer-events-none z-20" />
+                    <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-elite-pink/40 rounded-tr-2xl sm:rounded-tr-3xl pointer-events-none z-20" />
+                    <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-elite-pink/40 rounded-bl-2xl sm:rounded-bl-3xl pointer-events-none z-20" />
+                    <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-elite-purple/40 rounded-br-2xl sm:rounded-br-3xl pointer-events-none z-20" />
+
+                    {/* The Kuula Iframe */}
+                    <iframe
+                        ref={iframeRef}
+                        className="ku-embed w-full h-full"
+                        frameBorder="0"
+                        allow="xr-spatial-tracking; gyroscope; accelerometer"
+                        allowFullScreen
+                        scrolling="no"
+                        src="https://kuula.co/share/collection/7MFMk?logo=1&info=1&fs=1&vr=0&zoom=1&sd=1&thumbs=1"
+                        style={{ border: 'none', display: 'block', minHeight: '400px' }}
+                    />
+
+                    {/* Scanning Facility Loader Overlay */}
+                    <AnimatePresence>
+                        {isLoading && (
+                            <motion.div
+                                initial={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.8 }}
+                                className="absolute inset-0 z-40 bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center pointer-events-none"
+                            >
+                                {/* Pulsing ring animation */}
+                                <div className="relative w-24 h-24 mb-6">
+                                    <div className="absolute inset-0 rounded-full border-2 border-elite-purple/30 animate-ping" />
+                                    <div className="absolute inset-2 rounded-full border border-elite-pink/40 animate-ping" style={{ animationDelay: '0.3s' }} />
+                                    <div className="absolute inset-4 rounded-full border border-elite-purple/50 animate-ping" style={{ animationDelay: '0.6s' }} />
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <Orbit size={32} className="text-elite-purple animate-spin" style={{ animationDuration: '3s' }} />
+                                    </div>
+                                </div>
+                                <div className="w-48 h-1 bg-white/10 rounded-full overflow-hidden mb-4">
+                                    <motion.div
+                                        initial={{ width: "0%" }}
+                                        animate={{ width: "100%" }}
+                                        transition={{ duration: 2, ease: "easeInOut" }}
+                                        className="h-full bg-gradient-to-r from-elite-purple to-elite-pink"
+                                        style={{ boxShadow: '0 0 15px #8B5CF6' }}
+                                    />
+                                </div>
+                                <span className="text-elite-purple font-bold tracking-[0.3em] text-[10px] uppercase animate-pulse">
+                                    Loading Virtual Tour...
+                                </span>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
+
+                {/* Bottom Bridge to Gallery */}
+                <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    className="text-center px-6 sm:px-8 py-4 rounded-3xl border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.8)] pointer-events-auto"
-                    style={{ background: 'rgba(5,5,15,0.7)', backdropFilter: 'blur(30px) saturate(1.2)' }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                    className="mt-4 sm:mt-6 flex items-center gap-4"
                 >
-                    <h2 className="text-lg sm:text-2xl font-heading font-black tracking-widest text-white uppercase">{activeZone.title}</h2>
-                    <p className="text-xs sm:text-sm text-gray-400 mt-1 font-light tracking-wide max-w-sm hidden sm:block mb-3">{activeZone.desc}</p>
                     <button
-                        onClick={() => onSwitchToGallery(getGalleryCategoryForZone(activeZone.id))}
-                        className="text-[10px] font-bold tracking-widest text-elite-pink hover:text-white transition-colors border-b border-elite-pink/30 pb-0.5"
+                        onClick={() => onSwitchToGallery('ALL')}
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-elite-pink/30 bg-elite-pink/10 backdrop-blur-md text-elite-pink hover:bg-elite-pink/20 hover:border-elite-pink/50 transition-all duration-300 group"
                     >
-                        📸 VIEW {activeZone.title.split(' ')[0]} PHOTOS
+                        <ZoomIn size={14} className="group-hover:scale-110 transition-transform" />
+                        <span className="text-[10px] font-bold tracking-widest uppercase">📸 Browse Photo Gallery</span>
                     </button>
                 </motion.div>
-            </div>
-
-            <TacticalMiniMap activeZone={activeZone} />
-
-            {/* Zone Sidebar */}
-            <div className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-30 flex flex-col gap-2 sm:gap-3">
-                {tourZones.map((zone, i) => (
-                    <div key={zone.id} className="relative group flex items-center justify-end">
-                        <div className="absolute right-12 sm:right-14 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300 px-3 py-1.5 rounded-lg bg-black/80 border border-white/10 backdrop-blur-md whitespace-nowrap">
-                            <span className="text-[10px] sm:text-xs font-bold tracking-widest text-[#E0E0E0] uppercase">{zone.title}</span>
-                        </div>
-                        <button
-                            onClick={() => setActiveIndex(i)}
-                            className={`relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center transition-all duration-300 border backdrop-blur-md ${i === activeIndex ? 'bg-gradient-to-r from-elite-purple/30 to-elite-pink/30 border-elite-pink/50 shadow-[0_0_20px_rgba(236,72,153,0.3)]' : 'bg-black/40 border-white/10 hover:border-elite-purple/40 hover:bg-white/5'}`}
-                        >
-                            <zone.icon size={18} className={i === activeIndex ? "text-elite-pink" : "text-gray-400"} />
-                        </button>
-                    </div>
-                ))}
             </div>
         </motion.div>
     )
@@ -464,7 +297,7 @@ function GalleryMode({ initialCategory }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 w-full h-full bg-[#050508] z-[91] overflow-y-auto overflow-x-hidden"
+            className="relative w-full min-h-screen bg-[#050508] z-[90]"
         >
             <div className="pt-20 pb-16 px-4">
                 <div className="max-w-7xl mx-auto">
@@ -567,21 +400,10 @@ function GalleryMode({ initialCategory }) {
 export default function Explore() {
     const [hasEntered, setHasEntered] = useState(false)
     const [mode, setMode] = useState('360') // '360' or 'gallery'
-    const [neonMode, setNeonMode] = useState(false)
+
     const [initialCategory, setInitialCategory] = useState('ALL')
     const [tourInitialLoadComplete, setTourInitialLoadComplete] = useState(false)
 
-    const navigate = useNavigate()
-
-    // Stop/start Lenis smooth scroll when entering/exiting immersive mode
-    useEffect(() => {
-        if (hasEntered && window.lenis) {
-            window.lenis.stop()
-        }
-        return () => {
-            if (window.lenis) window.lenis.start()
-        }
-    }, [hasEntered])
 
     const handleEnter360 = () => {
         setMode('360')
@@ -600,7 +422,7 @@ export default function Explore() {
             </AnimatePresence>
 
             {hasEntered && (
-                <div className="fixed inset-0 bg-black z-[90] overflow-hidden">
+                <div className="relative w-full min-h-screen bg-black z-[90]">
 
                     {/* Top Controls Bar */}
                     <div className="fixed top-0 left-0 right-0 w-full p-4 sm:p-6 flex flex-wrap justify-between items-start gap-4 z-[110] pointer-events-none bg-gradient-to-b from-black/80 via-black/40 to-transparent pb-10">
@@ -608,7 +430,6 @@ export default function Explore() {
                         {/* Back Button */}
                         <button
                             onClick={() => {
-                            if (window.lenis) window.lenis.start()
                             setHasEntered(false)
                             setMode('360') // reset mode for next entry
                         }}
@@ -634,38 +455,25 @@ export default function Explore() {
                             </button>
                         </div>
 
-                        {/* Optional: Elite Neon Mode Toggle (only in 360) */}
-                        <div className="pointer-events-auto sm:order-3 shrink-0 flex justify-end min-w-[100px]">
-                            <AnimatePresence>
-                                {mode === '360' && (
-                                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 rounded-xl border border-white/10 backdrop-blur-md bg-black/40">
-                                        <span className={`text-[9px] sm:text-[10px] font-bold tracking-widest ${neonMode ? 'text-elite-pink' : 'text-gray-500'} hidden sm:inline`}>ELITE</span>
-                                        <button
-                                            onClick={() => setNeonMode(!neonMode)}
-                                            className={`w-10 h-5 sm:w-12 sm:h-6 rounded-full relative transition-colors duration-300 ${neonMode ? 'bg-elite-purple border border-elite-pink' : 'bg-gray-800 border border-gray-600'}`}
-                                        >
-                                            <motion.div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-white absolute top-1" animate={{ left: neonMode ? 'calc(100% - 1.25rem)' : '0.25rem' }} transition={{ type: 'spring', stiffness: 500, damping: 30 }} />
-                                        </button>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
+                        {/* Spacer for layout balance */}
+                        <div className="pointer-events-auto sm:order-3 shrink-0 flex justify-end min-w-[100px]" />
                     </div>
 
                     {/* Mode Content Wrapper */}
                     <div className="relative w-full h-full">
                         <AnimatePresence mode="wait">
                             {mode === '360' ? (
-                                <VirtualTourMode
-                                    key="360"
-                                    neonMode={neonMode}
-                                    onSwitchToGallery={(category) => {
-                                        setInitialCategory(category)
-                                        setMode('gallery')
-                                    }}
-                                    initialLoadComplete={tourInitialLoadComplete}
-                                    setInitialLoadComplete={setTourInitialLoadComplete}
-                                />
+                                <div className="fixed inset-0 w-full h-full">
+                                    <VirtualTourMode
+                                        key="360"
+                                        onSwitchToGallery={(category) => {
+                                            setInitialCategory(category)
+                                            setMode('gallery')
+                                        }}
+                                        initialLoadComplete={tourInitialLoadComplete}
+                                        setInitialLoadComplete={setTourInitialLoadComplete}
+                                    />
+                                </div>
                             ) : (
                                 <GalleryMode key="gallery" initialCategory={initialCategory} />
                             )}

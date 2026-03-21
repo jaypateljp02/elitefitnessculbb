@@ -162,7 +162,7 @@ function Hero() {
                         <Link to="/membership" className="relative group px-8 py-4 rounded-lg overflow-hidden inline-flex items-center justify-center gap-3 font-bold text-base">
                             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-elite-purple to-elite-pink" />
                             <div className="absolute inset-[2px] rounded-[6px] bg-elite-purple/80 group-hover:bg-elite-purple transition-all" />
-                            <span className="relative z-10 flex items-center gap-2">GET STARTED <ArrowRight size={18} /></span>
+                            <span className="relative z-10 flex items-center gap-2">JOIN NOW <ArrowRight size={18} /></span>
                         </Link>
                     </div>
                     <div ref={mag2.ref} onMouseMove={mag2.onMouseMove} onMouseLeave={mag2.onMouseLeave} className="magnetic-btn">
@@ -446,7 +446,7 @@ function Facilities() {
                             style={{ border: '1px solid rgba(255,255,255,0.08)' }}
                         >
                             <img src={f.image} alt={f.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" loading="lazy" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
 
                             <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end relative z-10">
                                 <span className={`text-xs font-bold tracking-[0.2em] uppercase mb-3 ${i === 0 ? 'text-elite-pink' : 'text-elite-purple'}`}>

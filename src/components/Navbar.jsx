@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sparkles, Building2 } from 'lucide-react'
+import { Menu, X, Zap, Sparkles, Building2 } from 'lucide-react'
 
 // Use Is Touch Hook
 function useIsTouch() {
@@ -140,7 +140,7 @@ export default function Navbar() {
                                 <div className="absolute inset-0 rounded-[14px] bg-gradient-to-r from-elite-purple to-elite-pink" />
                                 <div className="absolute inset-[1px] rounded-[13px] bg-[#0a0a14] transition-opacity duration-300" />
                                 <span className="relative z-10 flex items-center gap-1.5 group-hover:text-white transition-colors">
-                                    <Sparkles size={12} className="text-[#EC4899]" /> JOIN NOW
+                                    <Zap size={12} className="text-[#EC4899] fill-[#EC4899]" /> JOIN NOW
                                 </span>
                             </Link>
                         </div>

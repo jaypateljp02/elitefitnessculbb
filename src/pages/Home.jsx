@@ -616,9 +616,8 @@ function Testimonials() {
         { name: 'Kavita Singh', role: 'Working Mom', text: 'Finding time for fitness is hard as a mom. The flexible class timings and the supportive atmosphere make it possible. I actually look forward to my sessions now!', rating: 5, initials: 'KS', color: '#EC4899' },
     ]
 
-    // On mobile show 4, on desktop show all
-    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640
-    const visibleTestimonials = (!isMobile || showAll) ? testimonials : testimonials.slice(0, 4)
+    // Show 6 reviews initially, reveal all on "See More"
+    const visibleTestimonials = showAll ? testimonials : testimonials.slice(0, 6)
 
     return (
         <section className="py-16 sm:py-28 px-4 relative noise-bg" style={{ background: 'radial-gradient(ellipse at 30% 20%, rgba(139,92,246,0.06) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(236,72,153,0.04) 0%, transparent 50%)' }}>
@@ -692,14 +691,14 @@ function Testimonials() {
                     ))}
                 </div>
 
-                {/* Mobile: Show More Toggle */}
-                {!showAll && isMobile && testimonials.length > 4 && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-6 text-center sm:hidden">
+                {/* See More Reviews Button */}
+                {!showAll && testimonials.length > 6 && (
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-8 text-center">
                         <button
                             onClick={() => setShowAll(true)}
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest text-elite-purple border border-elite-purple/30 hover:bg-elite-purple/10 transition-all"
                         >
-                            Show {testimonials.length - 4} More Reviews
+                            See More Reviews
                         </button>
                     </motion.div>
                 )}

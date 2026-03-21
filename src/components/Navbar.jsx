@@ -209,7 +209,7 @@ export default function Navbar() {
                         </Link>
                         <Link to="/membership" className="flex-[1.5] rounded-xl flex items-center justify-center gap-2 font-bold text-[12px] tracking-widest text-[#E0E0E0] bg-gradient-to-r from-elite-purple to-elite-pink shadow-[0_0_15px_rgba(236,72,153,0.3)] relative overflow-hidden">
                             <div className="absolute inset-0 bg-white/20 hover:bg-transparent transition-colors" />
-                            <Sparkles size={14} /> JOIN CLUB
+                            <Zap size={14} className="fill-current" /> JOIN CLUB
                         </Link>
                     </div>
                 </motion.div>

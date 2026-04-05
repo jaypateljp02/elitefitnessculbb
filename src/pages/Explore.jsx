@@ -118,6 +118,7 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
    ======================================= */
 function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoadComplete }) {
     const [isLoading, setIsLoading] = useState(!initialLoadComplete)
+    const [tourStarted, setTourStarted] = useState(false)
     const iframeRef = useRef(null)
 
     // Scanning Facility Loader - Only play once per session
@@ -195,18 +196,41 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
                     <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-elite-orange/40 rounded-bl-2xl sm:rounded-bl-3xl pointer-events-none z-20" />
                     <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-elite-orange/40 rounded-br-2xl sm:rounded-br-3xl pointer-events-none z-20" />
 
-                    {/* The Kuula Iframe */}
-                    <iframe
-                        ref={iframeRef}
-                        className="ku-embed w-full h-full"
-                        frameBorder="0"
-                        allow="xr-spatial-tracking; gyroscope; accelerometer"
-                        allowFullScreen
-                        scrolling="no"
-                        loading="lazy"
-                        src="https://kuula.co/share/collection/7MFMk?logo=1&info=1&fs=1&vr=0&zoom=1&sd=1&thumbs=1"
-                        style={{ border: 'none', display: 'block', minHeight: '400px' }}
-                    />
+                    {/* The Kuula Iframe (Lazy Loaded Behind Click) */}
+                    {tourStarted ? (
+                        <iframe
+                            ref={iframeRef}
+                            className="ku-embed w-full h-full"
+                            frameBorder="0"
+                            allow="xr-spatial-tracking; gyroscope; accelerometer"
+                            allowFullScreen
+                            scrolling="no"
+                            loading="lazy"
+                            src="https://kuula.co/share/collection/7MFMk?logo=1&info=1&fs=1&vr=0&zoom=1&sd=1&thumbs=1"
+                            style={{ border: 'none', display: 'block', minHeight: '400px' }}
+                        />
+                    ) : (
+                        <div className="w-full h-full min-h-[400px] flex flex-col items-center justify-center bg-black relative group">
+                            <img 
+                                src="/asset/Sitting area wall.webp" 
+                                className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-700" 
+                                alt="360 Tour Preview"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#05050c] via-black/40 to-[#05050c]" />
+                            <button 
+                                onClick={() => setTourStarted(true)}
+                                className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-elite-orange/20 border border-elite-orange flex items-center justify-center btn-glow hover:bg-elite-orange hover:border-elite-orange group-hover:scale-105 transition-all duration-300"
+                            >
+                                <PlayCircle size={40} className="text-white sm:w-12 sm:h-12" />
+                            </button>
+                            <span className="relative z-10 mt-6 text-white font-heading font-black tracking-widest text-lg sm:text-xl uppercase text-shadow-glow">
+                                ENTER 360° TOUR
+                            </span>
+                            <span className="relative z-10 mt-2 text-elite-orange text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase">
+                                Click to load interactive experience
+                            </span>
+                        </div>
+                    )}
 
                     {/* Scanning Facility Loader Overlay */}
                     <AnimatePresence>

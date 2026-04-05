@@ -10,14 +10,14 @@ function ContactHero() {
       <div className="absolute inset-0 bg-black">
         <img src="/asset/11.webp" alt="Cardio Zone" className="w-full h-full object-cover grayscale opacity-20 mix-blend-luminosity" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
-        <div className="absolute inset-0 bg-gradient-to-r from-elite-orange/10 to-elite-cyan/5 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-elite-orange/10 to-elite-orange/5 mix-blend-overlay" />
       </div>
 
       <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.05, 0.1, 0.05] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-elite-orange/20 blur-[130px] -translate-y-1/2 pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <span className="text-xs font-bold tracking-[0.2em] text-elite-cyan uppercase mb-4 block">GET IN TOUCH</span>
+          <span className="text-xs font-bold tracking-[0.2em] text-purple-400 uppercase mb-4 block">GET IN TOUCH</span>
           <h1 className="text-5xl sm:text-7xl font-heading font-black mb-6 uppercase tracking-tight">
             CONTACT <span className="gradient-text text-glow">US</span>
           </h1>
@@ -51,9 +51,9 @@ function ContactCards() {
             className="glass-card p-8 border border-white/5 relative overflow-hidden group"
             style={{ background: 'linear-gradient(135deg, rgba(20,20,30,0.8), rgba(10,10,15,0.95))' }}
           >
-            <div className="absolute top-0 right-0 w-24 h-24 bg-elite-orange/5 blur-[30px] group-hover:bg-elite-cyan/10 transition-colors duration-500" />
+            <div className="absolute top-0 right-0 w-24 h-24 bg-elite-orange/5 blur-[30px] group-hover:bg-elite-orange/10 transition-colors duration-500" />
             <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <item.icon className="text-elite-cyan" size={20} />
+              <item.icon className="text-purple-400" size={20} />
             </div>
             <h3 className="font-heading font-bold text-sm tracking-widest uppercase mb-3 text-white">{item.title}</h3>
             {item.link ? (
@@ -119,7 +119,7 @@ function ContactFormMap() {
         {/* Form - Takes up 5 columns */}
         <div className="lg:col-span-5 flex flex-col justify-center">
           <div className="mb-10">
-            <span className="text-elite-cyan text-xs font-bold tracking-[0.2em] uppercase mb-2 block">CONTACT FORM</span>
+            <span className="text-purple-400 text-xs font-bold tracking-[0.2em] uppercase mb-2 block">CONTACT FORM</span>
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-white uppercase tracking-wide">
               SEND A <span className="gradient-text text-glow">MESSAGE</span>
             </h2>
@@ -161,7 +161,7 @@ function ContactFormMap() {
                   <label className="block text-[10px] text-gray-400 mb-2 font-black tracking-[0.15em] uppercase">Your Message</label>
                   <textarea rows="4" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-elite-orange/50 focus:bg-white/10 transition-all font-light resize-none" placeholder="How can we help you?" />
                 </div>
-                <button type="submit" disabled={isSubmitting} className="w-full mt-4 py-4 bg-gradient-to-r from-elite-orange to-elite-cyan rounded-xl font-bold text-xs tracking-[0.2em] btn-glow flex items-center justify-center gap-3 uppercase text-white hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed">
+                <button type="submit" disabled={isSubmitting} className="w-full mt-4 py-4 bg-gradient-to-r from-elite-orange to-amber-400 rounded-xl font-bold text-xs tracking-[0.2em] btn-glow flex items-center justify-center gap-3 uppercase text-white hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed">
                   {isSubmitting ? (
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   ) : (
@@ -196,7 +196,7 @@ function ContactFormMap() {
 
             {/* Location Pin Badge inside the map container */}
             <div className="absolute bottom-6 left-6 z-20 bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center gap-4">
-              <div className="bg-elite-cyan/20 text-elite-cyan p-2 rounded-xl">
+              <div className="bg-elite-orange/20 text-elite-orange p-2 rounded-xl">
                 <MapPin size={24} />
               </div>
               <div>

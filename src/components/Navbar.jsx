@@ -60,7 +60,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 pointer-events-none">
+            <nav className="fixed top-8 left-0 right-0 z-50 px-4 sm:px-8 py-4 pointer-events-none">
                 {/* Frosted Glass container with neon bottom border */}
                 <div
                     className={`pointer-events-auto max-w-screen-2xl mx-auto rounded-2xl px-6 py-3 flex items-center justify-between transition-all duration-500 relative ${scrolled ? 'shadow-[0_20px_40px_rgba(0,0,0,0.4)]' : ''}`}
@@ -75,8 +75,8 @@ export default function Navbar() {
                     <div
                         className="absolute bottom-0 left-4 right-4 h-[1px]"
                         style={{
-                            background: 'linear-gradient(90deg, transparent, #06b6d4, #e96f49, transparent)',
-                            boxShadow: '0 1px 8px rgba(6, 182, 212, 0.4), 0 1px 20px rgba(233, 111, 73, 0.2)',
+                            background: 'linear-gradient(90deg, transparent, #e96f49, #e96f49, transparent)',
+                            boxShadow: '0 1px 8px rgba(233, 111, 73, 0.4), 0 1px 20px rgba(233, 111, 73, 0.2)',
                         }}
                     />
 
@@ -85,7 +85,7 @@ export default function Navbar() {
                         <img src="/asset/Logo.webp" alt="Elite Fitness Clubb" className="h-8 sm:h-10 w-auto transition-all duration-300 group-hover:scale-105" style={{ filter: 'drop-shadow(0 0 8px rgba(233,111,73,0.3))' }} />
                         <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-1.5 leading-tight">
                             <span className="text-[10px] sm:text-sm font-heading font-black text-[#E0E0E0] tracking-widest whitespace-nowrap">ELITE FITNESS </span>
-                            <span className="text-[10px] sm:text-sm font-heading font-black tracking-widest whitespace-nowrap" style={{ color: '#06b6d4' }}>CLUBB</span>
+                            <span className="text-[10px] sm:text-sm font-heading font-black tracking-widest whitespace-nowrap" style={{ color: '#e96f49' }}>CLUBB</span>
                         </div>
                     </Link>
 
@@ -100,7 +100,7 @@ export default function Navbar() {
                                 {link.name}
                                 {/* Electric Pink "BIZ" Badge for Franchise */}
                                 {link.badge && (
-                                    <span className="px-1.5 py-0.5 rounded text-[9px] font-black tracking-widest text-[#06b6d4] bg-[#06b6d4]/10 border border-[#06b6d4]/30 shadow-[0_0_10px_rgba(6,182,212,0.3)] animate-pulse">
+                                    <span className="px-1.5 py-0.5 rounded text-[9px] font-black tracking-widest text-purple-400 bg-purple-500/10 border border-purple-500/30 shadow-[0_0_10px_rgba(233,111,73,0.3)] animate-pulse">
                                         {link.badge}
                                     </span>
                                 )}
@@ -109,7 +109,7 @@ export default function Navbar() {
                                         layoutId="nav-underline"
                                         className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full"
                                         style={{
-                                            background: 'linear-gradient(90deg, #e96f49, #06b6d4)',
+                                            background: 'linear-gradient(90deg, #e96f49, #7c3aed)',
                                             boxShadow: '0 0 8px rgba(233,111,73,0.5)',
                                         }}
                                     />
@@ -135,12 +135,12 @@ export default function Navbar() {
                         <div ref={joinNowMagnetic.ref} onMouseMove={joinNowMagnetic.onMouseMove} onMouseLeave={joinNowMagnetic.onMouseLeave} className="magnetic-btn">
                             <Link
                                 to="/membership"
-                                className="btn-liquid relative px-6 py-2.5 rounded-[14px] font-bold text-[11px] tracking-widest inline-flex items-center gap-1.5 text-[#E0E0E0] shadow-[0_0_20px_rgba(6,182,212,0.2)]"
+                                className="btn-liquid relative px-6 py-2.5 rounded-[14px] font-bold text-[11px] tracking-widest inline-flex items-center gap-1.5 text-[#E0E0E0] shadow-[0_0_20px_rgba(233,111,73,0.2)]"
                             >
-                                <div className="absolute inset-0 rounded-[14px] bg-gradient-to-r from-elite-orange to-elite-cyan" />
+                                <div className="absolute inset-0 rounded-[14px] bg-gradient-to-r from-elite-orange to-amber-400" />
                                 <div className="absolute inset-[1px] rounded-[13px] bg-[#0a0a14] transition-opacity duration-300" />
                                 <span className="relative z-10 flex items-center gap-1.5 group-hover:text-white transition-colors">
-                                    <Zap size={12} className="text-[#06b6d4] fill-[#06b6d4]" /> JOIN NOW
+                                    <Zap size={12} className="text-[#7c3aed] fill-[#7c3aed]" /> JOIN NOW
                                 </span>
                             </Link>
                         </div>
@@ -165,14 +165,14 @@ export default function Navbar() {
                             <div className="absolute inset-0 bg-black/80 backdrop-blur-xl" />
                             {/* Animated Orbs inside menu */}
                             <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }} transition={{ duration: 4, repeat: Infinity }} className="absolute top-1/4 left-1/4 w-[300px] h-[300px] bg-elite-orange rounded-full blur-[100px]" />
-                            <motion.div animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 5, repeat: Infinity, delay: 1 }} className="absolute bottom-1/4 right-1/4 w-[250px] h-[250px] bg-elite-cyan rounded-full blur-[100px]" />
+                            <motion.div animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 5, repeat: Infinity, delay: 1 }} className="absolute bottom-1/4 right-1/4 w-[250px] h-[250px] bg-elite-orange rounded-full blur-[100px]" />
 
                             <div className="relative z-10 w-full max-w-sm rounded-[32px] overflow-hidden p-6 border border-white/10" style={{ background: 'rgba(5,5,15,0.7)', backdropFilter: 'blur(40px)' }}>
                                 <div className="flex flex-col items-center justify-center gap-3 mb-8">
                                     <img src="/asset/Logo.webp" alt="Elite Fitness Clubb" className="h-16" style={{ filter: 'drop-shadow(0 0 15px rgba(233,111,73,0.5))' }} />
                                     <div className="text-center">
                                         <span className="text-sm font-heading font-black text-[#E0E0E0] tracking-widest block">ELITE FITNESS</span>
-                                        <span className="text-sm font-heading font-black text-[#06b6d4] tracking-widest block mt-0.5">CLUBB</span>
+                                        <span className="text-sm font-heading font-black text-[#e96f49] tracking-widest block mt-0.5">CLUBB</span>
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2">
@@ -184,7 +184,7 @@ export default function Navbar() {
                                                 className={`flex items-center justify-between px-6 py-4 rounded-2xl text-base font-bold tracking-widest transition-all ${location.pathname === link.path ? 'bg-gradient-to-r from-elite-orange/20 to-transparent text-[#E0E0E0] border border-elite-orange/30' : 'text-gray-400 hover:bg-white/5 hover:text-[#E0E0E0]'}`}
                                             >
                                                 {link.name}
-                                                {link.badge && <span className="px-2 py-1 rounded-md text-[10px] text-[#06b6d4] bg-[#06b6d4]/10 border border-[#06b6d4]/30">{link.badge}</span>}
+                                                {link.badge && <span className="px-2 py-1 rounded-md text-[10px] text-purple-400 bg-purple-500/10 border border-purple-500/30">{link.badge}</span>}
                                             </Link>
                                         </motion.div>
                                     ))}
@@ -207,7 +207,7 @@ export default function Navbar() {
                         <Link to="/franchise" className="flex-1 rounded-xl flex items-center justify-center gap-2 font-bold text-[11px] tracking-widest text-elite-orange bg-elite-orange/10 border border-elite-orange/20 hover:bg-elite-orange/20 transition-colors">
                             <Building2 size={14} /> OWN A BIZ
                         </Link>
-                        <Link to="/membership" className="flex-[1.5] rounded-xl flex items-center justify-center gap-2 font-bold text-[12px] tracking-widest text-[#E0E0E0] bg-gradient-to-r from-elite-orange to-elite-cyan shadow-[0_0_15px_rgba(6,182,212,0.3)] relative overflow-hidden">
+                        <Link to="/membership" className="flex-[1.5] rounded-xl flex items-center justify-center gap-2 font-bold text-[12px] tracking-widest text-[#E0E0E0] bg-gradient-to-r from-elite-orange to-amber-400 shadow-[0_0_15px_rgba(233,111,73,0.3)] relative overflow-hidden">
                             <div className="absolute inset-0 bg-white/20 hover:bg-transparent transition-colors" />
                             <Zap size={14} className="fill-current" /> JOIN CLUB
                         </Link>

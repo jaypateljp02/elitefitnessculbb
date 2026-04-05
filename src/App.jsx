@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, lazy, Suspense } from 'react'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import TopTicker from './components/TopTicker'
 import CustomCursor from './components/CustomCursor'
 
 // Lazy-load pages for faster initial load
@@ -66,8 +67,8 @@ function GradientDefs() {
         <svg width="0" height="0" style={{ position: 'absolute' }}>
             <defs>
                 <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#000080" />
-                    <stop offset="100%" stopColor="#06b6d4" />
+                    <stop offset="0%" stopColor="#e96f49" />
+                    <stop offset="100%" stopColor="#D4A574" />
                 </linearGradient>
             </defs>
         </svg>
@@ -113,6 +114,8 @@ function App() {
 
             {/* Content (above background layers) */}
             <div className="relative z-10">
+                <TopTicker />
+                <div className="pt-8">
                 <Navbar />
                 <Suspense fallback={
                     <div className="min-h-screen flex items-center justify-center">
@@ -139,6 +142,7 @@ function App() {
                 <WhatsAppWidget />
                 <PhoneCallWidget />
                 <Footer />
+                </div>
             </div>
         </div>
     )

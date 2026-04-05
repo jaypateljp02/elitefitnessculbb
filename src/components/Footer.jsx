@@ -20,7 +20,7 @@ export default function Footer() {
             {/* Background elements */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-elite-orange/50 to-transparent" />
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-elite-orange/5 blur-[150px] pointer-events-none" />
-            <div className="absolute bottom-[-10%] right-1/4 w-[400px] h-[400px] rounded-full bg-elite-cyan/5 blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-[-10%] right-1/4 w-[400px] h-[400px] rounded-full bg-elite-orange/5 blur-[120px] pointer-events-none" />
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
@@ -53,12 +53,12 @@ export default function Footer() {
                     {/* Quick Links (Spans 3 cols) */}
                     <div className="lg:col-span-3 lg:pl-10">
                         <h3 className="text-white font-heading font-black text-lg tracking-widest uppercase mb-8 flex items-center gap-3">
-                            <span className="w-2 h-2 rounded-full bg-elite-cyan"></span> Exploration
+                            <span className="w-2 h-2 rounded-full bg-elite-orange"></span> Exploration
                         </h3>
                         <ul className="space-y-4">
                             {quickLinks.map((link) => (
                                 <li key={link.path}>
-                                    <Link to={link.path} className="text-gray-400 hover:text-elite-cyan transition-all text-sm hover:translate-x-2 duration-300 inline-flex items-center gap-2 font-light tracking-wide group">
+                                    <Link to={link.path} className="text-gray-400 hover:text-purple-400 transition-all text-sm hover:translate-x-2 duration-300 inline-flex items-center gap-2 font-light tracking-wide group">
                                         <ArrowUp size={12} className="rotate-45 opacity-0 group-hover:opacity-100 transition-opacity text-elite-orange" />
                                         {link.name}
                                     </Link>
@@ -84,8 +84,8 @@ export default function Footer() {
                             </a>
 
                             <a href="tel:+918888161216" className="flex items-center gap-4 group">
-                                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-elite-cyan/10 group-hover:border-elite-cyan/30 transition-all duration-300 shadow-[0_0_0_rgba(6,182,212,0)] group-hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-                                    <Phone size={20} className="text-elite-cyan" />
+                                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-elite-orange/10 group-hover:border-elite-orange/30 transition-all duration-300 shadow-[0_0_0_rgba(233,111,73,0)] group-hover:shadow-[0_0_20px_rgba(233,111,73,0.2)]">
+                                    <Phone size={20} className="text-elite-orange" />
                                 </div>
                                 <div>
                                     <h4 className="text-gray-500 text-xs font-bold tracking-widest uppercase mb-1">Direct Line</h4>

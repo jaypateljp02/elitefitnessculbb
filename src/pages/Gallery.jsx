@@ -6,16 +6,16 @@ import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react'
 const categories = ['ALL', 'GYM INTERIOR', 'EQUIPMENT', 'CLASSES', 'RECOVERY']
 
 const images = [
-    { id: 1, src: '/asset/Pillar 1.webp', category: 'GYM INTERIOR', span: 'col-span-2 row-span-2' },
-    { id: 2, src: '/asset/Pillar 2.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-1' },
+    { id: 1, src: '/asset/new/20260404_130238.webp', category: 'GYM INTERIOR', span: 'col-span-2 row-span-2' },
+    { id: 2, src: '/asset/new/20260404_130314.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-1' },
     { id: 3, src: '/asset/Yoga 1.webp', category: 'CLASSES', span: 'col-span-1 row-span-2' },
     { id: 4, src: '/asset/ice bath area.webp', category: 'RECOVERY', span: 'col-span-2 row-span-1' },
-    { id: 5, src: '/asset/Pillar 3.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-2' },
+    { id: 5, src: '/asset/new/20260404_130412.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-2' },
     { id: 6, src: '/asset/Zumba.webp', category: 'CLASSES', span: 'col-span-2 row-span-2' },
-    { id: 7, src: '/asset/Pillar 4.webp', category: 'GYM INTERIOR', span: 'col-span-1 row-span-1' },
+    { id: 7, src: '/asset/new/20260404_130446.webp', category: 'GYM INTERIOR', span: 'col-span-1 row-span-1' },
     { id: 8, src: '/asset/Cafe wall image 1.webp', category: 'RECOVERY', span: 'col-span-1 row-span-1' },
-    { id: 9, src: '/asset/yoga 2.webp', category: 'CLASSES', span: 'col-span-1 row-span-1' },
-    { id: 10, src: '/asset/Yoga 3.webp', category: 'CLASSES', span: 'col-span-2 row-span-1' },
+    { id: 9, src: '/asset/new/20260404_130852.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-1' },
+    { id: 10, src: '/asset/new/20260404_131006.webp', category: 'GYM INTERIOR', span: 'col-span-2 row-span-1' },
 ]
 
 export default function Gallery() {
@@ -44,7 +44,7 @@ export default function Gallery() {
             {/* Hero */}
             <section className="relative pt-36 pb-20 px-4 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-elite-orange/10 via-elite-dark to-black" />
-                <motion.div animate={{ scale: [1, 1.3, 1], opacity: [0.08, 0.15, 0.08] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-elite-cyan/10 blur-[130px]" />
+                <motion.div animate={{ scale: [1, 1.3, 1], opacity: [0.08, 0.15, 0.08] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-elite-orange/10 blur-[130px]" />
                 <div className="relative z-10 max-w-4xl mx-auto text-center">
                     <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}>
                         <span className="tag-elite mb-6 inline-block">OUR FACILITY</span>
@@ -63,7 +63,7 @@ export default function Gallery() {
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
                                 className={`px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 ${activeCategory === cat
-                                        ? 'bg-gradient-to-r from-elite-orange to-elite-cyan text-white shadow-[0_0_20px_rgba(233,111,73,0.5)]'
+                                        ? 'bg-gradient-to-r from-elite-orange to-amber-400 text-white shadow-[0_0_20px_rgba(233,111,73,0.5)]'
                                         : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5'
                                     }`}
                             >
@@ -104,7 +104,7 @@ export default function Gallery() {
 
                                     {/* Corner glow */}
                                     <div className="absolute -top-10 -left-10 w-20 h-20 bg-elite-orange/50 blur-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                    <div className="absolute -bottom-10 -right-10 w-20 h-20 bg-elite-cyan/50 blur-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="absolute -bottom-10 -right-10 w-20 h-20 bg-elite-orange/50 blur-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 </motion.div>
                             ))}
                         </AnimatePresence>
@@ -122,7 +122,7 @@ export default function Gallery() {
                         onClick={closeLightbox}
                         className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8"
                     >
-                        <button onClick={closeLightbox} className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-elite-cyan hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all z-50">
+                        <button onClick={closeLightbox} className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-elite-orange hover:shadow-[0_0_20px_rgba(233,111,73,0.5)] transition-all z-50">
                             <X size={24} />
                         </button>
 

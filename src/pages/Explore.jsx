@@ -10,16 +10,16 @@ import { X, Orbit, ZoomIn, ChevronLeft, ChevronRight, PlayCircle, ArrowLeft } fr
 const categories = ['ALL', '🔥 TRANSFORMATIONS', '💪 ELITE COACHING', '🧘 THE VIBE']
 
 const galleryImages = [
-    { id: 1, src: '/asset/barbell-on-the-floor-in-gym-M46QLA3-2048x1367.webp', category: '💪 ELITE COACHING', span: 'col-span-2 row-span-2' },
-    { id: 2, src: '/asset/sportsman-make-sport-exercises-in-gym-PE2NXZL-2048x1367.webp', category: '🔥 TRANSFORMATIONS', span: 'col-span-1 row-span-2' },
-    { id: 3, src: '/asset/Pillar 1.webp', category: '🔥 TRANSFORMATIONS', span: 'col-span-1 row-span-1' },
-    { id: 4, src: '/asset/Pillar 2.webp', category: '💪 ELITE COACHING', span: 'col-span-2 row-span-1' },
+    { id: 1, src: '/asset/new/20260404_130238.webp', category: '💪 ELITE COACHING', span: 'col-span-2 row-span-2' },
+    { id: 2, src: '/asset/new/20260404_130314.webp', category: '🔥 TRANSFORMATIONS', span: 'col-span-1 row-span-2' },
+    { id: 3, src: '/asset/new/20260404_130338.webp', category: '🔥 TRANSFORMATIONS', span: 'col-span-1 row-span-1' },
+    { id: 4, src: '/asset/new/20260404_130412.webp', category: '💪 ELITE COACHING', span: 'col-span-2 row-span-1' },
     { id: 5, src: '/asset/Yoga 1.webp', category: '🧘 THE VIBE', span: 'col-span-1 row-span-2' },
     { id: 6, src: '/asset/ice bath area.webp', category: '🧘 THE VIBE', span: 'col-span-1 row-span-1' },
     { id: 7, src: '/asset/Zumba.webp', category: '🧘 THE VIBE', span: 'col-span-2 row-span-2' },
-    { id: 8, src: '/asset/Cafe wall image 1.webp', category: '🧘 THE VIBE', span: 'col-span-1 row-span-1' },
-    { id: 9, src: '/asset/Female  Changing Room.webp', category: '🧘 THE VIBE', span: 'col-span-1 row-span-1' },
-    { id: 10, src: '/asset/Mens  Changing Room.webp', category: '🧘 THE VIBE', span: 'col-span-2 row-span-1' },
+    { id: 8, src: '/asset/new/20260404_130446.webp', category: '🧘 THE VIBE', span: 'col-span-1 row-span-1' },
+    { id: 9, src: '/asset/new/20260404_130852.webp', category: '💪 ELITE COACHING', span: 'col-span-1 row-span-1' },
+    { id: 10, src: '/asset/new/20260404_131006.webp', category: '🔥 TRANSFORMATIONS', span: 'col-span-2 row-span-1' },
 ]
 
 /* =======================================
@@ -50,8 +50,8 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
                     transition={{ delay: 0.5, duration: 1 }}
                     className="flex flex-col items-center gap-8"
                 >
-                    <div className="w-16 h-16 rounded-full border border-elite-cyan/30 flex items-center justify-center bg-elite-cyan/10 mb-[-10px] animate-pulse-glow" style={{ boxShadow: '0 0 30px rgba(6,182,212,0.3)' }}>
-                        <Orbit size={32} className="text-elite-cyan animate-spin-slow" />
+                    <div className="w-16 h-16 rounded-full border border-elite-orange/30 flex items-center justify-center bg-elite-orange/10 mb-[-10px] animate-pulse-glow" style={{ boxShadow: '0 0 30px rgba(233,111,73,0.3)' }}>
+                        <Orbit size={32} className="text-purple-400 animate-spin-slow" />
                     </div>
                     <div>
                         <h1 className="text-5xl sm:text-7xl font-heading font-black tracking-widest text-[#E0E0E0] uppercase text-shadow-glow">
@@ -64,15 +64,15 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
                         {/* Gallery Card */}
                         <button
                             onClick={onEnterGallery}
-                            className="group relative h-48 sm:h-64 rounded-3xl overflow-hidden border border-white/10 hover:border-elite-cyan/50 transition-all duration-500 focus:outline-none flex flex-col justify-end p-6 text-left"
+                            className="group relative h-48 sm:h-64 rounded-3xl overflow-hidden border border-white/10 hover:border-elite-orange/50 transition-all duration-500 focus:outline-none flex flex-col justify-end p-6 text-left"
                             style={{ boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}
                         >
                             <img src="/asset/12.webp" alt="Gallery" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700" loading="lazy" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-elite-cyan/40 to-transparent transition-opacity duration-500 mix-blend-overlay" />
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-elite-orange/40 to-transparent transition-opacity duration-500 mix-blend-overlay" />
 
                             <div className="relative z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div className="w-12 h-12 rounded-full bg-elite-cyan/20 backdrop-blur-md border border-elite-cyan/30 flex items-center justify-center mb-4 text-elite-cyan group-hover:bg-elite-cyan group-hover:text-white transition-colors duration-500">
+                                <div className="w-12 h-12 rounded-full bg-purple-500/20 backdrop-blur-md border border-purple-500/30 flex items-center justify-center mb-4 text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors duration-500">
                                     <ZoomIn size={20} />
                                 </div>
                                 <h3 className="text-2xl font-heading font-black tracking-widest text-white uppercase group-hover:text-shadow-glow">
@@ -95,7 +95,7 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-elite-orange/40 to-transparent transition-opacity duration-500 mix-blend-overlay" />
 
                             <div className="relative z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div className="w-12 h-12 rounded-full bg-elite-orange/20 backdrop-blur-md border border-elite-orange/30 flex items-center justify-center mb-4 text-elite-orange group-hover:bg-elite-orange group-hover:text-white transition-colors duration-500 animate-pulse">
+                                <div className="w-12 h-12 rounded-full bg-purple-500/20 backdrop-blur-md border border-purple-500/30 flex items-center justify-center mb-4 text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors duration-500 animate-pulse">
                                     <PlayCircle size={20} />
                                 </div>
                                 <h3 className="text-2xl font-heading font-black tracking-widest text-white uppercase group-hover:text-shadow-glow">
@@ -145,7 +145,7 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
             {/* Ambient Background Glow */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-elite-orange/20 rounded-full blur-[120px] animate-pulse" />
-                <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-elite-cyan/15 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
+                <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-elite-orange/15 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-elite-orange/5 rounded-full blur-[150px]" />
             </div>
 
@@ -186,13 +186,13 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
                     transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     className="relative w-full flex-1 min-h-0 rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10"
                     style={{
-                        boxShadow: '0 0 80px rgba(233,111,73,0.15), 0 0 40px rgba(6,182,212,0.1), 0 20px 60px rgba(0,0,0,0.8)',
+                        boxShadow: '0 0 80px rgba(233,111,73,0.15), 0 0 40px rgba(233,111,73,0.1), 0 20px 60px rgba(0,0,0,0.8)',
                     }}
                 >
                     {/* Decorative corner accents */}
                     <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-elite-orange/40 rounded-tl-2xl sm:rounded-tl-3xl pointer-events-none z-20" />
-                    <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-elite-cyan/40 rounded-tr-2xl sm:rounded-tr-3xl pointer-events-none z-20" />
-                    <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-elite-cyan/40 rounded-bl-2xl sm:rounded-bl-3xl pointer-events-none z-20" />
+                    <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-elite-orange/40 rounded-tr-2xl sm:rounded-tr-3xl pointer-events-none z-20" />
+                    <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-elite-orange/40 rounded-bl-2xl sm:rounded-bl-3xl pointer-events-none z-20" />
                     <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-elite-orange/40 rounded-br-2xl sm:rounded-br-3xl pointer-events-none z-20" />
 
                     {/* The Kuula Iframe */}
@@ -203,6 +203,7 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
                         allow="xr-spatial-tracking; gyroscope; accelerometer"
                         allowFullScreen
                         scrolling="no"
+                        loading="lazy"
                         src="https://kuula.co/share/collection/7MFMk?logo=1&info=1&fs=1&vr=0&zoom=1&sd=1&thumbs=1"
                         style={{ border: 'none', display: 'block', minHeight: '400px' }}
                     />
@@ -219,7 +220,7 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
                                 {/* Pulsing ring animation */}
                                 <div className="relative w-24 h-24 mb-6">
                                     <div className="absolute inset-0 rounded-full border-2 border-elite-orange/30 animate-ping" />
-                                    <div className="absolute inset-2 rounded-full border border-elite-cyan/40 animate-ping" style={{ animationDelay: '0.3s' }} />
+                                    <div className="absolute inset-2 rounded-full border border-elite-orange/40 animate-ping" style={{ animationDelay: '0.3s' }} />
                                     <div className="absolute inset-4 rounded-full border border-elite-orange/50 animate-ping" style={{ animationDelay: '0.6s' }} />
                                     <div className="absolute inset-0 flex items-center justify-center">
                                         <Orbit size={32} className="text-elite-orange animate-spin" style={{ animationDuration: '3s' }} />
@@ -230,7 +231,7 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
                                         initial={{ width: "0%" }}
                                         animate={{ width: "100%" }}
                                         transition={{ duration: 2, ease: "easeInOut" }}
-                                        className="h-full bg-gradient-to-r from-elite-orange to-elite-cyan"
+                                        className="h-full bg-gradient-to-r from-elite-orange to-amber-400"
                                         style={{ boxShadow: '0 0 15px #e96f49' }}
                                     />
                                 </div>
@@ -251,7 +252,7 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
                 >
                     <button
                         onClick={() => onSwitchToGallery('ALL')}
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-elite-cyan/30 bg-elite-cyan/10 backdrop-blur-md text-elite-cyan hover:bg-elite-cyan/20 hover:border-elite-cyan/50 transition-all duration-300 group"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-elite-orange/30 bg-elite-orange/10 backdrop-blur-md text-elite-orange hover:bg-elite-orange/20 hover:border-elite-orange/50 transition-all duration-300 group"
                     >
                         <ZoomIn size={14} className="group-hover:scale-110 transition-transform" />
                         <span className="text-[10px] font-bold tracking-widest uppercase">📸 Browse Photo Gallery</span>
@@ -307,7 +308,7 @@ function GalleryMode({ initialCategory }) {
                             <button
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
-                                className={`px-5 py-2 rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase transition-all duration-300 ${activeCategory === cat ? 'bg-gradient-to-r from-elite-orange to-elite-cyan text-white shadow-[0_0_20px_rgba(233,111,73,0.5)]' : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5'}`}
+                                className={`px-5 py-2 rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase transition-all duration-300 ${activeCategory === cat ? 'bg-gradient-to-r from-elite-orange to-amber-400 text-white shadow-[0_0_20px_rgba(233,111,73,0.5)]' : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5'}`}
                             >
                                 {cat}
                             </button>
@@ -342,7 +343,7 @@ function GalleryMode({ initialCategory }) {
 
                                     <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 pointer-events-none">
                                         <span className="text-[10px] sm:text-xs font-bold tracking-widest text-white uppercase text-shadow-glow">{img.category}</span>
-                                        <span className="text-[8px] sm:text-[10px] font-bold tracking-widest text-elite-cyan uppercase border border-elite-cyan/30 bg-elite-cyan/10 px-2 py-1 rounded-md backdrop-blur-md">ENLARGE</span>
+                                        <span className="text-[8px] sm:text-[10px] font-bold tracking-widest text-purple-400 uppercase border border-purple-500/30 bg-purple-500/10 px-2 py-1 rounded-md backdrop-blur-md">ENLARGE</span>
                                     </div>
                                     <div className="absolute -top-10 -left-10 w-20 h-20 bg-elite-orange/50 blur-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 </motion.div>
@@ -363,7 +364,7 @@ function GalleryMode({ initialCategory }) {
                         className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-2xl flex flex-col items-center justify-center p-4 sm:p-8"
                     >
                         {/* Close Button - pure X */}
-                        <button onClick={() => setSelectedImage(null)} className="absolute top-24 right-4 sm:top-28 sm:right-10 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-elite-cyan hover:border-elite-cyan transition-all z-[110] shadow-[0_0_20px_rgba(0,0,0,0.5)] group">
+                        <button onClick={() => setSelectedImage(null)} className="absolute top-24 right-4 sm:top-28 sm:right-10 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-elite-orange hover:border-elite-orange transition-all z-[110] shadow-[0_0_20px_rgba(0,0,0,0.5)] group">
                             <X size={24} className="group-hover:rotate-90 transition-transform" />
                         </button>
                         <motion.div
@@ -376,10 +377,10 @@ function GalleryMode({ initialCategory }) {
                             <img src={selectedImage.src} alt={selectedImage.category} className="max-w-full max-h-full object-contain" />
 
                             {/* Navigation Arrows */}
-                            <button onClick={handlePrevImage} className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover/lightbox:opacity-100 hover:bg-elite-cyan hover:border-elite-cyan transition-all z-10 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                            <button onClick={handlePrevImage} className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover/lightbox:opacity-100 hover:bg-elite-orange hover:border-elite-orange transition-all z-10 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
                                 <ChevronLeft size={24} className="mr-0.5" />
                             </button>
-                            <button onClick={handleNextImage} className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover/lightbox:opacity-100 hover:bg-elite-cyan hover:border-elite-cyan transition-all z-10 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                            <button onClick={handleNextImage} className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover/lightbox:opacity-100 hover:bg-elite-orange hover:border-elite-orange transition-all z-10 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
                                 <ChevronRight size={24} className="ml-0.5" />
                             </button>
 
@@ -449,7 +450,7 @@ export default function Explore() {
                             </button>
                             <button
                                 onClick={() => setMode('gallery')}
-                                className={`flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase transition-all duration-300 ${mode === 'gallery' ? 'bg-elite-cyan text-white shadow-[0_0_15px_rgba(6,182,212,0.5)]' : 'text-gray-400 hover:text-white'}`}
+                                className={`flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase transition-all duration-300 ${mode === 'gallery' ? 'bg-elite-orange text-white shadow-[0_0_15px_rgba(233,111,73,0.5)]' : 'text-gray-400 hover:text-white'}`}
                             >
                                 <ZoomIn size={14} /> GALLERY
                             </button>

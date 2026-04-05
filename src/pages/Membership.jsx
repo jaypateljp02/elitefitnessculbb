@@ -87,7 +87,7 @@ function ComparisonGrid() {
                         <tr>
                             <th className="p-4 text-xs font-black tracking-widest text-gray-500 uppercase border-b border-white/10 w-2/5">Tier Benefits</th>
                             <th className="p-4 text-xs font-black tracking-widest text-[#E0E0E0] uppercase border-b border-white/10 text-center">Starter</th>
-                            <th className="p-4 text-xs font-black tracking-widest text-elite-cyan uppercase border-b border-white/10 text-center relative glow-cyan">Premium</th>
+                            <th className="p-4 text-xs font-black tracking-widest text-purple-400 uppercase border-b border-white/10 text-center relative">Premium</th>
                             <th className="p-4 text-xs font-black tracking-widest text-elite-orange uppercase border-b border-white/10 text-center glow-orange">Elite</th>
                         </tr>
                     </thead>
@@ -103,10 +103,10 @@ function ComparisonGrid() {
                                     {feat.name}
                                 </td>
                                 <td className="p-4 text-center">
-                                    {feat.starter ? <Check size={18} className={`mx-auto transition-all ${hoveredRow === i ? 'text-elite-cyan' : 'text-gray-500'}`} /> : <span className="text-gray-700">-</span>}
+                                    {feat.starter ? <Check size={18} className={`mx-auto transition-all ${hoveredRow === i ? 'text-purple-400' : 'text-gray-500'}`} /> : <span className="text-gray-700">-</span>}
                                 </td>
-                                <td className="p-4 text-center bg-elite-cyan/5">
-                                    {feat.premium ? <Check size={18} className={`mx-auto transition-all ${hoveredRow === i ? 'text-elite-cyan drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]' : 'text-gray-400'}`} /> : <span className="text-gray-700">-</span>}
+                                <td className="p-4 text-center bg-elite-orange/5">
+                                    {feat.premium ? <Check size={18} className={`mx-auto transition-all ${hoveredRow === i ? 'text-purple-400 drop-shadow-[0_0_8px_rgba(124,58,237,0.8)]' : 'text-gray-400'}`} /> : <span className="text-gray-700">-</span>}
                                 </td>
                                 <td className="p-4 text-center">
                                     {feat.elite ? <Check size={18} className={`mx-auto transition-all ${hoveredRow === i ? 'text-elite-orange drop-shadow-[0_0_8px_rgba(233,111,73,0.8)]' : 'text-gray-500'}`} /> : <span className="text-gray-700">-</span>}
@@ -215,7 +215,7 @@ export default function Membership() {
                         {/* Seasonal Note */}
                         <div className="flex flex-col items-center justify-center relative">
                             <div className="flex items-center gap-2 bg-black/40 px-6 py-3 rounded-full border border-white/10 backdrop-blur-md relative z-10 w-fit">
-                                <span className="text-xs font-bold tracking-widest uppercase text-elite-cyan">
+                                <span className="text-xs font-bold tracking-widest uppercase text-elite-orange">
                                     Seasonal Offers Available!
                                 </span>
                             </div>
@@ -249,7 +249,7 @@ export default function Membership() {
                     target="_blank"
                     rel="noreferrer"
                     whileHover={{ scale: 1.05 }}
-                    className="inline-block mt-8 px-10 py-4 border border-elite-cyan/30 hover:bg-elite-cyan/10 rounded-full text-elite-cyan font-bold text-xs tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(6,182,212,0.1)]">
+                    className="inline-block mt-8 px-10 py-4 border border-elite-orange/30 hover:bg-elite-orange/10 rounded-full text-elite-orange font-bold text-xs tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(233,111,73,0.1)]">
                     REQUEST A CALLBACK
                 </motion.a>
             </section>

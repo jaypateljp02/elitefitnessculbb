@@ -11,7 +11,7 @@ function FranchiseHero() {
     return (
         <section className="relative min-h-screen pt-32 pb-20 px-4 overflow-hidden flex items-center">
             <div className="absolute inset-0">
-                <img src="/asset/Pillar 1.webp" alt="Elite Fitness Gym" className="w-full h-full object-cover opacity-30" />
+                <img src="/asset/new/20260404_130338.webp" alt="Elite Fitness Gym" className="w-full h-full object-cover opacity-30" />
                 <div className="absolute inset-0 bg-black/70" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
             </div>
@@ -19,9 +19,9 @@ function FranchiseHero() {
 
             <div className="relative z-10 max-w-6xl mx-auto text-center w-full">
                 <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-elite-cyan/30 bg-elite-cyan/10 mb-8" style={{ boxShadow: '0 0 20px rgba(6,182,212,0.15)' }}>
-                        <span className="w-2 h-2 rounded-full bg-elite-cyan animate-pulse" />
-                        <span className="text-elite-cyan text-xs font-bold tracking-[0.2em]">FRANCHISE OPPORTUNITY</span>
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-elite-orange/30 bg-elite-orange/10 mb-8" style={{ boxShadow: '0 0 20px rgba(233,111,73,0.15)' }}>
+                        <span className="w-2 h-2 rounded-full bg-elite-orange animate-pulse" />
+                        <span className="text-purple-400 text-xs font-bold tracking-[0.2em]">FRANCHISE OPPORTUNITY</span>
                     </div>
 
                     <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-black leading-none mb-6 uppercase">
@@ -33,7 +33,7 @@ function FranchiseHero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="#roi-calculator" className="px-8 py-4 bg-gradient-to-r from-elite-orange to-elite-cyan rounded-xl font-bold text-sm tracking-widest uppercase inline-flex items-center justify-center gap-2 btn-glow">
+                        <a href="#roi-calculator" className="px-8 py-4 bg-gradient-to-r from-elite-orange to-amber-400 rounded-xl font-bold text-sm tracking-widest uppercase inline-flex items-center justify-center gap-2 btn-glow">
                             CALCULATE ROI <TrendingUp size={16} />
                         </a>
                         <a href="#enquiry" className="px-8 py-4 border border-white/20 rounded-xl font-bold text-sm tracking-widest uppercase inline-flex items-center justify-center gap-2 text-gray-300 hover:border-elite-orange/50 hover:bg-elite-orange/10 transition-all">
@@ -90,7 +90,7 @@ function WhyElite() {
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-elite-orange/5 blur-[40px] group-hover:bg-elite-orange/15 transition-colors pointer-events-none" />
                             <div className="w-12 h-12 rounded-xl bg-elite-orange/10 border border-elite-orange/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                                <item.icon size={22} className="text-elite-cyan" />
+                                <item.icon size={22} className="text-elite-orange" />
                             </div>
                             <h3 className="font-heading font-black text-white text-lg tracking-wide uppercase mb-2">{item.title}</h3>
                             <p className="text-gray-400 text-sm leading-relaxed font-light">{item.desc}</p>
@@ -119,7 +119,7 @@ function FranchiseModels() {
                             <div className="p-3 rounded-xl bg-elite-orange/10 border border-elite-orange/20 text-elite-orange shrink-0"><Crown size={24} /></div>
                             <div>
                                 <h3 className="text-xl sm:text-2xl font-heading font-black text-white uppercase">FOCO</h3>
-                                <span className="text-[11px] text-elite-orange font-bold tracking-widest uppercase">Franchise Owned · Company Operated</span>
+                                <span className="text-[11px] text-purple-400 font-bold tracking-widest uppercase">Franchise Owned · Company Operated</span>
                             </div>
                         </div>
                         <p className="text-gray-400 text-sm mb-6 font-light leading-relaxed relative z-10">
@@ -127,19 +127,19 @@ function FranchiseModels() {
                         </p>
                         <div className="space-y-3 relative z-10">
                             {['100% Passive Investment', 'Expert Company Management', 'Guaranteed Quality Standards', 'Complete Brand Consistency'].map((t, i) => (
-                                <div key={i} className="flex items-center gap-3"><CheckCircle2 size={15} className="text-elite-orange shrink-0" /><span className="text-gray-200 text-sm">{t}</span></div>
+                                <div key={i} className="flex items-center gap-3"><CheckCircle2 size={15} className="text-purple-400 shrink-0" /><span className="text-gray-200 text-sm">{t}</span></div>
                             ))}
                         </div>
                     </motion.div>
 
                     {/* FOFO */}
-                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="rounded-2xl border border-elite-cyan/30 bg-[#0a0a14] p-6 sm:p-8 relative group hover:border-elite-cyan/60 transition-colors duration-500">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-elite-cyan/5 rounded-full blur-[50px] pointer-events-none" />
+                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="rounded-2xl border border-elite-orange/30 bg-[#0a0a14] p-6 sm:p-8 relative group hover:border-elite-orange/60 transition-colors duration-500">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-elite-orange/5 rounded-full blur-[50px] pointer-events-none" />
                         <div className="flex items-center gap-4 mb-5 relative z-10">
-                            <div className="p-3 rounded-xl bg-elite-cyan/10 border border-elite-cyan/20 text-elite-cyan shrink-0"><Building size={24} /></div>
+                            <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 shrink-0"><Building size={24} /></div>
                             <div>
                                 <h3 className="text-xl sm:text-2xl font-heading font-black text-white uppercase">FOFO</h3>
-                                <span className="text-[11px] text-elite-cyan font-bold tracking-widest uppercase">Franchise Owned · Franchise Operated</span>
+                                <span className="text-[11px] text-purple-400 font-bold tracking-widest uppercase">Franchise Owned · Franchise Operated</span>
                             </div>
                         </div>
                         <p className="text-gray-400 text-sm mb-6 font-light leading-relaxed relative z-10">
@@ -147,7 +147,7 @@ function FranchiseModels() {
                         </p>
                         <div className="space-y-3 relative z-10">
                             {['Higher Active Profit Margins', 'Direct Operational Control', 'Comprehensive Initial Training', 'Ongoing Brand Support'].map((t, i) => (
-                                <div key={i} className="flex items-center gap-3"><CheckCircle2 size={15} className="text-elite-cyan shrink-0" /><span className="text-gray-200 text-sm">{t}</span></div>
+                                <div key={i} className="flex items-center gap-3"><CheckCircle2 size={15} className="text-purple-400 shrink-0" /><span className="text-gray-200 text-sm">{t}</span></div>
                             ))}
                         </div>
                     </motion.div>
@@ -212,12 +212,12 @@ function ROICalculator() {
                                 value={sqft}
                                 onChange={(e) => setSqft(Number(e.target.value))}
                                 className="w-full h-2 bg-gray-800 rounded-lg appearance-none cursor-pointer"
-                                style={{ background: `linear-gradient(to right, #e96f49 0%, #06b6d4 ${((sqft - 3000) / 12000) * 100}%, #1f2937 ${((sqft - 3000) / 12000) * 100}%, #1f2937 100%)` }}
+                                style={{ background: `linear-gradient(to right, #e96f49 0%, #e96f49 ${((sqft - 3000) / 12000) * 100}%, #1f2937 ${((sqft - 3000) / 12000) * 100}%, #1f2937 100%)` }}
                             />
                             <style>{`
                                 input[type=range]::-webkit-slider-thumb {
                                     -webkit-appearance: none; height: 24px; width: 24px; border-radius: 50%;
-                                    background: #fff; cursor: grab; box-shadow: 0 0 20px rgba(6,182,212,0.8), 0 0 0 6px rgba(233,111,73,0.3); margin-top: -11px;
+                                    background: #fff; cursor: grab; box-shadow: 0 0 20px rgba(233,111,73,0.8), 0 0 0 6px rgba(233,111,73,0.3); margin-top: -11px;
                                 }
                                 input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); cursor: grabbing; }
                             `}</style>
@@ -229,12 +229,12 @@ function ROICalculator() {
 
                     {/* Output */}
                     <div className="grid gap-4">
-                        <div className="rounded-xl border border-elite-cyan/20 bg-black/30 p-4 sm:p-5 flex items-center justify-between">
+                        <div className="rounded-xl border border-elite-orange/20 bg-black/30 p-4 sm:p-5 flex items-center justify-between">
                             <div>
-                                <div className="text-[10px] font-bold uppercase tracking-widest text-elite-cyan mb-1">Proj. Annual Profit</div>
+                                <div className="text-[10px] font-bold uppercase tracking-widest text-purple-400 mb-1">Proj. Annual Profit</div>
                                 <div className="text-2xl sm:text-3xl font-heading font-black text-white">₹{(profitPerYear / 100000).toFixed(1)} <span className="text-sm text-gray-500">Lakhs</span></div>
                             </div>
-                            <TrendingUp className="text-elite-cyan/50" size={28} />
+                            <TrendingUp className="text-purple-400/50" size={28} />
                         </div>
                         <div className="rounded-xl border border-elite-orange/20 bg-black/30 p-4 sm:p-5">
                             <div className="text-[10px] font-bold uppercase tracking-widest text-elite-orange mb-1">Est. Break-even</div>
@@ -276,7 +276,7 @@ function ProcessTimeline() {
                     {/* Glowing Line */}
                     <div className="absolute left-[19px] sm:left-1/2 sm:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-white/5">
                         <motion.div
-                            className="absolute top-0 left-0 right-0 origin-top bg-gradient-to-b from-elite-orange via-elite-cyan to-transparent shadow-[0_0_15px_rgba(6,182,212,0.6)]"
+                            className="absolute top-0 left-0 right-0 origin-top bg-gradient-to-b from-elite-orange via-amber-500 to-transparent shadow-[0_0_15px_rgba(233,111,73,0.6)]"
                             style={{ scaleY: pathLength }}
                         />
                     </div>
@@ -284,17 +284,17 @@ function ProcessTimeline() {
                     {steps.map((step, i) => (
                         <div key={i} className={`relative flex items-start sm:items-center gap-5 sm:gap-12 w-full ${i % 2 === 0 ? 'sm:flex-row-reverse' : 'sm:flex-row'}`}>
                             <div className="hidden sm:block w-1/2" />
-                            <div className="absolute left-0 sm:left-1/2 sm:-translate-x-1/2 w-10 h-10 rounded-full border-2 border-elite-cyan bg-black flex items-center justify-center z-10 shadow-[0_0_15px_rgba(6,182,212,0.4)] shrink-0">
-                                <span className="text-elite-cyan font-bold text-xs">{step.num}</span>
+                            <div className="absolute left-0 sm:left-1/2 sm:-translate-x-1/2 w-10 h-10 rounded-full border-2 border-elite-orange bg-black flex items-center justify-center z-10 shadow-[0_0_15px_rgba(233,111,73,0.4)] shrink-0">
+                                <span className="text-purple-400 font-bold text-xs">{step.num}</span>
                             </div>
                             <motion.div
                                 initial={{ opacity: 0, x: i % 2 === 0 ? 40 : -40 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5 }}
-                                className="w-full sm:w-1/2 ml-14 sm:ml-0 rounded-xl border border-white/8 bg-[#0a0a14] p-4 sm:p-6 group hover:border-elite-cyan/30 transition-colors"
+                                className="w-full sm:w-1/2 ml-14 sm:ml-0 rounded-xl border border-white/8 bg-[#0a0a14] p-4 sm:p-6 group hover:border-elite-orange/30 transition-colors"
                             >
-                                <h3 className="text-base sm:text-lg font-heading font-black text-white mb-1 uppercase tracking-wide group-hover:text-elite-cyan transition-colors">{step.title}</h3>
+                                <h3 className="text-base sm:text-lg font-heading font-black text-white mb-1 uppercase tracking-wide group-hover:text-purple-400 transition-colors">{step.title}</h3>
                                 <p className="text-gray-400 text-xs sm:text-sm leading-relaxed font-light">{step.desc}</p>
                             </motion.div>
                         </div>
@@ -360,7 +360,7 @@ function InvestorForm() {
                 <div className="rounded-2xl border border-white/10 bg-[#0a0a14] p-6 sm:p-10 mt-10">
                     {submitted ? (
                         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
-                            <CheckCircle2 size={56} className="mx-auto text-elite-cyan mb-5" style={{ filter: 'drop-shadow(0 0 20px rgba(6,182,212,0.5))' }} />
+                            <CheckCircle2 size={56} className="mx-auto text-purple-400 mb-5" style={{ filter: 'drop-shadow(0 0 20px rgba(233,111,73,0.5))' }} />
                             <h3 className="text-2xl font-heading font-black mb-3 uppercase tracking-widest text-white">DECK DISPATCHED</h3>
                             <p className="text-gray-400 font-light max-w-md mx-auto text-sm">Our franchise team will contact you within 24 hours.</p>
                         </motion.div>
@@ -383,7 +383,7 @@ function InvestorForm() {
                                     <option value="2CR+" className="bg-black">₹2Cr+</option>
                                 </select>
                             </div>
-                            <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-gradient-to-r from-elite-orange to-elite-cyan rounded-xl font-bold text-sm tracking-widest btn-glow flex items-center justify-center gap-3 uppercase text-white hover:shadow-[0_0_40px_rgba(233,111,73,0.5)] transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+                            <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-gradient-to-r from-elite-orange to-amber-400 rounded-xl font-bold text-sm tracking-widest btn-glow flex items-center justify-center gap-3 uppercase text-white hover:shadow-[0_0_40px_rgba(233,111,73,0.5)] transition-all disabled:opacity-50 disabled:cursor-not-allowed">
                                 {isSubmitting ? (
                                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                                 ) : (

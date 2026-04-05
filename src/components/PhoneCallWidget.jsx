@@ -46,10 +46,10 @@ export default function PhoneCallWidget() {
                         {/* Center Hub (where the bar goes) */}
                         <div className="relative flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-black shadow-[inset_0_3px_5px_rgba(0,0,0,1),0_1px_2px_rgba(255,255,255,0.2)] group-hover:bg-[#050505] transition-colors overflow-hidden">
                             {/* The Phone Icon shining out from the center hole */}
-                            <PhoneCall size={16} className="text-[#06b6d4] drop-shadow-[0_0_8px_rgba(6,182,212,0.8)] z-10 sm:scale-110" fill="currentColor" strokeWidth={1} />
+                            <PhoneCall size={16} className="text-[#e96f49] drop-shadow-[0_0_8px_rgba(233,111,73,0.8)] z-10 sm:scale-110" fill="currentColor" strokeWidth={1} />
 
                             {/* Inner hub glow */}
-                            <div className="absolute inset-0 bg-[#06b6d4]/20 rounded-full blur-[4px] animate-pulse" />
+                            <div className="absolute inset-0 bg-[#e96f49]/20 rounded-full blur-[4px] animate-pulse" />
                         </div>
                     </a>
                 </motion.div>

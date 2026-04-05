@@ -105,7 +105,7 @@ export default function HolographicCard({ plan, isAnnual }) {
             >
                 {/* 1. Liquid Swirl Border for Popular Tier */}
                 {plan.popular && (
-                    <div className="absolute inset-0 rounded-[16px] overflow-hidden -z-10 bg-gradient-to-br from-elite-orange via-elite-cyan to-elite-orange bg-[length:400%_400%] animate-pulse-glow" style={{ animation: 'liquidSwirl 4s ease infinite', opacity: 0.8 }} />
+                    <div className="absolute inset-0 rounded-[16px] overflow-hidden -z-10 bg-gradient-to-br from-elite-orange via-amber-500 to-elite-orange bg-[length:400%_400%] animate-pulse-glow" style={{ animation: 'liquidSwirl 4s ease infinite', opacity: 0.8 }} />
                 )}
 
                 {/* Main Card Body */}
@@ -115,7 +115,7 @@ export default function HolographicCard({ plan, isAnnual }) {
                     <motion.div
                         className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-screen"
                         style={{
-                            background: "radial-gradient(circle at center, rgba(6,182,212,0.3) 0%, transparent 50%)",
+                            background: "radial-gradient(circle at center, rgba(233,111,73,0.3) 0%, transparent 50%)",
                             left: useTransform(glareX, x => `${x}%`),
                             top: useTransform(glareY, y => `${y}%`),
                             transform: 'translate(-50%, -50%)',
@@ -140,7 +140,7 @@ export default function HolographicCard({ plan, isAnnual }) {
                     {/* 4. Tier Ribbon */}
                     {plan.popular && (
                         <div className="absolute top-0 right-0 z-10">
-                            <div className="bg-gradient-to-r from-elite-orange to-elite-cyan text-[9px] font-black uppercase text-white tracking-widest px-8 py-1 truncate shadow-[0_0_15px_rgba(6,182,212,0.5)] transform translate-x-[30%] translate-y-[100%] rotate-45">
+                            <div className="bg-gradient-to-r from-elite-orange to-amber-400 text-[9px] font-black uppercase text-white tracking-widest px-8 py-1 truncate shadow-[0_0_15px_rgba(233,111,73,0.5)] transform translate-x-[30%] translate-y-[100%] rotate-45">
                                 RECOMMENDED
                             </div>
                         </div>
@@ -153,7 +153,7 @@ export default function HolographicCard({ plan, isAnnual }) {
 
                         {/* Price Display / Seasonal Offers */}
                         <div className="mb-6 flex flex-col gap-1">
-                            <div className="text-xl font-heading font-black italic tracking-tighter" style={{ background: plan.popular ? 'linear-gradient(135deg, #06b6d4, #e96f49)' : plan.isElite ? 'linear-gradient(135deg, #a78bfa, #e879f9)' : 'linear-gradient(135deg, #E0E0E0, #a0a0a0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', filter: plan.popular ? 'drop-shadow(0 0 15px rgba(6,182,212,0.3))' : plan.isElite ? 'drop-shadow(0 0 10px rgba(233,111,73,0.5))' : 'none' }}>
+                            <div className="text-xl font-heading font-black italic tracking-tighter" style={{ background: plan.popular ? 'linear-gradient(135deg, #e96f49, #e96f49)' : plan.isElite ? 'linear-gradient(135deg, #a78bfa, #e879f9)' : 'linear-gradient(135deg, #E0E0E0, #a0a0a0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', filter: plan.popular ? 'drop-shadow(0 0 15px rgba(233,111,73,0.3))' : plan.isElite ? 'drop-shadow(0 0 10px rgba(233,111,73,0.5))' : 'none' }}>
                                 EXCLUSIVE SEASONAL OFFERS
                             </div>
                             <div className="text-[10px] text-gray-500 font-medium tracking-widest mt-1 uppercase">
@@ -166,7 +166,7 @@ export default function HolographicCard({ plan, isAnnual }) {
                             {plan.features.filter(f => f.ok).map((f, j) => (
                                 <li key={j} className="flex items-start gap-3 text-sm text-[#E0E0E0] font-light">
                                     <div className="w-5 h-5 rounded-full bg-elite-orange/20 border border-elite-orange/40 flex items-center justify-center shrink-0 mt-[-2px]" style={{ boxShadow: '0 0 8px rgba(233,111,73,0.3)' }}>
-                                        <Check size={12} className="text-elite-cyan" />
+                                        <Check size={12} className="text-purple-400" />
                                     </div>
                                     <span className="leading-tight">{f.text}</span>
                                 </li>
@@ -180,7 +180,7 @@ export default function HolographicCard({ plan, isAnnual }) {
                                 target="_blank"
                                 rel="noreferrer"
                                 className={`w-full py-4 rounded-xl font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2 transition-all ${plan.popular
-                                    ? 'btn-liquid text-white shadow-[0_0_20px_rgba(6,182,212,0.3)]'
+                                    ? 'btn-liquid text-white shadow-[0_0_20px_rgba(233,111,73,0.3)]'
                                     : 'bg-white/5 border border-white/10 hover:bg-white/10 hover:border-elite-orange/40 text-[#E0E0E0]'
                                     }`}>
                                 {plan.popular && <Sparkles size={14} />}

@@ -58,7 +58,7 @@ const zones = [
         stat: { area: 'CONDITIONING & STRENGTH', equipment: 'HIGH INTENSITY' },
         ctaLabel: 'START MY TRANSFORMATION JOURNEY',
         waLink: "https://wa.me/918888161216?text=Hi%20Elite!%20I%20want%20to%20start%20my%20Fat%20Loss%20or%20Weight%20Gain%20journey.",
-        color: 'rgba(6,182,212,0.5)',
+        color: 'rgba(233,111,73,0.5)',
         borderGlow: false, // Turned off here to keep focus on Coaching
         tooltip: null,
     },
@@ -117,7 +117,7 @@ function ZoneSection({ zone, index }) {
                 <div
                     className={`w-full lg:w-1/2 relative rounded-3xl overflow-hidden group ${zone.borderGlow ? 'p-[2px]' : ''}`}
                     style={zone.borderGlow ? {
-                        background: 'linear-gradient(135deg, #e96f49, #06b6d4, #F472B6, #e96f49)',
+                        background: 'linear-gradient(135deg, #e96f49, #e96f49, #F472B6, #e96f49)',
                         backgroundSize: '400% 400%',
                         animation: 'liquidSwirl 4s ease infinite',
                     } : {}}
@@ -136,7 +136,7 @@ function ZoneSection({ zone, index }) {
                             className="absolute bottom-3 left-3 right-3 sm:right-auto flex items-center gap-2 px-3 py-2 rounded-xl border border-white/15 text-[9px] font-black tracking-[0.15em] text-[#E0E0E0] uppercase"
                             style={{ background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(16px)' }}
                         >
-                            <MapPin size={12} className="text-elite-cyan shrink-0" />
+                            <MapPin size={12} className="text-purple-400 shrink-0" />
                             <span>{zone.stat.area}</span>
                             <span className="text-gray-500 ml-auto hidden sm:block">{zone.stat.equipment}</span>
                         </div>
@@ -148,8 +148,8 @@ function ZoneSection({ zone, index }) {
 
                     {/* Icon + Zone Label */}
                     <div className="flex items-center gap-4 mb-5">
-                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border border-elite-orange/40" style={{ background: 'linear-gradient(135deg, rgba(233,111,73,0.15), rgba(6,182,212,0.1))', boxShadow: '0 0 20px rgba(233,111,73,0.2)' }}>
-                            <IconEl size={26} className="text-elite-cyan" />
+                        <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 border border-elite-orange/40" style={{ background: 'linear-gradient(135deg, rgba(233,111,73,0.15), rgba(233,111,73,0.1))', boxShadow: '0 0 20px rgba(233,111,73,0.2)' }}>
+                            <IconEl size={26} className="text-purple-400" />
                         </div>
                         <div>
                             <span className="text-[9px] font-black tracking-[0.3em] text-gray-500 uppercase block">{zone.zone}</span>
@@ -168,7 +168,7 @@ function ZoneSection({ zone, index }) {
                         {zone.features.map((f, j) => (
                             <div key={j} className="flex items-center gap-3 text-sm text-[#E0E0E0] font-light">
                                 <div className="w-4 h-4 rounded-full bg-elite-orange/20 border border-elite-orange/40 flex items-center justify-center shrink-0" style={{ boxShadow: '0 0 6px rgba(233,111,73,0.3)' }}>
-                                    <Check size={10} className="text-elite-cyan" />
+                                    <Check size={10} className="text-purple-400" />
                                 </div>
                                 <span>{f}</span>
                             </div>
@@ -191,13 +191,13 @@ function ZoneSection({ zone, index }) {
                             href={zone.waLink}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-elite-orange to-elite-cyan rounded-xl text-[10px] font-bold tracking-widest uppercase btn-glow transition-all text-center"
+                            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-elite-orange to-amber-400 rounded-xl text-[10px] font-bold tracking-widest uppercase btn-glow transition-all text-center"
                         >
                             {zone.ctaLabel} <ArrowRight size={14} />
                         </a>
                         <Link
                             to="/virtual-tour"
-                            className="inline-flex items-center justify-center gap-2 px-5 py-3.5 border border-white/10 rounded-xl text-[10px] font-bold tracking-widest uppercase text-gray-400 hover:text-elite-cyan hover:border-elite-cyan/30 transition-all"
+                            className="inline-flex items-center justify-center gap-2 px-5 py-3.5 border border-white/10 rounded-xl text-[10px] font-bold tracking-widest uppercase text-gray-400 hover:text-elite-orange hover:border-elite-orange/30 transition-all"
                         >
                             <Maximize2 size={12} /> VIEW IN 360
                         </Link>
@@ -249,7 +249,7 @@ export default function Services() {
                         READY TO <span className="gradient-text">TRANSFORM?</span>
                     </h2>
                     <p className="text-gray-400 text-base mb-8 font-light">Start your journey with a free consultation.</p>
-                    <a href="https://wa.me/918888161216?text=Hi%20Elite!%20I%20want%20to%20book%20a%20free%20consultation." target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-elite-orange to-elite-cyan rounded-full text-sm font-bold btn-glow tracking-widest uppercase">
+                    <a href="https://wa.me/918888161216?text=Hi%20Elite!%20I%20want%20to%20book%20a%20free%20consultation." target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-elite-orange to-amber-400 rounded-full text-sm font-bold btn-glow tracking-widest uppercase">
                         <Sparkles size={18} /> BOOK FREE CONSULTATION
                     </a>
                 </div>

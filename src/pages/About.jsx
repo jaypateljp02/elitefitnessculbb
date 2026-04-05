@@ -7,7 +7,7 @@ import { Check, Droplets, Target, Shield, Users, Clock, Award, Star } from 'luci
 // SVG Signature Animation Component
 function AnimatedSignature() {
     return (
-        <svg viewBox="0 0 200 60" className="w-48 sm:w-64 mt-4 text-elite-cyan" fill="transparent" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg viewBox="0 0 200 60" className="w-48 sm:w-64 mt-4 text-elite-orange" fill="transparent" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <motion.path
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
@@ -35,7 +35,7 @@ function HeroBoutique() {
                 <img src="/asset/14.webp" alt="Clean Gym Floor" className="w-full h-full object-cover opacity-40" />
                 <div className="absolute inset-0 bg-black/60" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-                <div className="absolute inset-0 bg-gradient-to-r from-elite-orange/10 to-elite-cyan/10 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-gradient-to-r from-elite-orange/10 to-elite-orange/10 mix-blend-overlay" />
             </div>
 
             <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-elite-orange/10 blur-[150px] -translate-y-1/2 pointer-events-none" />
@@ -54,7 +54,7 @@ function HeroBoutique() {
 
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce opacity-50">
                 <span className="text-xs tracking-widest uppercase mb-2">Discover the Difference</span>
-                <div className="w-[1px] h-12 bg-gradient-to-b from-elite-cyan to-transparent" />
+                <div className="w-[1px] h-12 bg-gradient-to-b from-elite-orange to-transparent" />
             </div>
         </section>
     )
@@ -80,10 +80,10 @@ function LuxuryStats() {
                         className="glass-card p-8 sm:p-10 border border-white/5 shadow-2xl relative overflow-hidden group"
                         style={{ background: 'linear-gradient(135deg, rgba(20,20,30,0.8), rgba(10,10,15,0.95))' }}
                     >
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-elite-orange/10 blur-[40px] group-hover:bg-elite-cyan/20 transition-colors duration-500" />
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-elite-orange/10 blur-[40px] group-hover:bg-elite-orange/20 transition-colors duration-500" />
                         <div className="flex items-baseline gap-2 mb-2">
                             <h3 className="text-4xl sm:text-5xl font-heading font-black bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">{s.num}</h3>
-                            <span className="text-elite-cyan font-bold tracking-widest">{s.unit}</span>
+                            <span className="text-elite-orange font-bold tracking-widest">{s.unit}</span>
                         </div>
                         <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-gray-400 mb-4">{s.label}</h4>
                         <p className="text-gray-500 text-sm leading-relaxed font-light">{s.desc}</p>
@@ -110,11 +110,11 @@ function FoundersCorner() {
                     <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
                     <div className="absolute bottom-10 left-10">
-                        <span className="text-xs font-bold tracking-[0.2em] text-elite-cyan uppercase mb-2 block">THE VISIONARY</span>
+                        <span className="text-xs font-bold tracking-[0.2em] text-purple-400 uppercase mb-2 block">THE VISIONARY</span>
                         <h3 className="text-3xl font-heading font-black text-white">FOUNDER &<br />HEAD COACH</h3>
                     </div>
                     {/* Glowing Accent */}
-                    <div className="absolute -inset-1 rounded-[2.1rem] opacity-20 bg-gradient-to-br from-elite-orange via-transparent to-elite-cyan blur-[20px] -z-10" />
+                    <div className="absolute -inset-1 rounded-[2.1rem] opacity-20 bg-gradient-to-br from-elite-orange via-transparent to-amber-400 blur-[20px] -z-10" />
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:pl-10">
@@ -122,13 +122,13 @@ function FoundersCorner() {
 
                     <div className="prose prose-invert prose-lg mt-8 text-gray-300 font-light leading-relaxed">
                         <p>
-                            "Elite Fitness Clubb was established with a singular vision: to transcend the conventional gym experience. Hinjewadi demanded a space where fitness is approached not as a routine, but as an exact science and a dedicated craft."
+                            "When I founded Elite Fitness Clubb, I had one unshakeable belief — Hinjewadi deserved a gym that matched the ambition of its people. Not another franchise. Not another box with treadmills. A world-class training destination built from the ground up, with relentless attention to every detail."
                         </p>
                         <p className="mt-4">
-                            "We operate with intended exclusivity to guarantee uncompromising quality. With our hand-picked team of specialists, we do not merely supervise – we engineer your biomechanics, strategize your nutrition, and unequivocally guarantee your transformation. We demand excellence, because our members deserve nothing less."
+                            "We invested in the finest imported equipment, recruited trainers with championship-level expertise, and designed a 6,000 sq ft facility that inspires the moment you walk in. From personal training to ice bath recovery, from nutrition science to community support — every element here is engineered for one outcome: your complete transformation."
                         </p>
                         <p className="mt-4 font-normal text-white italic">
-                            "This is our standard. This is the Elite promise."
+                            "Here, mediocrity has no place. Only results. That is the Elite standard."
                         </p>
                     </div>
 
@@ -192,7 +192,7 @@ function EliteTrainerSlider() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
                         <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                            <span className="text-elite-cyan text-[10px] font-bold tracking-[0.2em] uppercase mb-2">{coach.role}</span>
+                            <span className="text-purple-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-2">{coach.role}</span>
                             <h3 className="text-3xl font-heading font-black text-white mb-4 uppercase">{coach.name}</h3>
 
                             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -209,7 +209,7 @@ function EliteTrainerSlider() {
             {/* Scroll Progress Bar */}
             <div className="max-w-7xl mx-auto px-4 mt-4">
                 <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
-                    <motion.div className="h-full bg-gradient-to-r from-elite-orange to-elite-cyan" style={{ scaleX: scrollXProgress, transformOrigin: 'left' }} />
+                    <motion.div className="h-full bg-gradient-to-r from-elite-orange to-amber-400" style={{ scaleX: scrollXProgress, transformOrigin: 'left' }} />
                 </div>
             </div>
         </section>
@@ -245,7 +245,7 @@ function BoutiqueDifference() {
                         >
                             <div className="absolute top-0 right-0 w-32 h-32 bg-elite-orange/5 blur-[40px] group-hover:bg-elite-orange/20 transition-colors" />
                             <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <r.icon className="text-elite-cyan" size={24} />
+                                <r.icon className="text-purple-400" size={24} />
                             </div>
                             <h3 className="text-xl font-heading font-bold text-white mb-4 tracking-wide">{r.title}</h3>
                             <p className="text-gray-400 font-light leading-relaxed">{r.desc}</p>

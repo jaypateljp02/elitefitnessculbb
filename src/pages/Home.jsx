@@ -48,7 +48,13 @@ function Hero() {
         '/asset/new/20260404_130238.webp',
         '/asset/new/20260404_130314.webp',
         '/asset/new/20260404_130338.webp',
-        '/asset/new/20260404_130412.webp'
+        '/asset/new/20260404_130412.webp',
+        '/asset/new/20260404_130426 .webp',
+        '/asset/new/20260404_130434 .webp',
+        '/asset/new/20260404_130446.webp',
+        '/asset/new/20260404_131006.webp',
+        '/asset/new/20260404_131034.webp',
+        '/asset/new/20260404_130257 (1).webp'
     ]
     // Crossfade slideshow (mimics video)
     useEffect(() => {
@@ -107,7 +113,7 @@ function Hero() {
             {/* Overlays */}
             <div className="absolute inset-0 bg-black/35" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/20" />
-            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(233,111,73,0.1) 0%, transparent 50%, rgba(6,182,212,0.06) 100%)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(233,111,73,0.1) 0%, transparent 50%, rgba(233,111,73,0.06) 100%)' }} />
 
             {/* Top neon accents */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-elite-orange to-transparent opacity-50" />
@@ -134,7 +140,7 @@ function Hero() {
                         className="relative text-[2.5rem] sm:text-7xl lg:text-[7rem] xl:text-[9rem] font-heading font-black leading-[0.9] tracking-tight"
                     >
                         <span
-                            className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-white via-elite-orange to-elite-cyan"
+                            className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-white via-elite-orange to-amber-400"
                             style={{
                                 filter: 'drop-shadow(0 0 25px rgba(233,111,73,0.8))',
                                 backgroundSize: '150% auto',
@@ -164,14 +170,14 @@ function Hero() {
                 >
                     <div ref={mag1.ref} onMouseMove={mag1.onMouseMove} onMouseLeave={mag1.onMouseLeave} className="magnetic-btn">
                         <Link to="/membership" className="relative group px-8 py-4 rounded-lg overflow-hidden inline-flex items-center justify-center gap-3 font-bold text-base">
-                            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-elite-orange to-elite-cyan" />
+                            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-elite-orange to-amber-400" />
                             <div className="absolute inset-[2px] rounded-[6px] bg-elite-orange/80 group-hover:bg-elite-orange transition-all" />
                             <span className="relative z-10 flex items-center gap-2">JOIN NOW <ArrowRight size={18} /></span>
                         </Link>
                     </div>
                     <div ref={mag2.ref} onMouseMove={mag2.onMouseMove} onMouseLeave={mag2.onMouseLeave} className="magnetic-btn">
                         <Link to="/virtual-tour" className="relative group px-8 py-4 rounded-lg overflow-hidden inline-flex items-center justify-center gap-3 font-bold text-base">
-                            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-elite-orange to-elite-cyan" />
+                            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-elite-orange to-amber-400" />
                             <div className="absolute inset-[2px] rounded-[6px] bg-black/80 group-hover:bg-black/60 transition-all" />
                             <span className="relative z-10 flex items-center gap-2">EXPLORE GYM <Play size={16} /></span>
                         </Link>
@@ -252,8 +258,8 @@ function Hero() {
                             top: `${5 + Math.random() * 90}%`,
                             width: `${2 + Math.random() * 3}px`,
                             height: `${2 + Math.random() * 3}px`,
-                            background: i % 2 === 0 ? '#e96f49' : '#06b6d4',
-                            boxShadow: `0 0 ${6 + Math.random() * 8}px ${i % 2 === 0 ? 'rgba(233,111,73,0.6)' : 'rgba(6,182,212,0.5)'}`,
+                            background: i % 2 === 0 ? '#e96f49' : '#e96f49',
+                            boxShadow: `0 0 ${6 + Math.random() * 8}px ${i % 2 === 0 ? 'rgba(233,111,73,0.6)' : 'rgba(233,111,73,0.5)'}`,
                         }}
                         animate={{ y: [0, -(60 + Math.random() * 80), 0], opacity: [0, 0.8, 0] }}
                         transition={{ duration: 5 + Math.random() * 4, repeat: Infinity, delay: Math.random() * 5 }}
@@ -264,7 +270,7 @@ function Hero() {
             {/* Scroll indicator */}
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }} className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10">
                 <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-6 h-10 rounded-full border border-white/20 flex items-start justify-center p-1.5">
-                    <div className="w-1 h-2.5 rounded-full bg-gradient-to-b from-elite-orange to-elite-cyan" />
+                    <div className="w-1 h-2.5 rounded-full bg-gradient-to-b from-elite-orange to-amber-400" />
                 </motion.div>
             </motion.div>
         </section>
@@ -283,7 +289,7 @@ function StatsBar() {
     ]
 
     return (
-        <section className="relative py-12 border-y border-white/5" style={{ background: 'linear-gradient(135deg, rgba(233,111,73,0.04), rgba(6,182,212,0.02), transparent)' }}>
+        <section className="relative py-12 border-y border-white/5" style={{ background: 'linear-gradient(135deg, rgba(233,111,73,0.04), rgba(233,111,73,0.02), transparent)' }}>
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-6">
                 {stats.map((stat, i) => {
                     const [ref, count] = useCountUp(stat.number)
@@ -366,19 +372,19 @@ function PhotoMarquee() {
    ======================================= */
 function AboutPreview() {
     return (
-        <section className="py-16 sm:py-28 px-4 relative noise-bg" style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(233,111,73,0.06) 0%, transparent 50%), radial-gradient(ellipse at 80% 30%, rgba(6,182,212,0.04) 0%, transparent 50%)' }}>
+        <section className="py-16 sm:py-28 px-4 relative noise-bg" style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(233,111,73,0.06) 0%, transparent 50%), radial-gradient(ellipse at 80% 30%, rgba(233,111,73,0.04) 0%, transparent 50%)' }}>
             <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
                 <motion.div initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative">
                     <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-                        <img src="/asset/Pillar 2.webp" alt="Elite Fitness Gym Interior" className="w-full h-[550px] object-cover" loading="lazy" />
+                        <img src="/asset/new/20260404_130434 .webp" alt="Elite Fitness Gym Interior" className="w-full h-[550px] object-cover" loading="lazy" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     </div>
                     <motion.div initial={{ opacity: 0, scale: 0.8, y: 20 }} whileInView={{ opacity: 1, scale: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-8 -right-4 sm:-right-8 p-6 rounded-2xl flex items-center gap-5" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))', backdropFilter: 'blur(24px)', border: '1px solid rgba(233,111,73,0.2)', boxShadow: '0 0 30px rgba(233,111,73,0.1), 0 20px 40px rgba(0,0,0,0.3)' }}>
-                        <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e96f49, #06b6d4)', boxShadow: '0 0 20px rgba(233,111,73,0.4)' }}><Trophy size={28} className="text-white" /></div>
+                        <div className="w-16 h-16 rounded-2xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #e96f49, #e96f49)', boxShadow: '0 0 20px rgba(233,111,73,0.4)' }}><Trophy size={28} className="text-white" /></div>
                         <div><div className="text-3xl font-heading font-black gradient-text">10+</div><div className="text-gray-400 text-sm font-medium">Years of Excellence</div></div>
                     </motion.div>
                     <div className="absolute -top-3 -left-3 w-16 h-16 border-l-2 border-t-2 border-elite-orange/40 rounded-tl-2xl" />
-                    <div className="absolute -bottom-3 -right-3 w-16 h-16 border-r-2 border-b-2 border-elite-cyan/30 rounded-br-2xl" />
+                    <div className="absolute -bottom-3 -right-3 w-16 h-16 border-r-2 border-b-2 border-elite-orange/30 rounded-br-2xl" />
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, x: 60 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
@@ -403,7 +409,7 @@ function AboutPreview() {
                             </motion.div>
                         ))}
                     </div>
-                    <Link to="/about" className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-elite-orange to-elite-cyan rounded-full font-bold btn-glow group text-lg">Discover Our Story <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform" /></Link>
+                    <Link to="/about" className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-elite-orange to-amber-400 rounded-full font-bold btn-glow group text-lg">Discover Our Story <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform" /></Link>
                 </motion.div>
             </div>
         </section>
@@ -460,7 +466,7 @@ function Facilities() {
     ]
 
     return (
-        <section className="py-16 sm:py-28 px-4 relative noise-bg" style={{ background: 'radial-gradient(ellipse at 20% 30%, rgba(233,111,73,0.06) 0%, transparent 40%), radial-gradient(ellipse at 80% 70%, rgba(6,182,212,0.04) 0%, transparent 40%)' }}>
+        <section className="py-16 sm:py-28 px-4 relative noise-bg" style={{ background: 'radial-gradient(ellipse at 20% 30%, rgba(233,111,73,0.06) 0%, transparent 40%), radial-gradient(ellipse at 80% 70%, rgba(233,111,73,0.04) 0%, transparent 40%)' }}>
             <div className="relative z-10 max-w-7xl mx-auto">
                 <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
                     <h2 className="text-4xl sm:text-5xl lg:text-5xl font-heading font-black uppercase mb-4 tracking-wide">
@@ -496,7 +502,7 @@ function Facilities() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
 
                             <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end relative z-10">
-                                <span className={`text-xs font-bold tracking-[0.2em] uppercase mb-3 ${i === 0 ? 'text-elite-cyan' : 'text-elite-orange'}`}>
+                                <span className={`text-xs font-bold tracking-[0.2em] uppercase mb-3 ${i === 0 ? 'text-purple-400' : 'text-elite-orange'}`}>
                                     {f.tag}
                                 </span>
                                 <h3 className={`font-heading font-black text-white mb-3 leading-tight ${i === 0 ? 'text-3xl sm:text-4xl' : 'text-2xl sm:text-3xl'}`}>
@@ -508,7 +514,7 @@ function Facilities() {
                             </div>
 
                             {/* Hover Border Glow */}
-                            <div className="absolute inset-0 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ border: `1px solid ${i === 0 ? 'rgba(6,182,212,0.5)' : 'rgba(233,111,73,0.4)'}`, boxShadow: `inset 0 0 30px ${i === 0 ? 'rgba(6,182,212,0.2)' : 'rgba(233,111,73,0.2)'}` }} />
+                            <div className="absolute inset-0 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ border: `1px solid ${i === 0 ? 'rgba(233,111,73,0.5)' : 'rgba(233,111,73,0.4)'}`, boxShadow: `inset 0 0 30px ${i === 0 ? 'rgba(233,111,73,0.2)' : 'rgba(233,111,73,0.2)'}` }} />
                         </motion.div>
                     ))}
                 </div>
@@ -615,7 +621,7 @@ function MembershipPreview() {
                 </div>
 
                 <div className="mt-10 sm:mt-16 text-center">
-                    <Link to="/membership" className="inline-flex items-center gap-2 text-elite-orange hover:text-elite-cyan transition-colors text-sm font-bold uppercase tracking-widest group">
+                    <Link to="/membership" className="inline-flex items-center gap-2 text-elite-orange hover:text-elite-orange transition-colors text-sm font-bold uppercase tracking-widest group">
                         VIEW DETAILED COMPARISON <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>
@@ -631,14 +637,14 @@ function MembershipPreview() {
    ======================================= */
 function FranchiseCTA() {
     return (
-        <section className="py-16 sm:py-28 px-4 relative overflow-hidden" style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(233,111,73,0.08) 0%, transparent 40%), radial-gradient(ellipse at 70% 50%, rgba(6,182,212,0.06) 0%, transparent 40%)' }}>
+        <section className="py-16 sm:py-28 px-4 relative overflow-hidden" style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(233,111,73,0.08) 0%, transparent 40%), radial-gradient(ellipse at 70% 50%, rgba(233,111,73,0.06) 0%, transparent 40%)' }}>
             <motion.div animate={{ scale: [1, 1.5, 1], opacity: [0.08, 0.15, 0.08] }} transition={{ duration: 10, repeat: Infinity }} className="absolute top-1/2 left-1/3 w-[600px] h-[600px] rounded-full bg-elite-orange/10 blur-[150px] -translate-y-1/2" />
             <div className="relative z-10 max-w-5xl mx-auto text-center">
                 <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                    <span className="tag-elite mb-8 inline-block" style={{ borderColor: 'rgba(6,182,212,0.3)', color: '#F472B6', background: 'rgba(6,182,212,0.1)' }}>💼 BUSINESS OPPORTUNITY</span>
+                    <span className="tag-elite mb-8 inline-block" style={{ borderColor: 'rgba(124,58,237,0.3)', color: '#a78bfa', background: 'rgba(124,58,237,0.1)' }}>💼 BUSINESS OPPORTUNITY</span>
                     <h2 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-black mb-8 leading-tight uppercase">Own an <span className="gradient-text text-glow">Elite Fitness</span><br />Clubb Franchise</h2>
                     <p className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto mb-12 font-light">Join India's fastest-growing premium fitness brand. Low investment, high returns, complete operational support.</p>
-                    <Link to="/franchise" className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-elite-cyan via-purple-500 to-elite-orange rounded-full text-lg font-bold btn-glow group"><Crown size={22} /> Explore Franchise <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform" /></Link>
+                    <Link to="/franchise" className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-elite-orange via-purple-500 to-purple-600 rounded-full text-lg font-bold btn-glow group"><Crown size={22} /> Explore Franchise <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform" /></Link>
                 </motion.div>
             </div>
         </section>
@@ -651,16 +657,16 @@ function FranchiseCTA() {
 function Testimonials() {
     const [showAll, setShowAll] = useState(false)
     const testimonials = [
-        { name: 'Neha Sharma', role: 'Corporate Executive', text: 'The level of personalization at Elite Fitness is incredible. My trainer understands my crazy work schedule and designed a program that actually works for me. Best investment in myself.', rating: 5, initials: 'NS', color: '#06b6d4' },
+        { name: 'Neha Sharma', role: 'Corporate Executive', text: 'The level of personalization at Elite Fitness is incredible. My trainer understands my crazy work schedule and designed a program that actually works for me. Best investment in myself.', rating: 5, initials: 'NS', color: '#e96f49' },
         { name: 'Karan Malhotra', role: 'Fitness Enthusiast', text: 'I\'ve been to every premium gym in Pune, but the community and equipment here are on another level. The trainers are deeply knowledgeable about biomechanics. Highly recommended.', rating: 5, initials: 'KM', color: '#e96f49' },
         { name: 'Rahul Sharma', role: 'Member · 2 Years', text: 'Elite Fitness completely transformed my approach to fitness. The trainers here don\'t just count reps — they build real programs. Lost 12 kgs and gained confidence I never thought possible.', rating: 5, initials: 'RS', color: '#e96f49' },
-        { name: 'Priya Patel', role: 'Weight Loss Journey', text: 'I lost 15 kgs in 6 months with their personal training program. The diet consultation made all the difference. The trainers genuinely care about your progress.', rating: 5, initials: 'PP', color: '#06b6d4' },
+        { name: 'Priya Patel', role: 'Weight Loss Journey', text: 'I lost 15 kgs in 6 months with their personal training program. The diet consultation made all the difference. The trainers genuinely care about your progress.', rating: 5, initials: 'PP', color: '#e96f49' },
         { name: 'Amit Deshmukh', role: 'Strength Athlete', text: 'Equipment quality is top-notch — Hammer Strength racks, premium dumbbells, the works. The vibe just hits different. Nothing in Hinjewadi even comes close.', rating: 5, initials: 'AD', color: '#6366F1' },
         { name: 'Sneha Joshi', role: 'Yoga & Zumba', text: 'Their yoga and Zumba classes are phenomenal! The instructors bring incredible energy. It\'s not just a gym, it\'s a community that lifts you up. Best decision ever!', rating: 5, initials: 'SJ', color: '#F59E0B' },
         { name: 'Vikram Kulkarni', role: 'IT Professional', text: 'After 10-hour coding marathons, this gym is my therapy. The ice bath recovery zone is a game-changer. Clean, modern, and never overcrowded. Exactly what Hinjewadi needed.', rating: 5, initials: 'VK', color: '#10B981' },
         { name: 'Ananya Reddy', role: 'Fitness Newbie', text: 'I was intimidated walking into a gym for the first time. The trainers here made me feel so welcome from day one. Two months in and I\'m already seeing results!', rating: 5, initials: 'AR', color: '#F472B6' },
         { name: 'Rohan Mehta', role: 'Bodybuilding', text: 'The personal training program is worth every rupee. My trainer designed a custom split that finally broke my plateau. Gained 5 kgs of lean muscle in 3 months.', rating: 5, initials: 'RM', color: '#e96f49' },
-        { name: 'Kavita Singh', role: 'Working Mom', text: 'Finding time for fitness is hard as a mom. The flexible class timings and the supportive atmosphere make it possible. I actually look forward to my sessions now!', rating: 5, initials: 'KS', color: '#06b6d4' },
+        { name: 'Kavita Singh', role: 'Working Mom', text: 'Finding time for fitness is hard as a mom. The flexible class timings and the supportive atmosphere make it possible. I actually look forward to my sessions now!', rating: 5, initials: 'KS', color: '#e96f49' },
     ]
 
     // Show 6 reviews initially, reveal all on "See More"
@@ -695,7 +701,7 @@ function Testimonials() {
     }
 
     return (
-        <section className="py-16 sm:py-28 px-4 relative noise-bg" style={{ background: 'radial-gradient(ellipse at 30% 20%, rgba(233,111,73,0.06) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(6,182,212,0.04) 0%, transparent 50%)' }}>
+        <section className="py-16 sm:py-28 px-4 relative noise-bg" style={{ background: 'radial-gradient(ellipse at 30% 20%, rgba(233,111,73,0.06) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(233,111,73,0.04) 0%, transparent 50%)' }}>
             {/* Inject Google Reviews SEO Schema */}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
             
@@ -783,7 +789,7 @@ function Testimonials() {
 
                 {/* Bottom CTA */}
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-10 sm:mt-14 text-center">
-                    <a href="https://www.google.com/maps/place/The+Elite+Fitness+Clubb/@18.600203,73.7316716,17z/data=!4m8!3m7!1s0x3bc2bb2543bc20b5:0x5ce8ad8ba071e275!8m2!3d18.600203!4d73.7342465!9m1!1b1!16s%2Fg%2F11wy1d2js3" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-elite-orange hover:text-elite-cyan transition-colors text-sm font-bold uppercase tracking-widest group">
+                    <a href="https://www.google.com/maps/place/The+Elite+Fitness+Clubb/@18.600203,73.7316716,17z/data=!4m8!3m7!1s0x3bc2bb2543bc20b5:0x5ce8ad8ba071e275!8m2!3d18.600203!4d73.7342465!9m1!1b1!16s%2Fg%2F11wy1d2js3" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-elite-orange hover:text-elite-orange transition-colors text-sm font-bold uppercase tracking-widest group">
                         READ ALL REVIEWS ON GOOGLE <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                 </motion.div>
@@ -801,14 +807,14 @@ function FinalCTA() {
             <div className="absolute inset-0">
                 <img src="/asset/Sitting area wall.webp" alt="Gym Ambiance" className="w-full h-full object-cover" loading="lazy" />
                 <div className="absolute inset-0 bg-black/60" />
-                <div className="absolute inset-0 bg-gradient-to-r from-elite-orange/20 to-elite-cyan/20 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-gradient-to-r from-elite-orange/20 to-elite-orange/20 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
             </div>
             <motion.div animate={{ scale: [1, 1.5, 1], opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-elite-orange/10 blur-[150px]" />
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative z-10 max-w-4xl mx-auto text-center">
                 <h2 className="text-5xl sm:text-7xl lg:text-8xl font-heading font-black mb-8 leading-none uppercase">Start Your <span className="gradient-text text-glow">Fitness Journey</span> Today</h2>
                 <p className="text-gray-300 text-lg mb-12 max-w-xl mx-auto font-light">Don't wait for tomorrow. Your future self will thank you.</p>
-                <Link to="/membership" className="inline-flex items-center gap-3 px-12 py-6 bg-gradient-to-r from-elite-orange via-purple-500 to-elite-cyan rounded-full text-xl font-bold btn-glow animate-pulse-glow group">
+                <Link to="/membership" className="inline-flex items-center gap-3 px-12 py-6 bg-gradient-to-r from-elite-orange via-purple-500 to-purple-600 rounded-full text-xl font-bold btn-glow animate-pulse-glow group">
                     Join Now <ArrowRight size={22} className="group-hover:translate-x-1.5 transition-transform" />
                 </Link>
             </motion.div>

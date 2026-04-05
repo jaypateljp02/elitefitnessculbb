@@ -67,7 +67,7 @@ function GradientDefs() {
             <defs>
                 <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#000080" />
-                    <stop offset="100%" stopColor="#EC4899" />
+                    <stop offset="100%" stopColor="#06b6d4" />
                 </linearGradient>
             </defs>
         </svg>
@@ -117,7 +117,7 @@ function App() {
                 <Suspense fallback={
                     <div className="min-h-screen flex items-center justify-center">
                         <div className="flex flex-col items-center gap-4">
-                            <div className="w-10 h-10 border-2 border-elite-purple/30 border-t-elite-purple rounded-full animate-spin" />
+                            <div className="w-10 h-10 border-2 border-elite-orange/30 border-t-elite-orange rounded-full animate-spin" />
                             <span className="text-gray-500 text-xs font-bold tracking-widest uppercase">Loading...</span>
                         </div>
                     </div>

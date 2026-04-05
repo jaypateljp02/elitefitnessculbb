@@ -7,7 +7,7 @@ import { Check, Droplets, Target, Shield, Users, Clock, Award, Star } from 'luci
 // SVG Signature Animation Component
 function AnimatedSignature() {
     return (
-        <svg viewBox="0 0 200 60" className="w-48 sm:w-64 mt-4 text-elite-pink" fill="transparent" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg viewBox="0 0 200 60" className="w-48 sm:w-64 mt-4 text-elite-cyan" fill="transparent" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <motion.path
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
@@ -32,13 +32,13 @@ function HeroBoutique() {
     return (
         <section className="relative pt-36 pb-28 px-4 overflow-hidden min-h-[90vh] flex items-center justify-center">
             <div className="absolute inset-0">
-                <img src="/asset/14.png" alt="Clean Gym Floor" className="w-full h-full object-cover opacity-40" />
+                <img src="/asset/14.webp" alt="Clean Gym Floor" className="w-full h-full object-cover opacity-40" />
                 <div className="absolute inset-0 bg-black/60" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-                <div className="absolute inset-0 bg-gradient-to-r from-elite-purple/10 to-elite-pink/10 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-gradient-to-r from-elite-orange/10 to-elite-cyan/10 mix-blend-overlay" />
             </div>
 
-            <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-elite-purple/10 blur-[150px] -translate-y-1/2 pointer-events-none" />
+            <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-elite-orange/10 blur-[150px] -translate-y-1/2 pointer-events-none" />
 
             <div className="relative z-10 max-w-5xl mx-auto text-center">
                 <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -54,7 +54,7 @@ function HeroBoutique() {
 
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce opacity-50">
                 <span className="text-xs tracking-widest uppercase mb-2">Discover the Difference</span>
-                <div className="w-[1px] h-12 bg-gradient-to-b from-elite-pink to-transparent" />
+                <div className="w-[1px] h-12 bg-gradient-to-b from-elite-cyan to-transparent" />
             </div>
         </section>
     )
@@ -80,10 +80,10 @@ function LuxuryStats() {
                         className="glass-card p-8 sm:p-10 border border-white/5 shadow-2xl relative overflow-hidden group"
                         style={{ background: 'linear-gradient(135deg, rgba(20,20,30,0.8), rgba(10,10,15,0.95))' }}
                     >
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-elite-purple/10 blur-[40px] group-hover:bg-elite-pink/20 transition-colors duration-500" />
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-elite-orange/10 blur-[40px] group-hover:bg-elite-cyan/20 transition-colors duration-500" />
                         <div className="flex items-baseline gap-2 mb-2">
                             <h3 className="text-4xl sm:text-5xl font-heading font-black bg-gradient-to-br from-white to-gray-400 bg-clip-text text-transparent">{s.num}</h3>
-                            <span className="text-elite-pink font-bold tracking-widest">{s.unit}</span>
+                            <span className="text-elite-cyan font-bold tracking-widest">{s.unit}</span>
                         </div>
                         <h4 className="text-sm font-bold tracking-[0.2em] uppercase text-gray-400 mb-4">{s.label}</h4>
                         <p className="text-gray-500 text-sm leading-relaxed font-light">{s.desc}</p>
@@ -101,7 +101,7 @@ function FoundersCorner() {
                 <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative h-[600px] w-full max-w-md mx-auto lg:mx-0">
                     <div className="absolute inset-0 rounded-[2rem] border border-white/10" style={{ background: 'linear-gradient(180deg, #111, #000)' }} />
                     <img
-                        src="/asset/sportsman-make-sport-exercises-in-gym-PE2NXZL-2048x1367.jpg"
+                        src="/asset/new/own%20.webp"
                         alt="Founder of Elite Fitness"
                         className="absolute inset-x-0 bottom-0 w-full h-full object-cover object-center rounded-[2rem] opacity-80 mix-blend-luminosity brightness-110 contrast-125"
                         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
@@ -110,11 +110,11 @@ function FoundersCorner() {
                     <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
 
                     <div className="absolute bottom-10 left-10">
-                        <span className="text-xs font-bold tracking-[0.2em] text-elite-pink uppercase mb-2 block">THE VISIONARY</span>
+                        <span className="text-xs font-bold tracking-[0.2em] text-elite-cyan uppercase mb-2 block">THE VISIONARY</span>
                         <h3 className="text-3xl font-heading font-black text-white">FOUNDER &<br />HEAD COACH</h3>
                     </div>
                     {/* Glowing Accent */}
-                    <div className="absolute -inset-1 rounded-[2.1rem] opacity-20 bg-gradient-to-br from-elite-purple via-transparent to-elite-pink blur-[20px] -z-10" />
+                    <div className="absolute -inset-1 rounded-[2.1rem] opacity-20 bg-gradient-to-br from-elite-orange via-transparent to-elite-cyan blur-[20px] -z-10" />
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:pl-10">
@@ -145,25 +145,25 @@ function EliteTrainerSlider() {
             name: 'COACH RAHUL',
             role: 'Fat Loss Architect',
             proof: 'Successfully transformed 40+ corporate professionals.',
-            img: '/asset/6-2.png'
+            img: '/asset/6-2.webp'
         },
         {
             name: 'COACH SARA',
             role: 'Mobility & Recovery Specialist',
             proof: 'Certified in injury rehab and advanced biomechanics.',
-            img: '/asset/10-1.png'
+            img: '/asset/10-1.webp'
         },
         {
             name: 'COACH NIKHIL',
             role: 'Strength & Conditioning',
             proof: 'Built 10+ state-level powerlifting champions.',
-            img: '/asset/15.png'
+            img: '/asset/15.webp'
         },
         {
             name: 'COACH PRIYA',
             role: 'Nutrition & Wellness Engineer',
             proof: 'Designs holistic protocols for sustainable energy.',
-            img: '/asset/16.png'
+            img: '/asset/16.webp'
         },
     ]
 
@@ -192,7 +192,7 @@ function EliteTrainerSlider() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
                         <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                            <span className="text-elite-pink text-[10px] font-bold tracking-[0.2em] uppercase mb-2">{coach.role}</span>
+                            <span className="text-elite-cyan text-[10px] font-bold tracking-[0.2em] uppercase mb-2">{coach.role}</span>
                             <h3 className="text-3xl font-heading font-black text-white mb-4 uppercase">{coach.name}</h3>
 
                             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -209,7 +209,7 @@ function EliteTrainerSlider() {
             {/* Scroll Progress Bar */}
             <div className="max-w-7xl mx-auto px-4 mt-4">
                 <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
-                    <motion.div className="h-full bg-gradient-to-r from-elite-purple to-elite-pink" style={{ scaleX: scrollXProgress, transformOrigin: 'left' }} />
+                    <motion.div className="h-full bg-gradient-to-r from-elite-orange to-elite-cyan" style={{ scaleX: scrollXProgress, transformOrigin: 'left' }} />
                 </div>
             </div>
         </section>
@@ -227,7 +227,7 @@ function BoutiqueDifference() {
         <section className="py-28 px-4 relative noise-bg">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <span className="tag-elite mb-6 inline-block tracking-widest text-[#8B5CF6] border-[#8B5CF6]/30 bg-[#8B5CF6]/10">THE ELITE STANDARD</span>
+                    <span className="tag-elite mb-6 inline-block tracking-widest text-[#e96f49] border-[#e96f49]/30 bg-[#e96f49]/10">THE ELITE STANDARD</span>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black mb-8 uppercase">
                         THE <span className="gradient-text">BOUTIQUE DIFFERENCE</span>
                     </h2>
@@ -241,11 +241,11 @@ function BoutiqueDifference() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.15 }}
-                            className="bg-black/40 border border-white/10 rounded-3xl p-10 hover:border-elite-purple/50 transition-colors group relative overflow-hidden"
+                            className="bg-black/40 border border-white/10 rounded-3xl p-10 hover:border-elite-orange/50 transition-colors group relative overflow-hidden"
                         >
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-elite-purple/5 blur-[40px] group-hover:bg-elite-purple/20 transition-colors" />
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-elite-orange/5 blur-[40px] group-hover:bg-elite-orange/20 transition-colors" />
                             <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <r.icon className="text-elite-pink" size={24} />
+                                <r.icon className="text-elite-cyan" size={24} />
                             </div>
                             <h3 className="text-xl font-heading font-bold text-white mb-4 tracking-wide">{r.title}</h3>
                             <p className="text-gray-400 font-light leading-relaxed">{r.desc}</p>

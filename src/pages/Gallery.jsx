@@ -6,16 +6,16 @@ import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react'
 const categories = ['ALL', 'GYM INTERIOR', 'EQUIPMENT', 'CLASSES', 'RECOVERY']
 
 const images = [
-    { id: 1, src: '/asset/Pillar 1.jpeg', category: 'GYM INTERIOR', span: 'col-span-2 row-span-2' },
-    { id: 2, src: '/asset/Pillar 2.jpeg', category: 'EQUIPMENT', span: 'col-span-1 row-span-1' },
-    { id: 3, src: '/asset/Yoga 1.jpeg', category: 'CLASSES', span: 'col-span-1 row-span-2' },
-    { id: 4, src: '/asset/ice bath area.jpeg', category: 'RECOVERY', span: 'col-span-2 row-span-1' },
-    { id: 5, src: '/asset/Pillar 3.jpeg', category: 'EQUIPMENT', span: 'col-span-1 row-span-2' },
-    { id: 6, src: '/asset/Zumba.jpeg', category: 'CLASSES', span: 'col-span-2 row-span-2' },
-    { id: 7, src: '/asset/Pillar 4.jpeg', category: 'GYM INTERIOR', span: 'col-span-1 row-span-1' },
-    { id: 8, src: '/asset/Cafe wall image 1.jpeg', category: 'RECOVERY', span: 'col-span-1 row-span-1' },
-    { id: 9, src: '/asset/yoga 2.jpeg', category: 'CLASSES', span: 'col-span-1 row-span-1' },
-    { id: 10, src: '/asset/Yoga 3.jpeg', category: 'CLASSES', span: 'col-span-2 row-span-1' },
+    { id: 1, src: '/asset/Pillar 1.webp', category: 'GYM INTERIOR', span: 'col-span-2 row-span-2' },
+    { id: 2, src: '/asset/Pillar 2.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-1' },
+    { id: 3, src: '/asset/Yoga 1.webp', category: 'CLASSES', span: 'col-span-1 row-span-2' },
+    { id: 4, src: '/asset/ice bath area.webp', category: 'RECOVERY', span: 'col-span-2 row-span-1' },
+    { id: 5, src: '/asset/Pillar 3.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-2' },
+    { id: 6, src: '/asset/Zumba.webp', category: 'CLASSES', span: 'col-span-2 row-span-2' },
+    { id: 7, src: '/asset/Pillar 4.webp', category: 'GYM INTERIOR', span: 'col-span-1 row-span-1' },
+    { id: 8, src: '/asset/Cafe wall image 1.webp', category: 'RECOVERY', span: 'col-span-1 row-span-1' },
+    { id: 9, src: '/asset/yoga 2.webp', category: 'CLASSES', span: 'col-span-1 row-span-1' },
+    { id: 10, src: '/asset/Yoga 3.webp', category: 'CLASSES', span: 'col-span-2 row-span-1' },
 ]
 
 export default function Gallery() {
@@ -43,8 +43,8 @@ export default function Gallery() {
         <PageWrapper>
             {/* Hero */}
             <section className="relative pt-36 pb-20 px-4 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-elite-purple/10 via-elite-dark to-black" />
-                <motion.div animate={{ scale: [1, 1.3, 1], opacity: [0.08, 0.15, 0.08] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-elite-pink/10 blur-[130px]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-elite-orange/10 via-elite-dark to-black" />
+                <motion.div animate={{ scale: [1, 1.3, 1], opacity: [0.08, 0.15, 0.08] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-elite-cyan/10 blur-[130px]" />
                 <div className="relative z-10 max-w-4xl mx-auto text-center">
                     <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}>
                         <span className="tag-elite mb-6 inline-block">OUR FACILITY</span>
@@ -63,7 +63,7 @@ export default function Gallery() {
                                 key={cat}
                                 onClick={() => setActiveCategory(cat)}
                                 className={`px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 ${activeCategory === cat
-                                        ? 'bg-gradient-to-r from-elite-purple to-elite-pink text-white shadow-[0_0_20px_rgba(139,92,246,0.5)]'
+                                        ? 'bg-gradient-to-r from-elite-orange to-elite-cyan text-white shadow-[0_0_20px_rgba(233,111,73,0.5)]'
                                         : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5'
                                     }`}
                             >
@@ -94,7 +94,7 @@ export default function Gallery() {
 
                                     {/* Hover Overlay */}
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
-                                        <div className="w-12 h-12 rounded-full bg-elite-purple flex items-center justify-center mb-3 scale-0 group-hover:scale-100 transition-transform duration-500 shadow-[0_0_20px_rgba(139,92,246,0.6)]">
+                                        <div className="w-12 h-12 rounded-full bg-elite-orange flex items-center justify-center mb-3 scale-0 group-hover:scale-100 transition-transform duration-500 shadow-[0_0_20px_rgba(233,111,73,0.6)]">
                                             <ZoomIn size={20} className="text-white" />
                                         </div>
                                         <span className="text-white font-bold text-sm tracking-widest uppercase translate-y-4 group-hover:translate-y-0 transition-transform duration-500 opacity-0 group-hover:opacity-100">
@@ -103,8 +103,8 @@ export default function Gallery() {
                                     </div>
 
                                     {/* Corner glow */}
-                                    <div className="absolute -top-10 -left-10 w-20 h-20 bg-elite-purple/50 blur-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                    <div className="absolute -bottom-10 -right-10 w-20 h-20 bg-elite-pink/50 blur-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="absolute -top-10 -left-10 w-20 h-20 bg-elite-orange/50 blur-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    <div className="absolute -bottom-10 -right-10 w-20 h-20 bg-elite-cyan/50 blur-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 </motion.div>
                             ))}
                         </AnimatePresence>
@@ -122,15 +122,15 @@ export default function Gallery() {
                         onClick={closeLightbox}
                         className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8"
                     >
-                        <button onClick={closeLightbox} className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-elite-pink hover:shadow-[0_0_20px_rgba(236,72,153,0.5)] transition-all z-50">
+                        <button onClick={closeLightbox} className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-elite-cyan hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all z-50">
                             <X size={24} />
                         </button>
 
-                        <button onClick={prevImage} className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-elite-purple hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all z-50 hidden sm:flex">
+                        <button onClick={prevImage} className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-elite-orange hover:shadow-[0_0_20px_rgba(233,111,73,0.5)] transition-all z-50 hidden sm:flex">
                             <ChevronLeft size={24} />
                         </button>
 
-                        <button onClick={nextImage} className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-elite-purple hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] transition-all z-50 hidden sm:flex">
+                        <button onClick={nextImage} className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-elite-orange hover:shadow-[0_0_20px_rgba(233,111,73,0.5)] transition-all z-50 hidden sm:flex">
                             <ChevronRight size={24} />
                         </button>
 
@@ -138,7 +138,7 @@ export default function Gallery() {
                             initial={{ scale: 0.9, y: 20 }}
                             animate={{ scale: 1, y: 0 }}
                             exit={{ scale: 0.9, y: 20 }}
-                            className="relative max-w-6xl w-full h-[80vh] rounded-2xl overflow-hidden border border-white/20 shadow-[0_0_60px_rgba(139,92,246,0.3)]"
+                            className="relative max-w-6xl w-full h-[80vh] rounded-2xl overflow-hidden border border-white/20 shadow-[0_0_60px_rgba(233,111,73,0.3)]"
                             onClick={e => e.stopPropagation()}
                         >
                             <img src={selectedImage.src} alt="Enlarged Gym View" className="w-full h-full object-contain bg-black" />

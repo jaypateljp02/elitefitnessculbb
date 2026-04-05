@@ -58,11 +58,11 @@ const plans = [
 
 // Comparison Grid Data
 const comparisonFeatures = [
-    { name: 'Strength & Cardio Floor', starter: true, premium: true, elite: true, image: '/asset/2-2.png' },
-    { name: 'Group Classes (Yoga, Zumba)', starter: false, premium: true, elite: true, image: '/asset/9-1.png' },
-    { name: 'Diet & Nutrition Consult', starter: false, premium: true, elite: true, image: '/asset/Cafe Wall image 2.jpeg' },
-    { name: 'Personal Trainer Sessions', starter: false, premium: false, elite: true, image: '/asset/8.png' },
-    { name: 'Ice Bath Recovery Zone', starter: false, premium: false, elite: true, image: '/asset/11.png' },
+    { name: 'Strength & Cardio Floor', starter: true, premium: true, elite: true, image: '/asset/2-2.webp' },
+    { name: 'Group Classes (Yoga, Zumba)', starter: false, premium: true, elite: true, image: '/asset/9-1.webp' },
+    { name: 'Diet & Nutrition Consult', starter: false, premium: true, elite: true, image: '/asset/Cafe Wall image 2.webp' },
+    { name: 'Personal Trainer Sessions', starter: false, premium: false, elite: true, image: '/asset/8.webp' },
+    { name: 'Ice Bath Recovery Zone', starter: false, premium: false, elite: true, image: '/asset/11.webp' },
 ]
 
 
@@ -87,15 +87,15 @@ function ComparisonGrid() {
                         <tr>
                             <th className="p-4 text-xs font-black tracking-widest text-gray-500 uppercase border-b border-white/10 w-2/5">Tier Benefits</th>
                             <th className="p-4 text-xs font-black tracking-widest text-[#E0E0E0] uppercase border-b border-white/10 text-center">Starter</th>
-                            <th className="p-4 text-xs font-black tracking-widest text-elite-pink uppercase border-b border-white/10 text-center relative glow-pink">Premium</th>
-                            <th className="p-4 text-xs font-black tracking-widest text-elite-purple uppercase border-b border-white/10 text-center glow-purple">Elite</th>
+                            <th className="p-4 text-xs font-black tracking-widest text-elite-cyan uppercase border-b border-white/10 text-center relative glow-cyan">Premium</th>
+                            <th className="p-4 text-xs font-black tracking-widest text-elite-orange uppercase border-b border-white/10 text-center glow-orange">Elite</th>
                         </tr>
                     </thead>
                     <tbody>
                         {comparisonFeatures.map((feat, i) => (
                             <tr
                                 key={i}
-                                className="group cursor-pointer transition-colors duration-300 hover:bg-elite-purple/5 border-b border-white/5"
+                                className="group cursor-pointer transition-colors duration-300 hover:bg-elite-orange/5 border-b border-white/5"
                                 onMouseEnter={() => setHoveredRow(i)}
                                 onMouseLeave={() => setHoveredRow(null)}
                             >
@@ -103,13 +103,13 @@ function ComparisonGrid() {
                                     {feat.name}
                                 </td>
                                 <td className="p-4 text-center">
-                                    {feat.starter ? <Check size={18} className={`mx-auto transition-all ${hoveredRow === i ? 'text-elite-pink' : 'text-gray-500'}`} /> : <span className="text-gray-700">-</span>}
+                                    {feat.starter ? <Check size={18} className={`mx-auto transition-all ${hoveredRow === i ? 'text-elite-cyan' : 'text-gray-500'}`} /> : <span className="text-gray-700">-</span>}
                                 </td>
-                                <td className="p-4 text-center bg-elite-pink/5">
-                                    {feat.premium ? <Check size={18} className={`mx-auto transition-all ${hoveredRow === i ? 'text-elite-pink drop-shadow-[0_0_8px_rgba(236,72,153,0.8)]' : 'text-gray-400'}`} /> : <span className="text-gray-700">-</span>}
+                                <td className="p-4 text-center bg-elite-cyan/5">
+                                    {feat.premium ? <Check size={18} className={`mx-auto transition-all ${hoveredRow === i ? 'text-elite-cyan drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]' : 'text-gray-400'}`} /> : <span className="text-gray-700">-</span>}
                                 </td>
                                 <td className="p-4 text-center">
-                                    {feat.elite ? <Check size={18} className={`mx-auto transition-all ${hoveredRow === i ? 'text-elite-purple drop-shadow-[0_0_8px_rgba(139,92,246,0.8)]' : 'text-gray-500'}`} /> : <span className="text-gray-700">-</span>}
+                                    {feat.elite ? <Check size={18} className={`mx-auto transition-all ${hoveredRow === i ? 'text-elite-orange drop-shadow-[0_0_8px_rgba(233,111,73,0.8)]' : 'text-gray-500'}`} /> : <span className="text-gray-700">-</span>}
                                 </td>
                             </tr>
                         ))}
@@ -143,7 +143,7 @@ function ComparisonGrid() {
                                 src={comparisonFeatures[hoveredRow].image}
                                 className="w-full h-full object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-elite-purple/40 mix-blend-overlay" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-elite-orange/40 mix-blend-overlay" />
                         </div>
                     </motion.div>
                 )}
@@ -215,7 +215,7 @@ export default function Membership() {
                         {/* Seasonal Note */}
                         <div className="flex flex-col items-center justify-center relative">
                             <div className="flex items-center gap-2 bg-black/40 px-6 py-3 rounded-full border border-white/10 backdrop-blur-md relative z-10 w-fit">
-                                <span className="text-xs font-bold tracking-widest uppercase text-elite-pink">
+                                <span className="text-xs font-bold tracking-widest uppercase text-elite-cyan">
                                     Seasonal Offers Available!
                                 </span>
                             </div>
@@ -249,7 +249,7 @@ export default function Membership() {
                     target="_blank"
                     rel="noreferrer"
                     whileHover={{ scale: 1.05 }}
-                    className="inline-block mt-8 px-10 py-4 border border-elite-pink/30 hover:bg-elite-pink/10 rounded-full text-elite-pink font-bold text-xs tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(236,72,153,0.1)]">
+                    className="inline-block mt-8 px-10 py-4 border border-elite-cyan/30 hover:bg-elite-cyan/10 rounded-full text-elite-cyan font-bold text-xs tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(6,182,212,0.1)]">
                     REQUEST A CALLBACK
                 </motion.a>
             </section>

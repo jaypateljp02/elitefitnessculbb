@@ -8,16 +8,16 @@ function ContactHero() {
   return (
     <section className="relative pt-36 pb-28 px-4 overflow-hidden min-h-[50vh] flex items-center justify-center">
       <div className="absolute inset-0 bg-black">
-        <img src="/asset/11.png" alt="Cardio Zone" className="w-full h-full object-cover grayscale opacity-20 mix-blend-luminosity" />
+        <img src="/asset/11.webp" alt="Cardio Zone" className="w-full h-full object-cover grayscale opacity-20 mix-blend-luminosity" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
-        <div className="absolute inset-0 bg-gradient-to-r from-elite-purple/10 to-elite-pink/5 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-elite-orange/10 to-elite-cyan/5 mix-blend-overlay" />
       </div>
 
-      <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.05, 0.1, 0.05] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-elite-purple/20 blur-[130px] -translate-y-1/2 pointer-events-none" />
+      <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.05, 0.1, 0.05] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-elite-orange/20 blur-[130px] -translate-y-1/2 pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <span className="text-xs font-bold tracking-[0.2em] text-elite-pink uppercase mb-4 block">GET IN TOUCH</span>
+          <span className="text-xs font-bold tracking-[0.2em] text-elite-cyan uppercase mb-4 block">GET IN TOUCH</span>
           <h1 className="text-5xl sm:text-7xl font-heading font-black mb-6 uppercase tracking-tight">
             CONTACT <span className="gradient-text text-glow">US</span>
           </h1>
@@ -35,7 +35,7 @@ function ContactCards() {
     { icon: MapPin, title: 'VISIT US', info: '2nd floor, Laxmi Chowk, Elite Fitness Clubb, above KFC, Phase 1, Hinjawadi, Maharashtra 411057', detail: '' },
     { icon: Phone, title: 'CALL US', info: '+91 8888 161216', link: 'tel:+918888161216', detail: 'Mon-Sat' },
     { icon: Mail, title: 'EMAIL US', info: 'info@elitefitness.club', link: 'mailto:info@elitefitness.club', detail: 'We Reply Within 24 Hrs' },
-    { icon: Clock, title: 'HOURS', info: 'Mon-Sat: 5AM - 11PM', detail: '' },
+    { icon: Clock, title: 'HOURS', info: 'Mon-Sat: 5AM - 10PM', detail: '' },
   ]
 
   return (
@@ -51,13 +51,13 @@ function ContactCards() {
             className="glass-card p-8 border border-white/5 relative overflow-hidden group"
             style={{ background: 'linear-gradient(135deg, rgba(20,20,30,0.8), rgba(10,10,15,0.95))' }}
           >
-            <div className="absolute top-0 right-0 w-24 h-24 bg-elite-purple/5 blur-[30px] group-hover:bg-elite-pink/10 transition-colors duration-500" />
+            <div className="absolute top-0 right-0 w-24 h-24 bg-elite-orange/5 blur-[30px] group-hover:bg-elite-cyan/10 transition-colors duration-500" />
             <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <item.icon className="text-elite-pink" size={20} />
+              <item.icon className="text-elite-cyan" size={20} />
             </div>
             <h3 className="font-heading font-bold text-sm tracking-widest uppercase mb-3 text-white">{item.title}</h3>
             {item.link ? (
-              <a href={item.link} className="text-gray-300 text-sm hover:text-elite-purple transition-colors font-light block mb-2">{item.info}</a>
+              <a href={item.link} className="text-gray-300 text-sm hover:text-elite-orange transition-colors font-light block mb-2">{item.info}</a>
             ) : (
               <p className="text-gray-300 text-sm font-light block mb-2">{item.info}</p>
             )}
@@ -119,7 +119,7 @@ function ContactFormMap() {
         {/* Form - Takes up 5 columns */}
         <div className="lg:col-span-5 flex flex-col justify-center">
           <div className="mb-10">
-            <span className="text-elite-pink text-xs font-bold tracking-[0.2em] uppercase mb-2 block">CONTACT FORM</span>
+            <span className="text-elite-cyan text-xs font-bold tracking-[0.2em] uppercase mb-2 block">CONTACT FORM</span>
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-white uppercase tracking-wide">
               SEND A <span className="gradient-text text-glow">MESSAGE</span>
             </h2>
@@ -142,26 +142,26 @@ function ContactFormMap() {
               onSubmit={handleSubmit}
               className="bg-[#0a0a0f] border border-white/10 rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-elite-purple/5 blur-[60px] pointer-events-none" />
+              <div className="absolute top-0 right-0 w-64 h-64 bg-elite-orange/5 blur-[60px] pointer-events-none" />
 
               <div className="space-y-6 relative z-10">
                 <div>
                   <label className="block text-[10px] text-gray-400 mb-2 font-black tracking-[0.15em] uppercase">Full Name</label>
-                  <input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-elite-purple/50 focus:bg-white/10 transition-all font-light" placeholder="Your Name" />
+                  <input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-elite-orange/50 focus:bg-white/10 transition-all font-light" placeholder="Your Name" />
                 </div>
                 <div>
                   <label className="block text-[10px] text-gray-400 mb-2 font-black tracking-[0.15em] uppercase">Phone Number</label>
-                  <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-elite-purple/50 focus:bg-white/10 transition-all font-light" placeholder="+91 Phone Number" />
+                  <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-elite-orange/50 focus:bg-white/10 transition-all font-light" placeholder="+91 Phone Number" />
                 </div>
                 <div>
                   <label className="block text-[10px] text-gray-400 mb-2 font-black tracking-[0.15em] uppercase">Email Address</label>
-                  <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-elite-purple/50 focus:bg-white/10 transition-all font-light" placeholder="you@email.com" />
+                  <input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-elite-orange/50 focus:bg-white/10 transition-all font-light" placeholder="you@email.com" />
                 </div>
                 <div>
                   <label className="block text-[10px] text-gray-400 mb-2 font-black tracking-[0.15em] uppercase">Your Message</label>
-                  <textarea rows="4" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-elite-purple/50 focus:bg-white/10 transition-all font-light resize-none" placeholder="How can we help you?" />
+                  <textarea rows="4" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-elite-orange/50 focus:bg-white/10 transition-all font-light resize-none" placeholder="How can we help you?" />
                 </div>
-                <button type="submit" disabled={isSubmitting} className="w-full mt-4 py-4 bg-gradient-to-r from-elite-purple to-elite-pink rounded-xl font-bold text-xs tracking-[0.2em] btn-glow flex items-center justify-center gap-3 uppercase text-white hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed">
+                <button type="submit" disabled={isSubmitting} className="w-full mt-4 py-4 bg-gradient-to-r from-elite-orange to-elite-cyan rounded-xl font-bold text-xs tracking-[0.2em] btn-glow flex items-center justify-center gap-3 uppercase text-white hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed">
                   {isSubmitting ? (
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   ) : (
@@ -192,11 +192,11 @@ function ContactFormMap() {
               className="absolute inset-0 z-0"
             />
             {/* Subtle glow overlay for the map */}
-            <div className="absolute inset-0 bg-elite-purple/5 pointer-events-none mix-blend-overlay z-10" />
+            <div className="absolute inset-0 bg-elite-orange/5 pointer-events-none mix-blend-overlay z-10" />
 
             {/* Location Pin Badge inside the map container */}
             <div className="absolute bottom-6 left-6 z-20 bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex items-center gap-4">
-              <div className="bg-elite-pink/20 text-elite-pink p-2 rounded-xl">
+              <div className="bg-elite-cyan/20 text-elite-cyan p-2 rounded-xl">
                 <MapPin size={24} />
               </div>
               <div>

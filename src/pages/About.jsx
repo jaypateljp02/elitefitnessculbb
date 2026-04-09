@@ -154,10 +154,11 @@ const testimonials = [
         img: '/asset/new/20260404_130314.webp',
     },
     {
-        name: 'PRIYA S.',
-        achievement: 'Gained 8kg lean muscle',
-        quote: 'The ice bath recovery and advanced coaching helped me break through every plateau. This gym is different.',
-        img: '/asset/new/20260404_130338.webp',
+        name: 'SAMIR K.',
+        achievement: 'WEIGHT LOSS',
+        quote: 'The tailored nutrition and advanced coaching helped me break through every plateau. Elite changed my life.',
+        img: '/asset/new/weight_gain.jpg',
+        containImage: true,
     },
     {
         name: 'AMIT K.',
@@ -269,7 +270,7 @@ const MobileTransformationDeck = ({ testimonials }) => {
                             style={{ aspectRatio: '3/4', touchAction: 'none' }}
                         >
                             {/* Base Image */}
-                            <img src={t.img} alt={t.name} className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+                            <img src={t.img} alt={t.name} className={`absolute inset-0 w-full h-full pointer-events-none ${t.containImage ? 'object-contain bg-black' : 'object-cover'}`} />
 
                             {/* Gradients */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/70 to-transparent opacity-95 pointer-events-none" />
@@ -323,7 +324,7 @@ function TransformationResults() {
                     {testimonials.map((t, i) => (
                         <TiltCard key={i} index={i}>
                             {/* Base Image */}
-                            <img src={t.img} alt={t.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover/card:scale-110" loading="lazy" />
+                            <img src={t.img} alt={t.name} className={`absolute inset-0 w-full h-full transition-transform duration-[1.5s] group-hover/card:scale-110 ${t.containImage ? 'object-contain bg-black' : 'object-cover'}`} loading="lazy" />
 
                             {/* Gradients */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/60 to-transparent opacity-90 md:opacity-80" />

@@ -9,7 +9,7 @@ import { TrendingUp, Shield, RefreshCw, Megaphone, IndianRupee, Store, Crown, Ar
    ======================================= */
 function FranchiseHero() {
     return (
-        <section className="relative min-h-screen pt-32 pb-20 px-4 overflow-hidden flex items-center">
+        <section className="relative min-h-screen pt-32 pb-20 px-4 overflow-hidden flex items-center noise-bg">
             <div className="absolute inset-0">
                 <img src="/asset/new/20260404_130338.webp" alt="The Elite Fitness Gym" className="w-full h-full object-cover opacity-30" />
                 <div className="absolute inset-0 bg-black/70" />
@@ -74,7 +74,7 @@ function WhyElite() {
     ]
 
     return (
-        <section className="py-16 sm:py-24 px-4 relative">
+        <section className="py-16 sm:py-24 px-4 relative noise-bg">
             <div className="relative z-10 max-w-7xl mx-auto">
                 <SectionHeading subtitle="THE ADVANTAGE" title={<>WHY <span className="gradient-text">THE ELITE FITNESS</span></>} description="An unfair advantage in the fitness franchise market." />
 
@@ -195,7 +195,7 @@ function ROICalculator() {
     const breakEvenMonths = Math.ceil(totalSetupCost / profitPerMonth)
 
     return (
-        <section id="roi-calculator" className="py-16 sm:py-24 px-4 relative">
+        <section id="roi-calculator" className="py-16 sm:py-24 px-4 relative noise-bg">
             <div className="relative z-10 max-w-5xl mx-auto">
                 <SectionHeading subtitle="FINANCIAL PROJECTIONS" title={<>ROI <span className="gradient-text">CALCULATOR</span></>} description="Estimate your potential earnings based on facility size." />
 
@@ -268,7 +268,7 @@ function ProcessTimeline() {
     ]
 
     return (
-        <section className="py-16 sm:py-24 px-4 relative">
+        <section className="py-16 sm:py-24 px-4 relative noise-bg">
             <div className="relative z-10 max-w-4xl mx-auto" ref={containerRef}>
                 <SectionHeading subtitle="THE ROADMAP" title={<>ROAD TO <span className="gradient-text">OWNERSHIP</span></>} />
 
@@ -353,7 +353,7 @@ function InvestorForm() {
     }
 
     return (
-        <section id="enquiry" className="py-16 sm:py-24 px-4 relative">
+        <section id="enquiry" className="py-16 sm:py-24 px-4 relative noise-bg">
             <div className="relative z-10 max-w-3xl mx-auto">
                 <SectionHeading subtitle="SECURE YOUR TERRITORY" title={<>REQUEST <span className="gradient-text">PROSPECTUS</span></>} description="Submit your details to receive the official financial deck." />
 

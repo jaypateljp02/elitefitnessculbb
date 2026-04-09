@@ -4,33 +4,22 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePres
 import { useRef, useState } from 'react'
 import { Check, Droplets, Target, Shield, Users, Clock, Award, Star } from 'lucide-react'
 
-// SVG Signature Animation Component
+// Real Founder Signature Component
 function AnimatedSignature() {
     return (
-        <svg viewBox="0 0 200 60" className="w-48 sm:w-64 mt-4 text-elite-orange drop-shadow-md" fill="transparent" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <motion.path
-                initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 2.5, ease: "easeInOut" }}
-                d="M 20 45 
-                   C 5 20, 25 10, 25 30 
-                   C 25 45, 40 45, 45 40
-                   S 50 20, 60 40
-                   S 70 30, 80 40
-                   S 90 25, 95 38
-                   
-                   M 110 15 
-                   L 105 50 
-                   M 110 20 
-                   C 130 15, 125 35, 108 35
-                   C 125 45, 130 25, 138 35
-                   L 142 15 L 140 40
-                   C 150 25, 160 35, 175 35"
+        <motion.div 
+            initial={{ opacity: 0, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 0.9, filter: 'blur(0px)' }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="mt-6 mb-2"
+        >
+            <img 
+                src="/asset/new/signature.png" 
+                alt="Sandeep Patil Signature" 
+                className="w-48 sm:w-64 object-contain filter invert mix-blend-screen opacity-90 transition-opacity hover:opacity-100"
             />
-            {/* The dot on the 'i' in Patil */}
-            <motion.circle initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 2.2 }} cx="152" cy="18" r="1.5" fill="currentColor" stroke="none" />
-        </svg>
+        </motion.div>
     )
 }
 
@@ -265,8 +254,10 @@ const MobileTransformationDeck = ({ testimonials }) => {
                             layout
                             initial={{ scale: 0.8, opacity: 0, y: 0 }}
                             animate={{
-                                scale: 1 - index * 0.05,
-                                y: index * 25,
+                                scale: 1 - index * 0.02,
+                                y: index * 12,
+                                x: index === 0 ? 0 : index % 2 !== 0 ? 20 : -20,
+                                rotate: index === 0 ? 0 : index % 2 !== 0 ? 5 : -5,
                                 zIndex: cards.length - index,
                                 opacity: 1 - index * 0.15
                             }}
@@ -323,7 +314,7 @@ function TransformationResults() {
                 {/* Giant Rolling Ticker Background */}
                 <div className="absolute top-1/2 left-0 -translate-y-1/2 flex whitespace-nowrap opacity-[0.02] pointer-events-none z-0">
                     <div className="animate-marquee text-[12rem] md:text-[20rem] font-black font-heading tracking-tighter leading-none" style={{ WebkitTextStroke: '3px #e96f49', color: 'transparent' }}>
-                        REAL RESULTS • REAL BODIES • REAL RESULTS • REAL BODIES • REAL RESULTS •
+                        THE ELITE FITNESS CLUBB • THE ELITE FITNESS CLUBB • THE ELITE FITNESS CLUBB •
                     </div>
                 </div>
 

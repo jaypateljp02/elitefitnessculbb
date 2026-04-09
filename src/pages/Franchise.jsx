@@ -1,7 +1,7 @@
 import PageWrapper from '../components/PageWrapper'
 import SectionHeading from '../components/SectionHeading'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useState, useRef } from 'react'
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
+import { useState, useRef, useEffect } from 'react'
 import { TrendingUp, Shield, RefreshCw, Megaphone, IndianRupee, Store, Crown, ArrowRight, Building, CheckCircle2, Users, Zap, MapPin, Phone, ChevronDown } from 'lucide-react'
 
 /* =======================================
@@ -312,9 +312,33 @@ function InvestorForm() {
     const [formData, setFormData] = useState({ name: '', phone: '', email: '', city: '', capital: '' })
     const [submitted, setSubmitted] = useState(false)
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const [dropdownOpen, setDropdownOpen] = useState(false)
+    const dropdownRef = useRef(null)
+
+    const capitalOptions = [
+        { value: '75L', label: '₹75 Lakhs (Silver Tier)' },
+        { value: '1CR', label: '₹1 Crore (Gold Tier)' },
+        { value: '1CR+', label: '₹1 Crore+ (Multi-unit)' },
+    ]
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setDropdownOpen(false)
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside)
+        return () => document.removeEventListener("mousedown", handleClickOutside)
+    }, [])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        
+        if (!formData.capital) {
+            alert("Please select an Available Investment Capital option.")
+            return
+        }
+
         setIsSubmitting(true)
 
         try {
@@ -374,24 +398,45 @@ function InvestorForm() {
                                 <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Business Email</label><input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className="input-elite" placeholder="rahul@company.com" /></div>
                                 <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Target City</label><input type="text" value={formData.city} onChange={(e) => setFormData({ ...formData, city: e.target.value })} required className="input-elite" placeholder="e.g. Pune" /></div>
                             </div>
-                            <div>
+                            <div className="relative" ref={dropdownRef}>
                                 <label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Available Investment Capital</label>
-                                <div className="relative">
-                                    <select 
-                                        value={formData.capital} 
-                                        onChange={(e) => setFormData({ ...formData, capital: e.target.value })} 
-                                        required 
-                                        className={`input-elite appearance-none bg-[#0a0a14] w-full pr-12 cursor-pointer outline-none focus:border-elite-orange/50 transition-colors ${!formData.capital ? 'text-gray-500' : 'text-white'}`}
-                                    >
-                                        <option value="" disabled className="bg-[#050508] text-gray-500">Select an option...</option>
-                                        <option value="75L" className="bg-[#050508] text-white py-2">₹75 Lakhs (Silver Tier)</option>
-                                        <option value="1CR" className="bg-[#050508] text-white py-2">₹1 Crore (Gold Tier)</option>
-                                        <option value="1CR+" className="bg-[#050508] text-white py-2">₹1 Crore+ (Multi-unit)</option>
-                                    </select>
-                                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+                                
+                                <div 
+                                    className={`input-elite bg-[#0a0a14] w-full pr-12 cursor-pointer flex items-center transition-colors ${!formData.capital ? 'text-gray-500' : 'text-white'} ${dropdownOpen ? 'border-elite-orange/50' : ''}`}
+                                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                                >
+                                    <span className="truncate">
+                                        {formData.capital ? capitalOptions.find(opt => opt.value === formData.capital)?.label : 'Select an option...'}
+                                    </span>
+                                    <div className={`absolute right-4 top-1/2 transform -translate-y-[20%] mt-[2px] pointer-events-none text-gray-500 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`}>
                                         <ChevronDown size={18} />
                                     </div>
                                 </div>
+
+                                <AnimatePresence>
+                                    {dropdownOpen && (
+                                        <motion.div 
+                                            initial={{ opacity: 0, y: -10, scaleY: 0.95 }}
+                                            animate={{ opacity: 1, y: 0, scaleY: 1 }}
+                                            exit={{ opacity: 0, y: -10, scaleY: 0.95 }}
+                                            transition={{ duration: 0.2, ease: 'easeOut' }}
+                                            className="absolute left-0 right-0 top-full mt-2 bg-[#0d0d16] border border-white/10 rounded-xl overflow-hidden z-50 origin-top shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-md"
+                                        >
+                                            {capitalOptions.map((opt) => (
+                                                <div 
+                                                    key={opt.value}
+                                                    className={`px-4 py-3 cursor-pointer text-sm transition-colors ${formData.capital === opt.value ? 'bg-elite-orange/10 text-elite-orange' : 'text-gray-300 hover:bg-white/5 hover:text-white'}`}
+                                                    onClick={() => {
+                                                        setFormData({ ...formData, capital: opt.value })
+                                                        setDropdownOpen(false)
+                                                    }}
+                                                >
+                                                    {opt.label}
+                                                </div>
+                                            ))}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </div>
                             <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-gradient-to-r from-elite-orange to-amber-400 rounded-xl font-bold text-sm tracking-widest btn-glow flex items-center justify-center gap-3 uppercase text-white hover:shadow-[0_0_40px_rgba(233,111,73,0.5)] transition-all disabled:opacity-50 disabled:cursor-not-allowed">
                                 {isSubmitting ? (

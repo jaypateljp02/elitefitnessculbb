@@ -11,7 +11,7 @@ function FranchiseHero() {
     return (
         <section className="relative min-h-screen pt-32 pb-20 px-4 overflow-hidden flex items-center">
             <div className="absolute inset-0">
-                <img src="/asset/new/20260404_130338.webp" alt="Elite Fitness Gym" className="w-full h-full object-cover opacity-30" />
+                <img src="/asset/new/20260404_130338.webp" alt="The Elite Fitness Gym" className="w-full h-full object-cover opacity-30" />
                 <div className="absolute inset-0 bg-black/70" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
             </div>
@@ -25,11 +25,11 @@ function FranchiseHero() {
                     </div>
 
                     <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-black leading-none mb-6 uppercase">
-                        Own an <span className="gradient-text text-glow">Elite Fitness</span><br />Clubb Franchise
+                        Own an <span className="gradient-text text-glow">The Elite Fitness</span><br />Clubb Franchise
                     </h1>
 
                     <p className="text-gray-400 text-lg sm:text-xl font-light leading-relaxed mb-10 max-w-2xl mx-auto">
-                        Partner with India's fastest-growing premium fitness brand. High margins, rapid break-even, and complete operational support.
+                        Partner with a visionary premium fitness brand. High margins, transparent operations, and complete system support to ensure your success.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -67,7 +67,7 @@ function WhyElite() {
     const benefits = [
         { icon: TrendingUp, title: 'High ROI', desc: 'Proven business model with fast break-even and high profit margins in the booming fitness industry.' },
         { icon: Building, title: 'Turnkey Setup', desc: 'Complete assistance from site selection to interior design and premium equipment installation.' },
-        { icon: Crown, title: 'Brand Power', desc: 'Leverage the strong Elite Fitness brand name, reputation, and growing member loyalty.' },
+        { icon: Crown, title: 'Brand Power', desc: 'Leverage the strong The Elite Fitness brand name, reputation, and growing member loyalty.' },
         { icon: RefreshCw, title: 'Operational Support', desc: 'Comprehensive SOPs, staff hiring & training, and software management support.' },
         { icon: Megaphone, title: 'Marketing Dominance', desc: 'Centralized digital marketing, social media management, and local launch campaigns.' },
         { icon: IndianRupee, title: 'Premium Pricing', desc: 'High-ticket memberships enabled by premium facility positioning and brand prestige.' },
@@ -76,7 +76,7 @@ function WhyElite() {
     return (
         <section className="py-16 sm:py-24 px-4 relative">
             <div className="relative z-10 max-w-7xl mx-auto">
-                <SectionHeading subtitle="THE ADVANTAGE" title={<>WHY <span className="gradient-text">ELITE FITNESS</span></>} description="An unfair advantage in the fitness franchise market." />
+                <SectionHeading subtitle="THE ADVANTAGE" title={<>WHY <span className="gradient-text">THE ELITE FITNESS</span></>} description="An unfair advantage in the fitness franchise market." />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-12 sm:mt-16">
                     {benefits.map((item, i) => (
@@ -326,8 +326,8 @@ function InvestorForm() {
                 },
                 body: JSON.stringify({
                     access_key: "60276be1-0988-435a-a1cc-9a21ec43d9de",
-                    subject: "New Franchise Investor Inquiry - Elite Fitness",
-                    from_name: "Elite Fitness Website",
+                    subject: "New Franchise Investor Inquiry - The Elite Fitness",
+                    from_name: "The Elite Fitness Website",
                     name: formData.name,
                     email: formData.email,
                     phone: formData.phone,

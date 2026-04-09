@@ -27,9 +27,9 @@ export default function Footer() {
                     {/* Brand & Newsletter (Spans 4 cols on desktop) */}
                     <div className="lg:col-span-5">
                         <Link to="/" className="flex items-center gap-3 mb-8 group inline-flex">
-                            <img src="/asset/Logo.webp" alt="Elite Fitness Clubb" className="h-16 w-auto group-hover:drop-shadow-[0_0_20px_rgba(233,111,73,0.5)] transition-all duration-500" />
+                            <img src="/asset/Logo.webp" alt="The Elite Fitness Clubb" className="h-16 w-auto group-hover:drop-shadow-[0_0_20px_rgba(233,111,73,0.5)] transition-all duration-500" />
                             <div>
-                                <span className="text-2xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">ELITE FITNESS</span>
+                                <span className="text-2xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">THE ELITE FITNESS</span>
                                 <span className="block text-xs tracking-[0.4em] text-elite-orange uppercase font-bold mt-0.5">Clubb</span>
                             </div>
                         </Link>
@@ -38,13 +38,19 @@ export default function Footer() {
                         </p>
 
                         <div className="flex gap-4">
-                            {[Instagram, Facebook, Youtube].map((Icon, i) => (
+                            {[
+                                { Icon: Instagram, href: 'https://www.instagram.com/theelitefitnessclubb' },
+                                { Icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61582460234284' },
+                                { Icon: Youtube, href: '#' },
+                            ].map((social, i) => (
                                 <a
                                     key={i}
-                                    href="#"
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noreferrer"
                                     className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-elite-orange/50 hover:bg-elite-orange/20 hover:shadow-[0_0_20px_rgba(233,111,73,0.3)] transition-all duration-300 transform hover:-translate-y-1"
                                 >
-                                    <Icon size={16} />
+                                    <social.Icon size={16} />
                                 </a>
                             ))}
                         </div>
@@ -78,8 +84,8 @@ export default function Footer() {
                                     <MapPin size={20} className="text-elite-orange" />
                                 </div>
                                 <div className="pt-1">
-                                    <h4 className="text-white text-sm font-bold tracking-wide mb-1 group-hover:text-elite-orange transition-colors">Headquarters</h4>
-                                    <p className="text-gray-400 text-sm font-light leading-relaxed">2nd floor, Laxmi Chowk, Elite Fitness Clubb,<br />above KFC, Phase 1, Hinjawadi,<br />Pune, Maharashtra 411057</p>
+                                    <h4 className="text-white text-sm font-bold tracking-wide mb-1 group-hover:text-elite-orange transition-colors">HEADQUARTERS</h4>
+                                    <p className="text-gray-400 text-sm font-light leading-relaxed">2nd floor, Laxmi Chowk, The Elite Fitness Clubb,<br />above KFC, Phase 1, Hinjawadi,<br />Pune, Maharashtra 411057</p>
                                 </div>
                             </a>
 
@@ -100,7 +106,7 @@ export default function Footer() {
                                 </h4>
                                 <div className="flex justify-between items-center text-sm">
                                     <span className="text-gray-400 font-light">Monday - Saturday</span>
-                                    <span className="text-white font-medium">5:00 AM - 10:00 PM</span>
+                                    <span className="text-white font-medium">6:00 AM - 10:00 PM</span>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +118,7 @@ export default function Footer() {
             <div className="relative z-10 border-t border-white/5 bg-black/40">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <p className="text-gray-500 text-sm font-light">
-                        © {new Date().getFullYear()} Elite Fitness Clubb. Crafted for Excellence.
+                        © {new Date().getFullYear()} The Elite Fitness Clubb.
                     </p>
                     <button
                         onClick={scrollToTop}

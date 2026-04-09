@@ -1,44 +1,54 @@
 import PageWrapper from '../components/PageWrapper'
 import SectionHeading from '../components/SectionHeading'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from 'framer-motion'
+import { useRef, useState } from 'react'
 import { Check, Droplets, Target, Shield, Users, Clock, Award, Star } from 'lucide-react'
 
 // SVG Signature Animation Component
 function AnimatedSignature() {
     return (
-        <svg viewBox="0 0 200 60" className="w-48 sm:w-64 mt-4 text-elite-orange" fill="transparent" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg viewBox="0 0 200 60" className="w-48 sm:w-64 mt-4 text-elite-orange drop-shadow-md" fill="transparent" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <motion.path
                 initial={{ pathLength: 0 }}
                 whileInView={{ pathLength: 1 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 2, ease: "easeInOut" }}
-                d="M 20 40 
-                   C 30 20, 40 10, 50 15 
-                   S 30 50, 60 40 
-                   C 70 30, 80 15, 90 25
-                   S 60 55, 100 45
-                   Q 120 30, 140 35
-                   T 180 30"
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+                d="M 20 45 
+                   C 5 20, 25 10, 25 30 
+                   C 25 45, 40 45, 45 40
+                   S 50 20, 60 40
+                   S 70 30, 80 40
+                   S 90 25, 95 38
+                   
+                   M 110 15 
+                   L 105 50 
+                   M 110 20 
+                   C 130 15, 125 35, 108 35
+                   C 125 45, 130 25, 138 35
+                   L 142 15 L 140 40
+                   C 150 25, 160 35, 175 35"
             />
-            {/* Dots */}
-            <motion.circle initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1.8 }} cx="150" cy="15" r="1.5" fill="currentColor" stroke="none" />
-            <motion.circle initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 2.0 }} cx="120" cy="20" r="1.5" fill="currentColor" stroke="none" />
+            {/* The dot on the 'i' in Patil */}
+            <motion.circle initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 2.2 }} cx="152" cy="18" r="1.5" fill="currentColor" stroke="none" />
         </svg>
     )
 }
 
 function HeroBoutique() {
     return (
-        <section className="relative pt-36 pb-28 px-4 overflow-hidden min-h-[90vh] flex items-center justify-center">
-            <div className="absolute inset-0">
-                <img src="/asset/14.webp" alt="Clean Gym Floor" className="w-full h-full object-cover opacity-40" />
-                <div className="absolute inset-0 bg-black/60" />
-                <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-                <div className="absolute inset-0 bg-gradient-to-r from-elite-orange/10 to-elite-orange/10 mix-blend-overlay" />
-            </div>
+        <section className="relative pt-36 pb-28 px-4 overflow-hidden min-h-[90vh] flex items-center justify-center bg-[#050508]">
+            {/* Layer 1: Base Radial Background */}
+            <div className="absolute inset-0 z-0" style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(233,111,73,0.15) 0%, transparent 70%)' }} />
+            
+            {/* Layer 2: Noise Texture */}
+            <div className="absolute inset-0 z-0 noise-bg opacity-40 mix-blend-overlay" />
 
-            <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-elite-orange/10 blur-[150px] -translate-y-1/2 pointer-events-none" />
+            {/* Layer 3: Cinematic Bottom Fade */}
+            <div className="absolute inset-x-0 bottom-0 top-1/2 z-0 bg-gradient-to-t from-[#050508] via-[#050508]/80 to-transparent" />
+
+            {/* Layer 4: Glowing Orb Animation */}
+            <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.25, 0.15] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-elite-orange/15 blur-[150px] -translate-y-1/2 pointer-events-none mix-blend-screen z-0" />
+
 
             <div className="relative z-10 max-w-5xl mx-auto text-center">
                 <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
@@ -102,7 +112,7 @@ function FoundersCorner() {
                     <div className="absolute inset-0 rounded-[2rem] border border-white/10" style={{ background: 'linear-gradient(180deg, #111, #000)' }} />
                     <img
                         src="/asset/new/own%20.webp"
-                        alt="Founder of Elite Fitness"
+                        alt="Founder of The Elite Fitness"
                         className="absolute inset-x-0 bottom-0 w-full h-full object-cover object-center rounded-[2rem] opacity-80 mix-blend-luminosity brightness-110 contrast-125"
                         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
                         loading="lazy"
@@ -111,105 +121,255 @@ function FoundersCorner() {
 
                     <div className="absolute bottom-10 left-10">
                         <span className="text-xs font-bold tracking-[0.2em] text-purple-400 uppercase mb-2 block">THE VISIONARY</span>
-                        <h3 className="text-3xl font-heading font-black text-white">FOUNDER &<br />HEAD COACH</h3>
+                        <h3 className="text-4xl font-heading font-black text-white tracking-widest">FOUNDER</h3>
                     </div>
                     {/* Glowing Accent */}
                     <div className="absolute -inset-1 rounded-[2.1rem] opacity-20 bg-gradient-to-br from-elite-orange via-transparent to-amber-400 blur-[20px] -z-10" />
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="lg:pl-10">
-                    <SectionHeading subtitle="A NOTE FROM THE FOUNDER" title={<>FITNESS IS <span className="gradient-text">PERSONAL AGAIN</span></>} align="left" />
+                    <SectionHeading subtitle="A NOTE FROM THE FOUNDER" title={<>TRANSFORMING LIVES THROUGH <span className="gradient-text">DISCIPLINE & FITNESS</span></>} align="left" />
 
                     <div className="prose prose-invert prose-lg mt-8 text-gray-300 font-light leading-relaxed">
                         <p>
-                            "When I founded Elite Fitness Clubb, I had one unshakeable belief — Hinjewadi deserved a gym that matched the ambition of its people. Not another franchise. Not another box with treadmills. A world-class training destination built from the ground up, with relentless attention to every detail."
+                            "I am <strong>Sandeep Jadhav Patil</strong>, the founder of The Elite Fitness Clubb. Fitness is not just a business for me, but a disciplined way of living. My journey started with a simple thought — to provide people in my village and surrounding areas with a premium fitness center that offers proper guidance, modern facilities, and a positive environment."
+                        </p>
+                        <p className="mt-4 text-white">
+                            Nowadays, fitness is not limited merely to bodybuilding or losing weight. In my view, fitness means <strong>physical strength, mental stability, confidence, and a disciplined lifestyle.</strong>
                         </p>
                         <p className="mt-4">
-                            "We invested in the finest imported equipment, recruited trainers with championship-level expertise, and designed a 6,000 sq ft facility that inspires the moment you walk in. From personal training to ice bath recovery, from nutrition science to community support — every element here is engineered for one outcome: your complete transformation."
+                            "Today, gyms are opening in many places, but very few focus on proper guidance, personal attention, and long-term results. At The Elite Fitness Clubb, we view each member not as a ‘result’ but as a <strong>‘responsibility’</strong>. I firmly believe that with the right training, proper diet, and the right environment, anyone can completely transform themselves."
                         </p>
-                        <p className="mt-4 font-normal text-white italic">
-                            "Here, mediocrity has no place. Only results. That is the Elite standard."
+                        <p className="mt-4">
+                            "In the coming times, our commitment is to take The Elite Fitness Clubb across the country as a strong and trusted fitness brand. We wish to work with franchise partners who not only run a business but also have the desire to bring positive changes in people's lives."
+                        </p>
+                        <p className="mt-6 text-2xl font-heading font-medium text-white tracking-wide border-l-2 border-elite-orange pl-6 py-1">
+                            "Fitness is a journey to change life, rather than just changing the body."
                         </p>
                     </div>
 
-                    <AnimatedSignature />
+                    <div className="mt-8 flex flex-col items-start gap-1">
+                        <AnimatedSignature />
+                        <span className="text-gray-400 font-bold tracking-[0.2em] uppercase text-xs mt-3">Sandeep Jadhav Patil</span>
+                    </div>
                 </motion.div>
             </div>
         </section>
     )
 }
-
-function EliteTrainerSlider() {
-    const coaches = [
+const testimonials = [
         {
-            name: 'COACH RAHUL',
-            role: 'Fat Loss Architect',
-            proof: 'Successfully transformed 40+ corporate professionals.',
-            img: '/asset/6-2.webp'
+            name: 'RAHUL M.',
+            achievement: 'Lost 18kg in 4 months',
+            quote: 'The personalized diet plan and trainer attention at The Elite Fitness Clubb changed everything. I\'ve never felt stronger.',
+            img: '/asset/new/20260404_130314.webp',
         },
         {
-            name: 'COACH SARA',
-            role: 'Mobility & Recovery Specialist',
-            proof: 'Certified in injury rehab and advanced biomechanics.',
-            img: '/asset/10-1.webp'
+            name: 'PRIYA S.',
+            achievement: 'Gained 8kg lean muscle',
+            quote: 'The ice bath recovery and advanced coaching helped me break through every plateau. This gym is different.',
+            img: '/asset/new/20260404_130338.webp',
         },
         {
-            name: 'COACH NIKHIL',
-            role: 'Strength & Conditioning',
-            proof: 'Built 10+ state-level powerlifting champions.',
-            img: '/asset/15.webp'
-        },
-        {
-            name: 'COACH PRIYA',
-            role: 'Nutrition & Wellness Engineer',
-            proof: 'Designs holistic protocols for sustainable energy.',
-            img: '/asset/16.webp'
+            name: 'AMIT K.',
+            achievement: 'Ran first marathon at 42',
+            quote: 'I came in overweight and unmotivated. Six months later, I ran my first marathon. Elite made it possible.',
+            img: '/asset/new/20260404_130412.webp',
         },
     ]
 
-    const scrollRef = useRef(null)
-    const { scrollXProgress } = useScroll({ container: scrollRef })
+const TiltCard = ({ children, index }) => {
+    const isStaggered = index % 2 !== 0;
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
+    const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
+    
+    // Glossy reflection movement
+    const glareX = useTransform(mouseXSpring, [-0.5, 0.5], ["-100%", "100%"]);
+    const glareY = useTransform(mouseYSpring, [-0.5, 0.5], ["-100%", "100%"]);
+
+    const handleMouseMove = (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const width = rect.width;
+        const height = rect.height;
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
 
     return (
-        <section className="py-28 relative bg-black/50 border-y border-white/5 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 mb-16">
-                <SectionHeading subtitle="THE ELITE 10" title={<>OUR SPECIAL FORCES <span className="gradient-text">TEAM</span></>} align="left" />
-                <p className="text-gray-400 mt-4 max-w-2xl font-light">We don't hire generic 'floor trainers.' We employ specialized architects capable of completely rebuilding your body and health.</p>
+        <motion.div
+            initial={{ opacity: 0, y: isStaggered ? 80 : 30 }}
+            whileInView={{ opacity: 1, y: isStaggered ? 48 : 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.15, duration: 0.7 }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+            className={`relative rounded-[2.5rem] overflow-hidden group/card border border-white/5 
+                        transition-all duration-700 ease-out cursor-pointer
+                        group-hover/spotlight:opacity-30 hover:!opacity-100 
+                        hover:z-50 hover:shadow-[0_0_60px_rgba(233,111,73,0.4)]
+                        ${isStaggered ? 'md:translate-y-12' : ''}`}
+        >
+            <div style={{ aspectRatio: '3/4' }}>
+                {children}
             </div>
 
-            {/* Horizontal Scroll Container */}
-            <div
-                ref={scrollRef}
-                className="flex gap-6 overflow-x-auto pb-12 px-4 sm:px-[10vw] no-scrollbar snap-x snap-mandatory"
-            >
-                {coaches.map((coach, i) => (
-                    <div
-                        key={i}
-                        className="min-w-[300px] max-w-[320px] sm:min-w-[400px] sm:max-w-[450px] shrink-0 snap-center relative rounded-3xl overflow-hidden group border border-white/10"
-                        style={{ aspectRatio: '3/4' }}
-                    >
-                        <img src={coach.img} alt={coach.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+            {/* Interactive 3D Glare */}
+            <motion.div 
+                className="absolute inset-0 w-[200%] h-[200%] pointer-events-none z-50 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"
+                style={{ x: glareX, y: glareY, rotate: "35deg" }}
+            />
+        </motion.div>
+    );
+};
 
-                        <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                            <span className="text-purple-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-2">{coach.role}</span>
-                            <h3 className="text-3xl font-heading font-black text-white mb-4 uppercase">{coach.name}</h3>
+// Tinder-Style Swipe Deck purely for mobile
+const MobileTransformationDeck = ({ testimonials }) => {
+    const [cards, setCards] = useState(testimonials);
 
-                            <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                                <div className="flex items-start gap-3">
-                                    <Star className="text-yellow-500 shrink-0 w-5 h-5 fill-yellow-500 mt-0.5" />
-                                    <p className="text-sm text-gray-200 leading-snug font-medium italic">"{coach.proof}"</p>
+    const handleDragEnd = (event, info) => {
+        // If dragged horizontally past threshold, send card to back
+        if (Math.abs(info.offset.x) > 60) {
+            setCards((prev) => {
+                const newCards = [...prev];
+                const frontCard = newCards.shift();
+                newCards.push(frontCard);
+                return newCards;
+            });
+        }
+    };
+
+    return (
+        <div className="relative w-full h-[550px] flex items-center justify-center overflow-hidden touch-none">
+            <AnimatePresence mode="popLayout">
+                {cards.map((t, index) => {
+                    const isFront = index === 0;
+                    return (
+                        <motion.div
+                            key={t.name}
+                            layout
+                            initial={{ scale: 0.8, opacity: 0, y: 0 }}
+                            animate={{
+                                scale: 1 - index * 0.05,
+                                y: index * 25,
+                                zIndex: cards.length - index,
+                                opacity: 1 - index * 0.15
+                            }}
+                            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                            drag={isFront ? "x" : false}
+                            dragConstraints={{ left: 0, right: 0 }}
+                            onDragEnd={isFront ? handleDragEnd : undefined}
+                            className={`absolute w-[85%] max-w-[340px] rounded-[2rem] overflow-hidden border border-white/10 ${isFront ? 'cursor-grab active:cursor-grabbing hover:shadow-[0_0_30px_rgba(233,111,73,0.2)]' : ''}`}
+                            style={{ aspectRatio: '3/4', touchAction: 'none' }}
+                        >
+                            {/* Base Image */}
+                            <img src={t.img} alt={t.name} className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+                            
+                            {/* Gradients */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/70 to-transparent opacity-95 pointer-events-none" />
+
+                            {/* Content Always Visible on Mobile */}
+                            <div className="absolute inset-0 p-6 flex flex-col justify-end pointer-events-none">
+                                <div className="self-start px-3 py-1 bg-elite-orange/20 border border-elite-orange/30 rounded-full text-elite-orange text-[10px] font-bold tracking-[0.2em] uppercase mb-3 backdrop-blur-md shadow-xl">
+                                    {t.achievement}
+                                </div>
+                                <h3 className="text-2xl font-heading font-black text-amber-400 mb-2 uppercase tracking-wide">
+                                    {t.name}
+                                </h3>
+                                <div className="pt-3 border-t border-white/10 mt-1">
+                                    <p className="text-sm text-gray-200 leading-relaxed font-light italic">
+                                        "{t.quote}"
+                                    </p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                ))}
+                        </motion.div>
+                    );
+                })}
+            </AnimatePresence>
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 mt-4 text-center z-50">
+                <span className="text-gray-500 text-[10px] font-bold tracking-[0.3em] uppercase animate-pulse">Swipe For More &lt;—&gt;</span>
+            </div>
+        </div>
+    );
+};
+
+function TransformationResults() {
+
+    return (
+        <section className="py-28 relative bg-black/50 border-y border-white/5 overflow-hidden noise-bg">
+            <div className="max-w-7xl mx-auto px-4 mb-16">
+                <SectionHeading subtitle="REAL RESULTS" title={<>TRANSFORMATION <span className="gradient-text">STORIES</span></>} align="left" />
+                <p className="text-gray-400 mt-4 max-w-2xl font-light">Our members' transformations speak louder than any marketing ever could.</p>
             </div>
 
-            {/* Scroll Progress Bar */}
-            <div className="max-w-7xl mx-auto px-4 mt-4">
-                <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
-                    <motion.div className="h-full bg-gradient-to-r from-elite-orange to-amber-400" style={{ scaleX: scrollXProgress, transformOrigin: 'left' }} />
+
+            {/* Testimonial Cards — Editorial Spotlight Layout */}
+            <div className="max-w-7xl mx-auto px-4 relative mt-10">
+                {/* Giant Rolling Ticker Background */}
+                <div className="absolute top-1/2 left-0 -translate-y-1/2 flex whitespace-nowrap opacity-[0.02] pointer-events-none z-0">
+                    <div className="animate-marquee text-[12rem] md:text-[20rem] font-black font-heading tracking-tighter leading-none" style={{ WebkitTextStroke: '3px #e96f49', color: 'transparent' }}>
+                        REAL RESULTS • REAL BODIES • REAL RESULTS • REAL BODIES • REAL RESULTS •
+                    </div>
+                </div>
+
+                {/* Staggered Grid with Spotlight Effect FOR DESKTOP */}
+                <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-10 relative z-10 group/spotlight">
+                    {testimonials.map((t, i) => (
+                        <TiltCard key={i} index={i}>
+                            {/* Base Image */}
+                            <img src={t.img} alt={t.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover/card:scale-110" loading="lazy" />
+                            
+                            {/* Gradients */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/60 to-transparent opacity-90 md:opacity-80" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-elite-orange/40 to-transparent opacity-100 md:opacity-0 md:group-hover/card:opacity-100 transition-opacity duration-700 mix-blend-overlay" />
+
+                            <div className="absolute inset-0 p-8 flex flex-col justify-end transform-gpu" style={{ transform: 'translateZ(30px)' }}>
+                                {/* Ambient Huge Quote Mark */}
+                                <div className="absolute top-8 left-8 text-8xl font-serif text-white opacity-10 group-hover/card:opacity-0 transition-opacity duration-500">"</div>
+
+                                {/* Content */}
+                                <div className="relative z-10 transform -translate-y-4 md:translate-y-0 md:group-hover/card:-translate-y-4 transition-transform duration-500 transform-gpu" style={{ transform: 'translateZ(40px)' }}>
+                                    <span className="inline-block px-3 py-1 bg-elite-orange/20 border border-elite-orange/30 rounded-full text-elite-orange text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-4 backdrop-blur-md shadow-xl">
+                                        {t.achievement}
+                                    </span>
+                                    <h3 className="text-3xl font-heading font-black text-white mb-0 uppercase tracking-wide text-amber-400 md:text-white md:group-hover/card:text-amber-400 transition-colors duration-300">
+                                        {t.name}
+                                    </h3>
+                                </div>
+
+                                {/* Expanding Reveal Section */}
+                                <div className="grid grid-rows-[1fr] md:grid-rows-[0fr] md:group-hover/card:grid-rows-[1fr] transition-all duration-500 ease-in-out transform-gpu" style={{ transform: 'translateZ(50px)' }}>
+                                    <div className="overflow-hidden">
+                                        <div className="pt-4 border-t border-white/10 mt-4">
+                                            <p className="text-base sm:text-lg text-gray-200 leading-relaxed font-light italic">
+                                                "{t.quote}"
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </TiltCard>
+                    ))}
+                </div>
+
+                {/* Interactive Deck Mode FOR MOBILE */}
+                <div className="block md:hidden relative z-10 mt-8 mb-4">
+                    <MobileTransformationDeck testimonials={testimonials} />
                 </div>
             </div>
         </section>
@@ -220,7 +380,7 @@ function BoutiqueDifference() {
     const reasons = [
         { icon: Clock, title: 'ZERO WAIT-TIME', desc: 'With capped membership numbers, you never wait for a squat rack, bench, or machine. Your workout happens on your schedule.' },
         { icon: Droplets, title: 'BIO-HACKING HYGIENE', desc: 'A smaller space allows us to maintain medical-grade cleanliness after every single session. An environment built for health.' },
-        { icon: Users, title: 'HINJEWADI\'S PRIVATE CLUB', desc: 'It’s a community of like-minded professionals who value their time, privacy, and results above all else.' },
+        { icon: Users, title: 'HINJEWADI\'S PRIVATE CLUB', desc: 'It\'s a community of like-minded professionals who value their time, privacy, and results above all else.' },
     ]
 
     return (
@@ -263,7 +423,7 @@ export default function About() {
             <HeroBoutique />
             <LuxuryStats />
             <FoundersCorner />
-            <EliteTrainerSlider />
+            <TransformationResults />
             <BoutiqueDifference />
         </PageWrapper>
     )

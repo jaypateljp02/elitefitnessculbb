@@ -52,7 +52,7 @@ export default function Gallery() {
                             PHOTO <span className="gradient-text text-glow">GALLERY</span>
                         </h1>
                         <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light mb-12">
-                            Take a look inside the Elite Fitness Clubb. Premium equipment, immaculate interiors, and an unmatched vibe.
+                            Take a look inside The Elite Fitness Clubb. Premium equipment, immaculate interiors, and an unmatched vibe.
                         </p>
                     </motion.div>
 

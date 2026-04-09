@@ -49,14 +49,21 @@ function MouseSpotlight() {
     const spotRef = useRef(null)
     useEffect(() => {
         if ('ontouchstart' in window && navigator.maxTouchPoints > 0) return
+        let animationFrameId;
         const handleMouseMove = (e) => {
-            if (spotRef.current) {
-                spotRef.current.style.left = `${e.clientX}px`
-                spotRef.current.style.top = `${e.clientY}px`
-            }
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            animationFrameId = requestAnimationFrame(() => {
+                if (spotRef.current) {
+                    spotRef.current.style.left = `${e.clientX}px`
+                    spotRef.current.style.top = `${e.clientY}px`
+                }
+            });
         }
         window.addEventListener('mousemove', handleMouseMove, { passive: true })
-        return () => window.removeEventListener('mousemove', handleMouseMove)
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove)
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        }
     }, [])
     return <div ref={spotRef} className="mouse-spotlight" />
 }
@@ -81,7 +88,7 @@ function App() {
     /* ===== Lenis Smooth Scroll (all devices) ===== */
     useEffect(() => {
         const lenis = new Lenis({
-            duration: 1.5,
+            duration: 0.8,
             smoothWheel: true,
             wheelMultiplier: 1,
             touchMultiplier: 1.5,

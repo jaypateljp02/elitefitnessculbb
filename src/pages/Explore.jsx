@@ -7,19 +7,21 @@ import { X, Orbit, ZoomIn, ChevronLeft, ChevronRight, PlayCircle, ArrowLeft } fr
 /* =======================================
    DATA: GALLERY
    ======================================= */
-const categories = ['ALL', '🔥 TRANSFORMATIONS', '💪 ELITE COACHING', '🧘 THE VIBE']
+const categories = ['ALL', 'GYM FLOOR', 'EQUIPMENT', 'RECOVERY', 'AMBIANCE']
 
 const galleryImages = [
-    { id: 1, src: '/asset/new/20260404_130238.webp', category: '💪 ELITE COACHING', span: 'col-span-2 row-span-2' },
-    { id: 2, src: '/asset/new/20260404_130314.webp', category: '🔥 TRANSFORMATIONS', span: 'col-span-1 row-span-2' },
-    { id: 3, src: '/asset/new/20260404_130338.webp', category: '🔥 TRANSFORMATIONS', span: 'col-span-1 row-span-1' },
-    { id: 4, src: '/asset/new/20260404_130412.webp', category: '💪 ELITE COACHING', span: 'col-span-2 row-span-1' },
-    { id: 5, src: '/asset/Yoga 1.webp', category: '🧘 THE VIBE', span: 'col-span-1 row-span-2' },
-    { id: 6, src: '/asset/ice bath area.webp', category: '🧘 THE VIBE', span: 'col-span-1 row-span-1' },
-    { id: 7, src: '/asset/Zumba.webp', category: '🧘 THE VIBE', span: 'col-span-2 row-span-2' },
-    { id: 8, src: '/asset/new/20260404_130446.webp', category: '🧘 THE VIBE', span: 'col-span-1 row-span-1' },
-    { id: 9, src: '/asset/new/20260404_130852.webp', category: '💪 ELITE COACHING', span: 'col-span-1 row-span-1' },
-    { id: 10, src: '/asset/new/20260404_131006.webp', category: '🔥 TRANSFORMATIONS', span: 'col-span-2 row-span-1' },
+    { id: 1, src: '/asset/new/20260404_130238.webp', category: 'GYM FLOOR', span: 'col-span-2 row-span-2' },
+    { id: 2, src: '/asset/new/20260404_130314.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-2' },
+    { id: 3, src: '/asset/new/20260404_130338.webp', category: 'GYM FLOOR', span: 'col-span-1 row-span-1' },
+    { id: 4, src: '/asset/new/20260404_130412.webp', category: 'EQUIPMENT', span: 'col-span-2 row-span-1' },
+    { id: 5, src: '/asset/new/20260404_130426 .webp', category: 'AMBIANCE', span: 'col-span-1 row-span-2' },
+    { id: 6, src: '/asset/ice bath area.webp', category: 'RECOVERY', span: 'col-span-1 row-span-1' },
+    { id: 7, src: '/asset/new/20260404_130434 .webp', category: 'AMBIANCE', span: 'col-span-2 row-span-2' },
+    { id: 8, src: '/asset/new/20260404_130446.webp', category: 'RECOVERY', span: 'col-span-1 row-span-1' },
+    { id: 9, src: '/asset/new/20260404_130852.webp', category: 'GYM FLOOR', span: 'col-span-1 row-span-1' },
+    { id: 10, src: '/asset/new/20260404_131006.webp', category: 'EQUIPMENT', span: 'col-span-2 row-span-1' },
+    { id: 11, src: '/asset/new/20260404_131034.webp', category: 'AMBIANCE', span: 'col-span-1 row-span-1' },
+    { id: 12, src: '/asset/new/20260404_130257 (1).webp', category: 'GYM FLOOR', span: 'col-span-1 row-span-2' },
 ]
 
 /* =======================================
@@ -37,7 +39,8 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
             <motion.img
                 animate={{ scale: [1, 1.2], x: [0, -50] }}
                 transition={{ duration: 20, ease: 'linear', repeat: Infinity, repeatType: 'reverse' }}
-                src="/asset/Sitting area wall.webp"
+                style={{ willChange: 'transform' }}
+                src="/asset/new/20260404_130238.webp"
                 className="absolute inset-0 w-full h-full object-cover opacity-60"
             />
             <div className="absolute inset-0 noise-overlay opacity-[0.03] mix-blend-overlay pointer-events-none" />
@@ -153,11 +156,7 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
             {/* Noise texture overlay */}
             <div className="absolute inset-0 noise-overlay opacity-[0.03] mix-blend-overlay pointer-events-none" />
 
-            {/* Live Counter */}
-            <div className="absolute top-24 sm:top-28 left-6 z-30 flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 backdrop-blur-md">
-                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[10px] font-bold text-emerald-400 tracking-wider">🟢 14 MEMBERS TRAINING</span>
-            </div>
+
 
             {/* Main Tour Container */}
             <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-8 flex flex-col items-center h-full">

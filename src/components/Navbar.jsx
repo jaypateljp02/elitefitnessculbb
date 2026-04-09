@@ -82,9 +82,9 @@ export default function Navbar() {
 
                     {/* Logo */}
                     <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 sm:gap-3 group z-[60]">
-                        <img src="/asset/Logo.webp" alt="Elite Fitness Clubb" className="h-8 sm:h-10 w-auto transition-all duration-300 group-hover:scale-105" style={{ filter: 'drop-shadow(0 0 8px rgba(233,111,73,0.3))' }} />
+                        <img src="/asset/Logo.webp" alt="The Elite Fitness Clubb" className="h-8 sm:h-10 w-auto transition-all duration-300 group-hover:scale-105" style={{ filter: 'drop-shadow(0 0 8px rgba(233,111,73,0.3))' }} />
                         <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-1.5 leading-tight">
-                            <span className="text-[10px] sm:text-sm font-heading font-black text-[#E0E0E0] tracking-widest whitespace-nowrap">ELITE FITNESS </span>
+                            <span className="text-[10px] sm:text-sm font-heading font-black text-[#E0E0E0] tracking-widest whitespace-nowrap">THE ELITE FITNESS </span>
                             <span className="text-[10px] sm:text-sm font-heading font-black tracking-widest whitespace-nowrap" style={{ color: '#e96f49' }}>CLUBB</span>
                         </div>
                     </Link>
@@ -169,9 +169,9 @@ export default function Navbar() {
 
                             <div className="relative z-10 w-full max-w-sm rounded-[32px] overflow-hidden p-6 border border-white/10" style={{ background: 'rgba(5,5,15,0.7)', backdropFilter: 'blur(40px)' }}>
                                 <div className="flex flex-col items-center justify-center gap-3 mb-8">
-                                    <img src="/asset/Logo.webp" alt="Elite Fitness Clubb" className="h-16" style={{ filter: 'drop-shadow(0 0 15px rgba(233,111,73,0.5))' }} />
+                                    <img src="/asset/Logo.webp" alt="The Elite Fitness Clubb" className="h-16" style={{ filter: 'drop-shadow(0 0 15px rgba(233,111,73,0.5))' }} />
                                     <div className="text-center">
-                                        <span className="text-sm font-heading font-black text-[#E0E0E0] tracking-widest block">ELITE FITNESS</span>
+                                        <span className="text-sm font-heading font-black text-[#E0E0E0] tracking-widest block">THE ELITE FITNESS</span>
                                         <span className="text-sm font-heading font-black text-[#e96f49] tracking-widest block mt-0.5">CLUBB</span>
                                     </div>
                                 </div>

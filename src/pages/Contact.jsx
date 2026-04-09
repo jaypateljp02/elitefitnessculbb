@@ -32,10 +32,10 @@ function ContactHero() {
 
 function ContactCards() {
   const contactInfo = [
-    { icon: MapPin, title: 'VISIT US', info: '2nd floor, Laxmi Chowk, Elite Fitness Clubb, above KFC, Phase 1, Hinjawadi, Maharashtra 411057', detail: '' },
+    { icon: MapPin, title: 'VISIT US', info: '2nd floor, Laxmi Chowk, The Elite Fitness Clubb, above KFC, Phase 1, Hinjawadi, Maharashtra 411057', detail: '' },
     { icon: Phone, title: 'CALL US', info: '+91 8888 161216', link: 'tel:+918888161216', detail: 'Mon-Sat' },
     { icon: Mail, title: 'EMAIL US', info: 'info@elitefitness.club', link: 'mailto:info@elitefitness.club', detail: 'We Reply Within 24 Hrs' },
-    { icon: Clock, title: 'HOURS', info: 'Mon-Sat: 5AM - 10PM', detail: '' },
+    { icon: Clock, title: 'HOURS', info: 'Mon-Sat: 6AM - 10PM', detail: '' },
   ]
 
   return (
@@ -87,8 +87,8 @@ function ContactFormMap() {
         },
         body: JSON.stringify({
           access_key: "60276be1-0988-435a-a1cc-9a21ec43d9de",
-          subject: "New Inquiry from Elite Fitness Contact Page",
-          from_name: "Elite Fitness Website",
+          subject: "New Inquiry from The Elite Fitness Contact Page",
+          from_name: "The Elite Fitness Website",
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
@@ -188,7 +188,7 @@ function ContactFormMap() {
               style={{ border: 0, filter: 'invert(100%) hue-rotate(195deg) sepia(20%) saturate(300%) contrast(110%) brightness(50%)' }}
               allowFullScreen
               loading="lazy"
-              title="Elite Fitness Clubb Location"
+              title="The Elite Fitness Clubb Location"
               className="absolute inset-0 z-0"
             />
             {/* Subtle glow overlay for the map */}
@@ -200,7 +200,7 @@ function ContactFormMap() {
                 <MapPin size={24} />
               </div>
               <div>
-                <h4 className="font-heading font-black text-white text-sm uppercase tracking-wide">Elite Fitness Clubb</h4>
+                <h4 className="font-heading font-black text-white text-sm uppercase tracking-wide">The Elite Fitness Clubb</h4>
                 <p className="text-xs text-gray-400 font-light mt-0.5">2nd floor, Laxmi Chowk, above KFC</p>
               </div>
             </div>

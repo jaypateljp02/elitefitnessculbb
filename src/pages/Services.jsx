@@ -1,7 +1,7 @@
 import PageWrapper from '../components/PageWrapper'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Dumbbell, Snowflake, Zap, Leaf, ArrowRight, Sparkles, MapPin, Maximize2, Check } from 'lucide-react'
+import { Dumbbell, Snowflake, Zap, Leaf, ArrowRight, MapPin, Maximize2, Check } from 'lucide-react'
 import { useState } from 'react'
 
 /* =======================================
@@ -32,16 +32,16 @@ const zones = [
         zoneNumber: '02',
         name: 'THE SCIENCE OF RECOVERY',
         tagline: 'HEAL FASTER. PERFORM HARDER.',
-        desc: "Recovery isn't a luxury; it's a protocol. Our dedicated recovery suite features ice bath circuits to reduce inflammation, steam and sun baths, and infrared saunas to accelerate cellular repair. Train more, hurt less.",
+        desc: "Recovery isn't a luxury; it's a protocol. Our dedicated recovery suite features ice bath circuits to reduce inflammation, steam rooms, and dedicated active recovery spaces to accelerate cellular repair. Train more, hurt less.",
         image: '/asset/11.webp',
         Icon: Snowflake,
-        features: ['Guided Ice Bath & Cold Plunge Protocols', 'Steam Bath & Sun Bath Therapy', 'Infrared Sauna for Muscle Repair', 'Mobility & Assisted Stretching Therapy'],
+        features: ['Guided Ice Bath & Cold Plunge Protocols', 'Steam Bath & Sun Bath Therapy', 'Active Recovery & Foam Rolling Zone', 'Mobility & Assisted Stretching Therapy'],
         subTags: ['Cold Therapy', 'Muscle Repair', 'Flexibility', 'Bio-Hacking'],
         stat: { area: 'RECOVERY SUITE', equipment: 'SORENESS -40%' },
         ctaLabel: 'BOOK A RECOVERY SESSION',
         waLink: 'https://wa.me/918888161216?text=Hi,%20tell%20me%20about%20your%20Recovery%20and%20Ice%20Bath%20sessions.',
         color: 'rgba(56,189,248,0.5)',
-        borderGlow: false,
+        borderGlow: true,
         tooltip: null,
     },
     {
@@ -59,7 +59,7 @@ const zones = [
         ctaLabel: 'START MY TRANSFORMATION JOURNEY',
         waLink: "https://wa.me/918888161216?text=Hi%20Elite!%20I%20want%20to%20start%20my%20Fat%20Loss%20or%20Weight%20Gain%20journey.",
         color: 'rgba(233,111,73,0.5)',
-        borderGlow: false, // Turned off here to keep focus on Coaching
+        borderGlow: true, // Enabled for all per user request
         tooltip: null,
     },
     {
@@ -77,7 +77,7 @@ const zones = [
         ctaLabel: 'JOIN A GROUP CLASS OR EVENT',
         waLink: 'https://wa.me/918888161216?text=Hi,%20please%20share%20the%20schedule%20for%20your%20Boutique%20Group%20Classes%20and%20Events.',
         color: 'rgba(52,211,153,0.4)',
-        borderGlow: false,
+        borderGlow: true,
         tooltip: {
             title: 'CLASS SCHEDULE',
             rows: [
@@ -250,7 +250,7 @@ export default function Services() {
                     </h2>
                     <p className="text-gray-400 text-base mb-8 font-light">Start your journey with a free consultation.</p>
                     <a href="https://wa.me/918888161216?text=Hi%20Elite!%20I%20want%20to%20book%20a%20free%20consultation." target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-elite-orange to-amber-400 rounded-full text-sm font-bold btn-glow tracking-widest uppercase">
-                        <Sparkles size={18} /> BOOK FREE CONSULTATION
+                        BOOK FREE CONSULTATION
                     </a>
                 </div>
             </section>

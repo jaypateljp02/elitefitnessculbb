@@ -740,7 +740,7 @@ html.lenis body {
 
 /* ===== GLOBAL: No pure white — soften all whites ===== */
 .text-white {
-    color: #E0E0E0 !important;
+    color: #E0E0E0;
 }
 
 /* ===== Clickable elements get cursor:none for custom cursor ===== */

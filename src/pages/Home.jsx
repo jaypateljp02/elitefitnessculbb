@@ -86,7 +86,7 @@ function Hero() {
             <motion.div style={{ opacity: heroOpacity, y: heroY }} className="relative z-10 text-center px-4 max-w-6xl w-full">
 
                 {/* Hero Text */}
-                <div className="relative mb-8">
+                <div className="relative mb-4">
                     <motion.div
                         initial={{ opacity: 0, y: 60 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1 }}
-                    className="text-sm sm:text-lg text-gray-300/80 max-w-xl mx-auto mb-10 font-light"
+                    className="text-sm sm:text-lg text-gray-300/80 max-w-xl mx-auto mb-6 font-light"
                 >
                     Experience the pinnacle of fitness. Join the most exclusive training environment.
                 </motion.p>

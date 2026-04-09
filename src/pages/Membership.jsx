@@ -83,7 +83,7 @@ const MEMBERSHIP_PLANS = [
    ======================================= */
 function MembershipHero() {
     return (
-        <section className="relative pt-44 pb-12 sm:pb-20 px-4 overflow-hidden min-h-[60vh] flex flex-col justify-center items-center">
+        <section className="relative pt-36 pb-8 sm:pb-12 px-4 overflow-hidden min-h-[45vh] flex flex-col justify-center items-center">
             {/* Background (Consistent with About/Home) */}
             <div className="absolute inset-0 z-0">
                 <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-25 grayscale brightness-90">
@@ -129,7 +129,7 @@ const MobileMembershipDeck = () => {
     };
 
     return (
-        <div className="relative w-full h-[720px] flex items-center justify-center overflow-hidden lg:hidden">
+        <div className="relative w-full h-[650px] flex items-center justify-center overflow-hidden lg:hidden">
             <AnimatePresence mode="popLayout">
                 {cards.map((p, index) => {
                     const isFront = index === 0;
@@ -276,9 +276,9 @@ const MembershipCard = ({ plan, index }) => {
    ======================================= */
 function PricingSection() {
     return (
-        <section className="py-24 px-4 relative overflow-hidden">
+        <section className="py-12 px-4 relative overflow-hidden">
             <div className="max-w-7xl mx-auto relative z-10 w-full">
-                <div className="text-center mb-24 hidden lg:block">
+                <div className="text-center mb-12 hidden lg:block">
                     <p className="text-elite-orange text-[10px] font-black tracking-[0.3em] uppercase mb-4">Pricing Architecture</p>
                     <h2 className="text-5xl sm:text-7xl lg:text-8xl font-heading font-black leading-none tracking-tight text-white uppercase">
                         CHOOSE YOUR <span className="gradient-text italic pr-4">PASS</span>
@@ -304,7 +304,7 @@ function PricingSection() {
    ======================================= */
 function Facilities() {
     return (
-        <section className="py-32 px-4 relative">
+        <section className="py-16 sm:py-24 px-4 relative">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-24">
                     <p className="text-elite-orange text-[10px] font-black tracking-[0.3em] uppercase mb-4">Elite Sanctuaries</p>
@@ -363,7 +363,7 @@ export default function Membership() {
             <PricingSection />
             <Facilities />
             {/* CTA */}
-            <section className="py-48 px-4 relative overflow-hidden flex flex-col items-center">
+            <section className="py-24 sm:py-32 px-4 relative overflow-hidden flex flex-col items-center">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-elite-orange/10 rounded-full blur-[150px]" />
                 <div className="relative z-10 max-w-4xl mx-auto text-center">
                     <h2 className="text-6xl sm:text-8xl lg:text-[10rem] font-heading font-black leading-[0.85] tracking-tight text-white mb-16 uppercase">

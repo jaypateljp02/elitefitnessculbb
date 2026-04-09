@@ -106,7 +106,7 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
                                     Virtual 360°<br />Tour
                                 </h3>
                                 <p className="text-gray-400 text-xs tracking-widest font-light mt-2 uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                    Experience the 15,000 sq.ft facility
+                                    Experience the 6,000 sq.ft facility
                                 </p>
                             </div>
                         </button>
@@ -121,23 +121,19 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
    MODE A: 360 VIRTUAL TOUR (KUULA EMBED)
    ======================================= */
 function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoadComplete }) {
-    const [isLoading, setIsLoading] = useState(!initialLoadComplete)
+    const [isLoading, setIsLoading] = useState(false)
     const [tourStarted, setTourStarted] = useState(false)
     const iframeRef = useRef(null)
 
-    // Scanning Facility Loader - Only play once per session
-    useEffect(() => {
-        if (!initialLoadComplete) {
-            setIsLoading(true)
-            const timer = setTimeout(() => {
-                setIsLoading(false)
-                setInitialLoadComplete(true)
-            }, 500)
-            return () => clearTimeout(timer)
-        } else {
-            setIsLoading(false)
-        }
-    }, [initialLoadComplete, setInitialLoadComplete])
+    const handleStartTour = () => {
+        setTourStarted(true);
+        setIsLoading(true);
+    };
+
+    const handleIframeLoad = () => {
+        setIsLoading(false);
+        setInitialLoadComplete(true);
+    };
 
     return (
         <motion.div
@@ -195,16 +191,15 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
                     <div className="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-elite-orange/40 rounded-bl-2xl sm:rounded-bl-3xl pointer-events-none z-20" />
                     <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-elite-orange/40 rounded-br-2xl sm:rounded-br-3xl pointer-events-none z-20" />
 
-                    {/* The Kuula Iframe (Lazy Loaded Behind Click) */}
                     {tourStarted ? (
                         <iframe
                             ref={iframeRef}
-                            className="ku-embed w-full h-full"
+                            onLoad={handleIframeLoad}
+                            className="ku-embed w-full h-full relative z-10"
                             frameBorder="0"
                             allow="xr-spatial-tracking; gyroscope; accelerometer"
                             allowFullScreen
                             scrolling="no"
-                            loading="lazy"
                             src="https://kuula.co/share/collection/7MFMk?logo=1&info=1&fs=1&vr=0&zoom=1&sd=1&thumbs=1"
                             style={{ border: 'none', display: 'block', minHeight: '400px' }}
                         />
@@ -217,7 +212,7 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#05050c] via-black/40 to-[#05050c]" />
                             <button 
-                                onClick={() => setTourStarted(true)}
+                                onClick={handleStartTour}
                                 className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-elite-orange/20 border border-elite-orange flex items-center justify-center btn-glow hover:bg-elite-orange hover:border-elite-orange group-hover:scale-105 transition-all duration-300"
                             >
                                 <PlayCircle size={40} className="text-white sm:w-12 sm:h-12" />
@@ -292,6 +287,11 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
 function GalleryMode({ initialCategory }) {
     const [activeCategory, setActiveCategory] = useState(initialCategory || 'ALL')
     const [selectedImage, setSelectedImage] = useState(null)
+    
+    // Swipe state for mobile
+    const [touchStart, setTouchStart] = useState(null)
+    const [touchEnd, setTouchEnd] = useState(null)
+
     const filteredImages = activeCategory === 'ALL' ? galleryImages : galleryImages.filter(img => img.category === activeCategory)
 
     const handleNextImage = (e) => {
@@ -310,6 +310,29 @@ function GalleryMode({ initialCategory }) {
         setSelectedImage(filteredImages[prevIndex]);
     };
 
+    const minSwipeDistance = 50;
+
+    const onTouchStart = (e) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEndHandler = () => {
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+        if (isLeftSwipe) {
+            handleNextImage();
+        } else if (isRightSwipe) {
+            handlePrevImage();
+        }
+    };
+
     // Ambient Music Audio Ref (Mock)
     useEffect(() => {
         // Here we would play the Deep House / Lo-Fi track for the gallery
@@ -323,7 +346,7 @@ function GalleryMode({ initialCategory }) {
             exit={{ opacity: 0 }}
             className="relative w-full min-h-screen z-[90]"
         >
-            <div className="pt-32 sm:pt-40 pb-16 px-4">
+            <div className="pt-44 sm:pt-40 pb-16 px-4">
                 <div className="max-w-7xl mx-auto">
                     {/* Categories */}
                     <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -394,10 +417,13 @@ function GalleryMode({ initialCategory }) {
                             initial={{ scale: 0.9, y: 20 }}
                             animate={{ scale: 1, y: 0 }}
                             exit={{ scale: 0.9, y: 20 }}
-                            className="relative max-w-6xl w-full h-[50vh] sm:h-[70vh] rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(233,111,73,0.3)] mt-12 sm:mt-0 flex items-center justify-center group/lightbox"
+                            className="relative max-w-6xl w-full h-[50vh] sm:h-[70vh] rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(233,111,73,0.3)] mt-12 sm:mt-0 flex items-center justify-center group/lightbox touch-pan-y"
                             onClick={e => e.stopPropagation()}
+                            onTouchStart={onTouchStart}
+                            onTouchMove={onTouchMove}
+                            onTouchEnd={onTouchEndHandler}
                         >
-                            <img src={selectedImage.src} alt={selectedImage.category} className="max-w-full max-h-full object-contain" />
+                            <img src={selectedImage.src} alt={selectedImage.category} className="max-w-full max-h-full object-contain pointer-events-none select-none" draggable="false" />
 
                             {/* Navigation Arrows */}
                             <button onClick={handlePrevImage} className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover/lightbox:opacity-100 hover:bg-elite-orange hover:border-elite-orange transition-all z-10 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
@@ -413,15 +439,16 @@ function GalleryMode({ initialCategory }) {
                         </motion.div>
 
                         {/* Thumbnail Swipe Strip */}
-                        <div className="w-full max-w-6xl mt-4 overflow-x-auto scrollbar-hide" onClick={e => e.stopPropagation()}>
-                            <div className="flex gap-2 justify-center px-4 py-2">
+                        <div className="w-full max-w-6xl mt-4 overflow-x-auto scrollbar-hide relative z-50 py-2 pointer-events-auto" onClick={e => e.stopPropagation()}>
+                            <div className="flex gap-2 justify-start sm:justify-center px-4 w-max sm:w-auto mx-auto">
                                 {filteredImages.map((img) => (
                                     <button
                                         key={img.id}
-                                        onClick={() => setSelectedImage(img)}
-                                        className={`shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden transition-all duration-300 ${selectedImage.id === img.id ? 'ring-2 ring-elite-orange scale-110 opacity-100' : 'opacity-40 hover:opacity-80 border border-white/10'}`}
+                                        type="button"
+                                        onClick={(e) => { e.stopPropagation(); setSelectedImage(img); }}
+                                        className={`relative shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer pointer-events-auto ${selectedImage.id === img.id ? 'ring-2 ring-elite-orange scale-110 opacity-100 shadow-[0_0_15px_rgba(233,111,73,0.5)]' : 'opacity-40 hover:opacity-80 border border-white/10'}`}
                                     >
-                                        <img src={img.src} alt={img.category} className="w-full h-full object-cover" loading="lazy" />
+                                        <img src={img.src} alt={img.category} className="w-full h-full object-cover pointer-events-none select-none" draggable="false" loading="lazy" />
                                     </button>
                                 ))}
                             </div>

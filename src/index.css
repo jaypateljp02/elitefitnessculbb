@@ -6,6 +6,12 @@
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 
+/* ===== Performant CSS-only slow zoom for hero backgrounds ===== */
+@keyframes slowZoom {
+    0% { transform: scale(1) translateX(0); }
+    100% { transform: scale(1.15) translateX(-30px); }
+}
+
 /* ===== Global Reset ===== */
 * {
     margin: 0;

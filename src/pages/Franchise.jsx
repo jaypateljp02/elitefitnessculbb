@@ -158,7 +158,7 @@ function FranchiseModels() {
                     <SectionHeading subtitle="CAPITAL REQUIREMENT" title={<>INVESTMENT <span className="gradient-text">TIERS</span></>} />
                     <div className="grid sm:grid-cols-2 gap-6 mt-10 max-w-4xl mx-auto">
                         {/* Silver */}
-                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-2xl border border-gray-600/40 bg-[#0a0a14] p-6 sm:p-8 text-center hover:border-gray-400/50 transition-colors">
+                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-2xl border-2 border-gray-400/50 bg-[#0a0a14] p-6 sm:p-8 text-center hover:border-gray-300/70 transition-colors" style={{ boxShadow: '0 0 25px rgba(192,192,192,0.1)' }}>
                             <h4 className="text-xl font-heading font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-500 mb-2 uppercase tracking-widest">SILVER TIER</h4>
                             <div className="text-4xl font-heading font-black text-white mb-3">₹75 Lakhs</div>
                             <p className="text-gray-400 text-sm font-light">Premium presence in tier-2 markets or compact premium spaces in metros.</p>

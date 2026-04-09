@@ -12,16 +12,12 @@ const categories = ['ALL', 'GYM FLOOR', 'EQUIPMENT', 'RECOVERY', 'AMBIANCE']
 const galleryImages = [
     { id: 1, src: '/asset/new/20260404_130238.webp', category: 'GYM FLOOR', span: 'col-span-2 row-span-2' },
     { id: 2, src: '/asset/new/20260404_130314.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-2' },
-    { id: 3, src: '/asset/new/20260404_130338.webp', category: 'GYM FLOOR', span: 'col-span-1 row-span-1' },
     { id: 4, src: '/asset/new/20260404_130412.webp', category: 'EQUIPMENT', span: 'col-span-2 row-span-1' },
     { id: 5, src: '/asset/new/20260404_130426 .webp', category: 'AMBIANCE', span: 'col-span-1 row-span-2' },
     { id: 6, src: '/asset/ice bath area.webp', category: 'RECOVERY', span: 'col-span-1 row-span-1' },
     { id: 7, src: '/asset/new/20260404_130434 .webp', category: 'AMBIANCE', span: 'col-span-2 row-span-2' },
     { id: 8, src: '/asset/new/20260404_130446.webp', category: 'RECOVERY', span: 'col-span-1 row-span-1' },
-    { id: 9, src: '/asset/new/20260404_130852.webp', category: 'GYM FLOOR', span: 'col-span-1 row-span-1' },
     { id: 10, src: '/asset/new/20260404_131006.webp', category: 'EQUIPMENT', span: 'col-span-2 row-span-1' },
-    { id: 11, src: '/asset/new/20260404_131034.webp', category: 'AMBIANCE', span: 'col-span-1 row-span-1' },
-    { id: 12, src: '/asset/new/20260404_130257 (1).webp', category: 'GYM FLOOR', span: 'col-span-1 row-span-2' },
 ]
 
 /* =======================================
@@ -31,17 +27,15 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
     return (
         <motion.div
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0, scale: 1.1, filter: 'blur(20px)' }}
-            transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
             className="relative z-10 flex items-center justify-center bg-black overflow-hidden"
             style={{ minHeight: 'calc(100vh - 80px)' }}
         >
-            <motion.img
-                animate={{ scale: [1, 1.2], x: [0, -50] }}
-                transition={{ duration: 20, ease: 'linear', repeat: Infinity, repeatType: 'reverse' }}
-                style={{ willChange: 'transform' }}
+            <img
                 src="/asset/new/20260404_130238.webp"
                 className="absolute inset-0 w-full h-full object-cover opacity-60"
+                style={{ animation: 'slowZoom 25s ease-in-out infinite alternate' }}
             />
             <div className="absolute inset-0 noise-overlay opacity-[0.03] mix-blend-overlay pointer-events-none" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black" />
@@ -98,7 +92,7 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-elite-orange/40 to-transparent transition-opacity duration-500 mix-blend-overlay" />
 
                             <div className="relative z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <div className="w-12 h-12 rounded-full bg-purple-500/20 backdrop-blur-md border border-purple-500/30 flex items-center justify-center mb-4 text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors duration-500 animate-pulse">
+                                <div className="w-12 h-12 rounded-full bg-purple-500/20 backdrop-blur-md border border-purple-500/30 flex items-center justify-center mb-4 text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors duration-500">
                                     <PlayCircle size={20} />
                                 </div>
                                 <h3 className="text-2xl font-heading font-black tracking-widest text-white uppercase group-hover:text-shadow-glow">
@@ -146,11 +140,10 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
             transition={{ duration: 0.8 }}
             className="absolute inset-0 w-full h-full bg-black z-0 overflow-hidden flex items-center justify-center"
         >
-            {/* Ambient Background Glow */}
+            {/* Ambient Background Glow (Static, no animation for performance) */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-elite-orange/20 rounded-full blur-[120px] animate-pulse" />
-                <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-elite-orange/15 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-elite-orange/5 rounded-full blur-[150px]" />
+                <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-elite-orange/15 rounded-full blur-[120px]" />
+                <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-elite-orange/10 rounded-full blur-[100px]" />
             </div>
 
             {/* Noise texture overlay */}
@@ -321,7 +314,7 @@ function GalleryMode({ initialCategory }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="relative w-full min-h-screen bg-[#050508] z-[90]"
+            className="relative w-full min-h-screen z-[90]"
         >
             <div className="pt-20 pb-16 px-4">
                 <div className="max-w-7xl mx-auto">
@@ -394,7 +387,7 @@ function GalleryMode({ initialCategory }) {
                             initial={{ scale: 0.9, y: 20 }}
                             animate={{ scale: 1, y: 0 }}
                             exit={{ scale: 0.9, y: 20 }}
-                            className="relative max-w-6xl w-full h-[60vh] sm:h-[80vh] rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(233,111,73,0.3)] mt-12 sm:mt-0 flex items-center justify-center group/lightbox"
+                            className="relative max-w-6xl w-full h-[50vh] sm:h-[70vh] rounded-2xl overflow-hidden shadow-[0_0_60px_rgba(233,111,73,0.3)] mt-12 sm:mt-0 flex items-center justify-center group/lightbox"
                             onClick={e => e.stopPropagation()}
                         >
                             <img src={selectedImage.src} alt={selectedImage.category} className="max-w-full max-h-full object-contain" />
@@ -411,6 +404,21 @@ function GalleryMode({ initialCategory }) {
                                 {selectedImage.category}
                             </div>
                         </motion.div>
+
+                        {/* Thumbnail Swipe Strip */}
+                        <div className="w-full max-w-6xl mt-4 overflow-x-auto scrollbar-hide" onClick={e => e.stopPropagation()}>
+                            <div className="flex gap-2 justify-center px-4 py-2">
+                                {filteredImages.map((img) => (
+                                    <button
+                                        key={img.id}
+                                        onClick={() => setSelectedImage(img)}
+                                        className={`shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden transition-all duration-300 ${selectedImage.id === img.id ? 'ring-2 ring-elite-orange scale-110 opacity-100' : 'opacity-40 hover:opacity-80 border border-white/10'}`}
+                                    >
+                                        <img src={img.src} alt={img.category} className="w-full h-full object-cover" loading="lazy" />
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -449,7 +457,7 @@ export default function Explore() {
                 <div className="relative w-full min-h-screen bg-black z-[90]">
 
                     {/* Top Controls Bar */}
-                    <div className="fixed top-0 left-0 right-0 w-full p-4 sm:p-6 flex flex-wrap justify-between items-start gap-4 z-[110] pointer-events-none bg-gradient-to-b from-black/80 via-black/40 to-transparent pb-10">
+                    <div className="fixed top-16 left-0 right-0 w-full p-4 sm:p-6 flex flex-wrap justify-between items-start gap-2 sm:gap-4 z-[110] pointer-events-none bg-gradient-to-b from-black/80 via-black/40 to-transparent pb-10">
                         
                         {/* Back Button */}
                         <button

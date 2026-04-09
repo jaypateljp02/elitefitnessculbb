@@ -129,7 +129,7 @@ const MobileMembershipDeck = () => {
     };
 
     return (
-        <div className="relative w-full h-[650px] flex items-center justify-center overflow-hidden lg:hidden">
+        <div className="relative w-full h-[720px] flex items-center justify-center overflow-hidden lg:hidden">
             <AnimatePresence mode="popLayout">
                 {cards.map((p, index) => {
                     const isFront = index === 0;
@@ -140,7 +140,7 @@ const MobileMembershipDeck = () => {
                             initial={{ scale: 0.8, opacity: 0, y: 0 }}
                             animate={{
                                 scale: 1 - index * 0.05,
-                                y: index * 24,
+                                y: index * 24 - 20,
                                 zIndex: cards.length - index,
                                 opacity: 1 - index * 0.25,
                                 rotate: index === 0 ? 0 : index % 2 === 0 ? 3 : -3
@@ -149,20 +149,20 @@ const MobileMembershipDeck = () => {
                             drag={isFront ? "x" : false}
                             dragConstraints={{ left: 0, right: 0 }}
                             onDragEnd={isFront ? handleDragEnd : undefined}
-                            className={`absolute w-[88%] max-w-[360px] rounded-[2.5rem] glass-card-strong p-8 overflow-hidden ${isFront ? 'hover:shadow-[0_0_40px_rgba(233,111,73,0.3)]' : ''}`}
+                            className={`absolute w-[88%] max-w-[360px] rounded-[2.5rem] glass-card-strong p-6 overflow-hidden ${isFront ? 'hover:shadow-[0_0_40px_rgba(233,111,73,0.3)]' : ''}`}
                             style={{ touchAction: 'none' }}
                         >
                             <div className="flex flex-col items-center text-center">
-                                <span className={`text-[9px] font-bold tracking-[0.2em] px-4 py-1.5 rounded-full border mb-8 uppercase ${p.glow ? 'bg-elite-orange/20 border-elite-orange/40 text-elite-orange' : 'bg-white/5 border-white/10 text-gray-400'}`}>
+                                <span className={`text-[9px] font-bold tracking-[0.2em] px-4 py-1.5 rounded-full border mb-6 uppercase ${p.glow ? 'bg-elite-orange/20 border-elite-orange/40 text-elite-orange' : 'bg-white/5 border-white/10 text-gray-400'}`}>
                                     {p.tag}
                                 </span>
                                 <h3 className="text-2xl font-heading font-black tracking-tight text-white mb-2 uppercase">{p.name}</h3>
-                                <div className="flex items-baseline gap-1 my-6 justify-center">
+                                <div className="flex items-baseline gap-1 my-4 justify-center">
                                     <span className="text-xl text-elite-orange font-bold">₹</span>
-                                    <span className={`text-6xl font-heading font-black tracking-tighter text-white ${p.glow ? 'text-glow' : ''}`}>{p.price}</span>
+                                    <span className={`text-5xl font-heading font-black tracking-tighter text-white ${p.glow ? 'text-glow' : ''}`}>{p.price}</span>
                                 </div>
-                                <p className="text-[10px] text-gray-500 tracking-widest uppercase mb-10">{p.perMonth}</p>
-                                <ul className="w-full space-y-4 mb-10 text-left">
+                                <p className="text-[10px] text-gray-500 tracking-widest uppercase mb-6">{p.perMonth}</p>
+                                <ul className="w-full space-y-3 mb-6 text-left">
                                     {p.features.map((f, j) => (
                                         <li key={j} className="flex items-center gap-3 text-xs font-light text-gray-300">
                                             <Check size={14} className="text-elite-orange shrink-0" />
@@ -174,14 +174,14 @@ const MobileMembershipDeck = () => {
                                     </li>
                                 </ul>
                                 <a href={`https://wa.me/918888161216?text=Hi! I want to join the ${p.name} plan.`} target="_blank" rel="noreferrer"
-                                    className={`w-full py-5 rounded-2xl text-[10px] font-black tracking-[0.2em] uppercase transition-all flex items-center justify-center gap-2 ${p.glow ? 'bg-elite-orange text-white shadow-xl shadow-orange-950/20' : 'bg-white/5 border border-white/10 text-white'}`}
+                                    className={`w-full py-4 rounded-2xl text-[10px] font-black tracking-[0.2em] uppercase transition-all flex items-center justify-center gap-2 ${p.glow ? 'bg-elite-orange text-white shadow-xl shadow-orange-950/20' : 'bg-white/5 border border-white/10 text-white'}`}
                                 >JOIN THE CLUBB <ArrowRight size={14} /></a>
                             </div>
                         </motion.div>
                     );
                 })}
             </AnimatePresence>
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center pointer-events-none">
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-center pointer-events-none z-0">
                 <span className="text-gray-600 text-[10px] font-bold tracking-[0.3em] uppercase animate-pulse">Swipe To Explore Passes &lt;—&gt;</span>
             </div>
         </div>

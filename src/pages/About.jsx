@@ -270,7 +270,10 @@ const MobileTransformationDeck = ({ testimonials }) => {
                             style={{ aspectRatio: '3/4', touchAction: 'none' }}
                         >
                             {/* Base Image */}
-                            <img src={t.img} alt={t.name} className={`absolute inset-0 w-full h-full pointer-events-none ${t.containImage ? 'object-contain bg-black' : 'object-cover'}`} />
+                            {t.containImage && (
+                                <img src={t.img} alt="" className="absolute inset-0 w-full h-full object-cover blur-[20px] opacity-60 scale-110 pointer-events-none" />
+                            )}
+                            <img src={t.img} alt={t.name} className={`absolute inset-0 w-full h-full pointer-events-none ${t.containImage ? 'object-contain' : 'object-cover'}`} />
 
                             {/* Gradients */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/70 to-transparent opacity-95 pointer-events-none" />
@@ -324,7 +327,10 @@ function TransformationResults() {
                     {testimonials.map((t, i) => (
                         <TiltCard key={i} index={i}>
                             {/* Base Image */}
-                            <img src={t.img} alt={t.name} className={`absolute inset-0 w-full h-full transition-transform duration-[1.5s] group-hover/card:scale-110 ${t.containImage ? 'object-contain bg-black' : 'object-cover'}`} loading="lazy" />
+                            {t.containImage && (
+                                <img src={t.img} alt="" className="absolute inset-0 w-full h-full object-cover blur-[20px] opacity-60 scale-110 pointer-events-none" />
+                            )}
+                            <img src={t.img} alt={t.name} className={`absolute inset-0 w-full h-full transition-transform duration-[1.5s] group-hover/card:scale-110 ${t.containImage ? 'object-contain' : 'object-cover'}`} loading="lazy" />
 
                             {/* Gradients */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/60 to-transparent opacity-90 md:opacity-80" />

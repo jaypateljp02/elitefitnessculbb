@@ -83,7 +83,7 @@ const MEMBERSHIP_PLANS = [
    ======================================= */
 function MembershipHero() {
     return (
-        <section className="relative pt-44 pb-32 px-4 overflow-hidden min-h-[85vh] flex flex-col justify-center items-center">
+        <section className="relative pt-44 pb-12 sm:pb-20 px-4 overflow-hidden min-h-[60vh] flex flex-col justify-center items-center">
             {/* Background (Consistent with About/Home) */}
             <div className="absolute inset-0 z-0">
                 <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-25 grayscale brightness-90">
@@ -222,13 +222,14 @@ const MembershipCard = ({ plan, index }) => {
 
                         <button 
                             onClick={() => setShowMore(true)}
-                            className="mt-4 mb-8 text-[10px] text-elite-orange font-black tracking-[0.2em] uppercase flex items-center gap-2 hover:text-white transition-colors"
+                            className="relative z-20 mt-4 mb-8 text-[10px] text-elite-orange font-black tracking-[0.2em] uppercase flex items-center gap-2 hover:text-white transition-colors"
+                            style={{ transform: "translateZ(50px)" }}
                         >
                             See Beside More Benefits <Sparkles size={12} />
                         </button>
 
                         <a href={`https://wa.me/918888161216?text=Hi! I want to join the ${plan.name} plan.`} target="_blank" rel="noreferrer"
-                            className={`w-full mt-auto py-5 rounded-2xl text-[11px] font-black tracking-[0.2em] uppercase transition-all flex items-center justify-center gap-2 ${plan.glow ? 'bg-white text-black hover:bg-elite-orange hover:text-white' : 'border border-white/10 text-white hover:bg-white hover:text-black shadow-xl'}`}
+                            className={`relative z-20 w-full mt-auto py-5 rounded-2xl text-[11px] font-black tracking-[0.2em] uppercase transition-all flex items-center justify-center gap-2 ${plan.glow ? 'bg-white text-black hover:bg-elite-orange hover:text-white hover:border-elite-orange' : 'border border-white/10 text-white hover:bg-elite-orange hover:text-white hover:border-elite-orange shadow-xl'}`}
                             style={{ transform: "translateZ(80px)" }}
                         >JOIN THE CLUBB <ArrowRight size={16} /></a>
                     </div>

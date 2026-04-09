@@ -11,13 +11,20 @@ const categories = ['ALL', 'GYM FLOOR', 'EQUIPMENT', 'RECOVERY', 'AMBIANCE']
 
 const galleryImages = [
     { id: 1, src: '/asset/new/20260404_130238.webp', category: 'GYM FLOOR', span: 'col-span-2 row-span-2' },
-    { id: 2, src: '/asset/new/20260404_130314.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-2' },
-    { id: 4, src: '/asset/new/20260404_130412.webp', category: 'EQUIPMENT', span: 'col-span-2 row-span-1' },
-    { id: 5, src: '/asset/new/20260404_130426 .webp', category: 'AMBIANCE', span: 'col-span-1 row-span-2' },
-    { id: 6, src: '/asset/ice bath area.webp', category: 'RECOVERY', span: 'col-span-1 row-span-1' },
-    { id: 7, src: '/asset/new/20260404_130434 .webp', category: 'AMBIANCE', span: 'col-span-2 row-span-2' },
-    { id: 8, src: '/asset/new/20260404_130446.webp', category: 'RECOVERY', span: 'col-span-1 row-span-1' },
-    { id: 10, src: '/asset/new/20260404_131006.webp', category: 'EQUIPMENT', span: 'col-span-2 row-span-1' },
+    { id: 2, src: '/asset/new/20260404_130257 (1).webp', category: 'AMBIANCE', span: 'col-span-1 row-span-1' },
+    { id: 3, src: '/asset/new/20260404_130314.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-1' },
+    { id: 4, src: '/asset/new/20260404_130338.webp', category: 'GYM FLOOR', span: 'col-span-2 row-span-1' },
+    { id: 5, src: '/asset/new/20260404_130412.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-2' },
+    { id: 6, src: '/asset/new/20260404_130426 .webp', category: 'AMBIANCE', span: 'col-span-1 row-span-1' },
+    { id: 7, src: '/asset/new/20260404_130434 .webp', category: 'RECOVERY', span: 'col-span-2 row-span-2' },
+    { id: 8, src: '/asset/new/20260404_130446.webp', category: 'GYM FLOOR', span: 'col-span-1 row-span-1' },
+    { id: 9, src: '/asset/new/20260404_130852.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-1' },
+    { id: 10, src: '/asset/new/20260404_130859.webp', category: 'AMBIANCE', span: 'col-span-2 row-span-1' },
+    { id: 11, src: '/asset/new/20260404_130917.webp', category: 'GYM FLOOR', span: 'col-span-1 row-span-2' },
+    { id: 12, src: '/asset/new/20260404_130932.webp', category: 'RECOVERY', span: 'col-span-1 row-span-1' },
+    { id: 13, src: '/asset/new/20260404_130940.webp', category: 'AMBIANCE', span: 'col-span-2 row-span-2' },
+    { id: 14, src: '/asset/new/20260404_131006.webp', category: 'EQUIPMENT', span: 'col-span-1 row-span-1' },
+    { id: 15, src: '/asset/new/20260404_131034.webp', category: 'GYM FLOOR', span: 'col-span-1 row-span-1' },
 ]
 
 /* =======================================
@@ -316,7 +323,7 @@ function GalleryMode({ initialCategory }) {
             exit={{ opacity: 0 }}
             className="relative w-full min-h-screen z-[90]"
         >
-            <div className="pt-20 pb-16 px-4">
+            <div className="pt-32 sm:pt-40 pb-16 px-4">
                 <div className="max-w-7xl mx-auto">
                     {/* Categories */}
                     <div className="flex flex-wrap justify-center gap-3 mb-10">

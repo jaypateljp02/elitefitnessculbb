@@ -34,7 +34,7 @@ function ContactCards() {
   const contactInfo = [
     { icon: MapPin, title: 'VISIT US', info: '2nd floor, Laxmi Chowk, The Elite Fitness Clubb, above KFC, Phase 1, Hinjawadi, Maharashtra 411057', detail: '' },
     { icon: Phone, title: 'CALL US', info: '+91 8888 161216', link: 'tel:+918888161216', detail: 'Mon-Sat' },
-    { icon: Mail, title: 'EMAIL US', info: 'info@elitefitness.club', link: 'mailto:info@elitefitness.club', detail: 'We Reply Within 24 Hrs' },
+    { icon: Mail, title: 'EMAIL US', info: 'theelitefitnessclubb@gmail.com', link: 'mailto:theelitefitnessclubb@gmail.com', detail: 'We Reply Within 24 Hrs' },
     { icon: Clock, title: 'HOURS', info: 'Mon-Sat: 6AM - 10PM', detail: '' },
   ]
 

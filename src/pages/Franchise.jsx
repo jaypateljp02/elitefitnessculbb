@@ -2,7 +2,7 @@ import PageWrapper from '../components/PageWrapper'
 import SectionHeading from '../components/SectionHeading'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useState, useRef } from 'react'
-import { TrendingUp, Shield, RefreshCw, Megaphone, IndianRupee, Store, Crown, ArrowRight, Building, CheckCircle2, Users, Zap, MapPin, Phone } from 'lucide-react'
+import { TrendingUp, Shield, RefreshCw, Megaphone, IndianRupee, Store, Crown, ArrowRight, Building, CheckCircle2, Users, Zap, MapPin, Phone, ChevronDown } from 'lucide-react'
 
 /* =======================================
    HERO
@@ -367,21 +367,31 @@ function InvestorForm() {
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <div className="grid sm:grid-cols-2 gap-5">
-                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Investor Name</label><input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="input-elite" placeholder="John Doe" /></div>
+                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Investor Name</label><input type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="input-elite" placeholder="Rahul Sharma" /></div>
                                 <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Phone Number</label><input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} required className="input-elite" placeholder="+91 ..." /></div>
                             </div>
                             <div className="grid sm:grid-cols-2 gap-5">
-                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Business Email</label><input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className="input-elite" placeholder="john@company.com" /></div>
+                                <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Business Email</label><input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className="input-elite" placeholder="rahul@company.com" /></div>
                                 <div><label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Target City</label><input type="text" value={formData.city} onChange={(e) => setFormData({ ...formData, city: e.target.value })} required className="input-elite" placeholder="e.g. Pune" /></div>
                             </div>
                             <div>
                                 <label className="block text-xs text-gray-400 mb-2 font-bold tracking-widest uppercase">Available Investment Capital</label>
-                                <select value={formData.capital} onChange={(e) => setFormData({ ...formData, capital: e.target.value })} required className="input-elite appearance-none bg-[#0a0a14]">
-                                    <option value="" disabled className="bg-black">Select an option</option>
-                                    <option value="50-1CR" className="bg-black">₹50L - ₹1Cr</option>
-                                    <option value="1-2CR" className="bg-black">₹1Cr - ₹2Cr</option>
-                                    <option value="2CR+" className="bg-black">₹2Cr+</option>
-                                </select>
+                                <div className="relative">
+                                    <select 
+                                        value={formData.capital} 
+                                        onChange={(e) => setFormData({ ...formData, capital: e.target.value })} 
+                                        required 
+                                        className={`input-elite appearance-none bg-[#0a0a14] w-full pr-12 cursor-pointer outline-none focus:border-elite-orange/50 transition-colors ${!formData.capital ? 'text-gray-500' : 'text-white'}`}
+                                    >
+                                        <option value="" disabled className="bg-[#050508] text-gray-500">Select an option...</option>
+                                        <option value="75L" className="bg-[#050508] text-white py-2">₹75 Lakhs (Silver Tier)</option>
+                                        <option value="1CR" className="bg-[#050508] text-white py-2">₹1 Crore (Gold Tier)</option>
+                                        <option value="1CR+" className="bg-[#050508] text-white py-2">₹1 Crore+ (Multi-unit)</option>
+                                    </select>
+                                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+                                        <ChevronDown size={18} />
+                                    </div>
+                                </div>
                             </div>
                             <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-gradient-to-r from-elite-orange to-amber-400 rounded-xl font-bold text-sm tracking-widest btn-glow flex items-center justify-center gap-3 uppercase text-white hover:shadow-[0_0_40px_rgba(233,111,73,0.5)] transition-all disabled:opacity-50 disabled:cursor-not-allowed">
                                 {isSubmitting ? (

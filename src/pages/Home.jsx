@@ -269,7 +269,7 @@ function AboutPreview() {
             <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
                 <motion.div initial={{ opacity: 0, x: -60 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative">
                     <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-                        <img src="/asset/new/20260404_130434 .webp" alt="The Elite Fitness Gym Interior" className="w-full h-[550px] object-cover" loading="lazy" />
+                        <img src="/asset/new/bodybuilder.png" alt="Elite Bodybuilder" className="w-full h-[550px] object-cover" loading="lazy" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     </div>
                     <motion.div initial={{ opacity: 0, scale: 0.8, y: 20 }} whileInView={{ opacity: 1, scale: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="absolute -bottom-8 -right-4 sm:-right-8 p-6 rounded-2xl flex items-center gap-5" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))', backdropFilter: 'blur(24px)', border: '1px solid rgba(233,111,73,0.2)', boxShadow: '0 0 30px rgba(233,111,73,0.1), 0 20px 40px rgba(0,0,0,0.3)' }}>

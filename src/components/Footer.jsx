@@ -117,9 +117,18 @@ export default function Footer() {
             {/* Bottom Bar */}
             <div className="relative z-10 border-t border-white/5 bg-black/40">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <p className="text-gray-500 text-sm font-light">
-                        © {new Date().getFullYear()} The Elite Fitness Clubb.
-                    </p>
+                    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-center sm:text-left">
+                        <p className="text-gray-500 text-sm font-light">
+                            © {new Date().getFullYear()} The Elite Fitness Clubb.
+                        </p>
+                        <p className="text-gray-600 text-sm font-light hidden sm:block">|</p>
+                        <p className="text-gray-500 text-sm font-light flex items-center gap-1.5">
+                            Developed by 
+                            <a href="https://studioofdigital.in/" target="_blank" rel="noreferrer" className="font-medium text-gray-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300">
+                                Studio of Digital
+                            </a>
+                        </p>
+                    </div>
                     <button
                         onClick={scrollToTop}
                         className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-elite-orange/50 bg-white/5 hover:bg-elite-orange/20 shadow-[0_0_0_rgba(233,111,73,0)] hover:shadow-[0_0_20px_rgba(233,111,73,0.3)] transition-all duration-300 transform hover:-translate-y-1"

@@ -162,10 +162,11 @@ const testimonials = [
         containImage: true,
     },
     {
-        name: 'AMIT K.',
-        achievement: 'Ran first marathon at 42',
-        quote: 'I came in overweight and unmotivated. Six months later, I ran my first marathon. Elite made it possible.',
-        img: '/asset/new/20260404_130412.webp',
+        name: 'SNEHA R.',
+        achievement: 'INCREASED STAMINA',
+        quote: 'The elite endurance coaching helped me double my stamina. I went from barely jogging to conquering long-distance runs with ease.',
+        img: '/asset/new/runner_stamina.jpg',
+        containImage: true,
     },
 ]
 

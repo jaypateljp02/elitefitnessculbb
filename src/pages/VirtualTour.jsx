@@ -110,7 +110,7 @@ function CinematicPortal({ onEnter }) {
                     transition={{ delay: 0.5, duration: 1 }}
                     className="flex flex-col items-center gap-8"
                 >
-                    <div className="w-16 h-16 rounded-full border border-elite-orange/30 flex items-center justify-center bg-elite-orange/10 mb-[-10px] animate-pulse-glow" style={{ boxShadow: '0 0 30px rgba(233,111,73,0.3)' }}>
+                    <div className="w-16 h-16 rounded-full border border-elite-orange/30 flex items-center justify-center bg-elite-orange/10 mb-[-10px]" style={{ boxShadow: '0 0 30px rgba(233,111,73,0.3)' }}>
                         <Orbit size={32} className="text-elite-orange animate-spin-slow" />
                     </div>
                     <h1 className="text-5xl sm:text-7xl font-heading font-black tracking-widest text-[#E0E0E0] uppercase text-shadow-glow">

@@ -15,7 +15,7 @@ function FranchiseHero() {
                 <div className="absolute inset-0 bg-black/70" />
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
             </div>
-            <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.15, 0.1] }} transition={{ duration: 10, repeat: Infinity }} className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-elite-orange/10 blur-[150px] pointer-events-none" />
+            <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] rounded-full bg-elite-orange/10 blur-[150px] pointer-events-none" />
 
             <div className="relative z-10 max-w-6xl mx-auto text-center w-full">
                 <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>

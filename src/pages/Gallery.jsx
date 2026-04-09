@@ -44,7 +44,7 @@ export default function Gallery() {
             {/* Hero */}
             <section className="relative pt-36 pb-20 px-4 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-elite-orange/10 via-elite-dark to-black" />
-                <motion.div animate={{ scale: [1, 1.3, 1], opacity: [0.08, 0.15, 0.08] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-elite-orange/10 blur-[130px]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-elite-orange/10 blur-[130px] pointer-events-none" />
                 <div className="relative z-10 max-w-4xl mx-auto text-center">
                     <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}>
                         <span className="tag-elite mb-6 inline-block">OUR FACILITY</span>

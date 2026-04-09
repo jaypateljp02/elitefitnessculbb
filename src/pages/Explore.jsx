@@ -47,7 +47,7 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
                     transition={{ delay: 0.5, duration: 1 }}
                     className="flex flex-col items-center gap-8"
                 >
-                    <div className="w-16 h-16 rounded-full border border-elite-orange/30 flex items-center justify-center bg-elite-orange/10 mb-[-10px] animate-pulse-glow" style={{ boxShadow: '0 0 30px rgba(233,111,73,0.3)' }}>
+                    <div className="w-16 h-16 rounded-full border border-elite-orange/30 flex items-center justify-center bg-elite-orange/10 mb-[-10px]" style={{ boxShadow: '0 0 30px rgba(233,111,73,0.3)' }}>
                         <Orbit size={32} className="text-purple-400 animate-spin-slow" />
                     </div>
                     <div>
@@ -161,7 +161,7 @@ function VirtualTourMode({ onSwitchToGallery, initialLoadComplete, setInitialLoa
                     transition={{ delay: 0.3, duration: 0.6 }}
                     className="flex items-center gap-3 mb-4 sm:mb-6"
                 >
-                    <div className="w-10 h-10 rounded-full bg-elite-orange/20 border border-elite-orange/30 flex items-center justify-center animate-pulse" style={{ boxShadow: '0 0 20px rgba(233,111,73,0.3)' }}>
+                    <div className="w-10 h-10 rounded-full bg-elite-orange/20 border border-elite-orange/30 flex items-center justify-center" style={{ boxShadow: '0 0 20px rgba(233,111,73,0.3)' }}>
                         <Orbit size={20} className="text-elite-orange" />
                     </div>
                     <div>

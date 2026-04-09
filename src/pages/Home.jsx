@@ -508,7 +508,7 @@ function FranchiseCTA() {
             <div className="relative z-10 max-w-5xl mx-auto text-center">
                 <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                     <span className="tag-elite mb-8 inline-block" style={{ borderColor: 'rgba(124,58,237,0.3)', color: '#a78bfa', background: 'rgba(124,58,237,0.1)' }}>💼 BUSINESS OPPORTUNITY</span>
-                    <h2 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-black mb-8 leading-tight uppercase">Own an <span className="gradient-text text-glow">The Elite Fitness</span><br />Clubb Franchise</h2>
+                    <h2 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-black mb-8 leading-tight uppercase text-center">Own an<br /><span className="gradient-text text-glow">The Elite Fitness Clubb</span><br />Franchise</h2>
                     <p className="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto mb-12 font-light">Join our vision to build India's most trusted premium fitness brand. Turnkey investment, high-margin operations, and complete system support.</p>
                     <Link to="/franchise" className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-elite-orange via-purple-500 to-purple-600 rounded-full text-lg font-bold btn-glow group"><Crown size={22} /> Explore Franchise <ArrowRight size={20} className="group-hover:translate-x-1.5 transition-transform" /></Link>
                 </motion.div>

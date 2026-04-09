@@ -13,7 +13,7 @@ function ContactHero() {
         <div className="absolute inset-0 bg-gradient-to-r from-elite-orange/10 to-elite-orange/5 mix-blend-overlay" />
       </div>
 
-      <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.05, 0.1, 0.05] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-elite-orange/20 blur-[130px] -translate-y-1/2 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-elite-orange/20 blur-[130px] -translate-y-1/2 pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>

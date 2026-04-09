@@ -36,7 +36,7 @@ function HeroBoutique() {
             <div className="absolute inset-x-0 bottom-0 top-1/2 z-0 bg-gradient-to-t from-[#050508] via-[#050508]/80 to-transparent" />
 
             {/* Layer 4: Glowing Orb Animation */}
-            <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.25, 0.15] }} transition={{ duration: 8, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-elite-orange/15 blur-[150px] -translate-y-1/2 pointer-events-none mix-blend-screen z-0" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-elite-orange/15 blur-[150px] -translate-y-1/2 pointer-events-none mix-blend-screen z-0" />
 
 
             <div className="relative z-10 max-w-5xl mx-auto text-center">

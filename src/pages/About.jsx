@@ -157,7 +157,7 @@ const testimonials = [
         name: 'SAMIR K.',
         achievement: 'WEIGHT LOSS',
         quote: 'The tailored nutrition and advanced coaching helped me break through every plateau. Elite changed my life.',
-        img: '/asset/new/weight_gain.jpg',
+        img: '/asset/new/weight_loss.jpg',
         containImage: true,
     },
     {

@@ -148,10 +148,11 @@ function FoundersCorner() {
 }
 const testimonials = [
     {
-        name: 'RAHUL M.',
-        achievement: 'Lost 18kg in 4 months',
-        quote: 'The personalized diet plan and trainer attention at The Elite Fitness Clubb changed everything. I\'ve never felt stronger.',
-        img: '/asset/new/20260404_130314.webp',
+        name: 'ANJALI P.',
+        achievement: 'WEIGHT GAIN',
+        quote: 'With tailored nutrition and progressive training, I finally built the muscle I struggled for years to gain.',
+        img: '/asset/new/weight_gain.jpg',
+        containImage: true,
     },
     {
         name: 'SAMIR K.',

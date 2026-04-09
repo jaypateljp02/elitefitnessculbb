@@ -34,7 +34,7 @@ export default function Footer() {
                             </div>
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-sm font-light">
-                            Hinjewadi's premier fitness destination. Experience a blend of world-class infrastructure, elite coaching, and unparalleled luxury.
+                            Hinjewadi's premium fitness destination. Experience a blend of world-class infrastructure, elite coaching, and unparalleled luxury.
                         </p>
 
                         <div className="flex gap-4">

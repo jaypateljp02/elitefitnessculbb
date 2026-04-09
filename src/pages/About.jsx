@@ -7,16 +7,16 @@ import { Check, Droplets, Target, Shield, Users, Clock, Award, Star } from 'luci
 // Real Founder Signature Component
 function AnimatedSignature() {
     return (
-        <motion.div 
+        <motion.div
             initial={{ opacity: 0, filter: 'blur(10px)' }}
             whileInView={{ opacity: 0.9, filter: 'blur(0px)' }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="mt-6 mb-2"
         >
-            <img 
-                src="/asset/new/signature.png" 
-                alt="Sandeep Patil Signature" 
+            <img
+                src="/asset/new/signature.png"
+                alt="Sandeep Patil Signature"
                 className="w-48 sm:w-64 object-contain filter invert mix-blend-screen opacity-90 transition-opacity hover:opacity-100"
             />
         </motion.div>
@@ -28,7 +28,7 @@ function HeroBoutique() {
         <section className="relative pt-36 pb-28 px-4 overflow-hidden min-h-[90vh] flex items-center justify-center bg-[#050508]">
             {/* Layer 1: Base Radial Background */}
             <div className="absolute inset-0 z-0" style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(233,111,73,0.15) 0%, transparent 70%)' }} />
-            
+
             {/* Layer 2: Noise Texture */}
             <div className="absolute inset-0 z-0 noise-bg opacity-40 mix-blend-overlay" />
 
@@ -121,7 +121,7 @@ function FoundersCorner() {
 
                     <div className="prose prose-invert prose-lg mt-8 text-gray-300 font-light leading-relaxed">
                         <p>
-                            "I am <strong>Sandeep Jadhav Patil</strong>, the founder of The Elite Fitness Clubb. Fitness is not just a business for me, but a disciplined way of living. My journey started with a simple thought — to provide people in my village and surrounding areas with a premium fitness center that offers proper guidance, modern facilities, and a positive environment."
+                            "I am <strong>Sandeep Jadhav Patil</strong>, the founder of The Elite Fitness Clubb. Fitness is not just a business for me, but a disciplined way of living. My journey started with a simple thought to provide people in my village and surrounding areas with a premium fitness center that offers proper guidance, modern facilities, and a positive environment."
                         </p>
                         <p className="mt-4 text-white">
                             Nowadays, fitness is not limited merely to bodybuilding or losing weight. In my view, fitness means <strong>physical strength, mental stability, confidence, and a disciplined lifestyle.</strong>
@@ -147,25 +147,25 @@ function FoundersCorner() {
     )
 }
 const testimonials = [
-        {
-            name: 'RAHUL M.',
-            achievement: 'Lost 18kg in 4 months',
-            quote: 'The personalized diet plan and trainer attention at The Elite Fitness Clubb changed everything. I\'ve never felt stronger.',
-            img: '/asset/new/20260404_130314.webp',
-        },
-        {
-            name: 'PRIYA S.',
-            achievement: 'Gained 8kg lean muscle',
-            quote: 'The ice bath recovery and advanced coaching helped me break through every plateau. This gym is different.',
-            img: '/asset/new/20260404_130338.webp',
-        },
-        {
-            name: 'AMIT K.',
-            achievement: 'Ran first marathon at 42',
-            quote: 'I came in overweight and unmotivated. Six months later, I ran my first marathon. Elite made it possible.',
-            img: '/asset/new/20260404_130412.webp',
-        },
-    ]
+    {
+        name: 'RAHUL M.',
+        achievement: 'Lost 18kg in 4 months',
+        quote: 'The personalized diet plan and trainer attention at The Elite Fitness Clubb changed everything. I\'ve never felt stronger.',
+        img: '/asset/new/20260404_130314.webp',
+    },
+    {
+        name: 'PRIYA S.',
+        achievement: 'Gained 8kg lean muscle',
+        quote: 'The ice bath recovery and advanced coaching helped me break through every plateau. This gym is different.',
+        img: '/asset/new/20260404_130338.webp',
+    },
+    {
+        name: 'AMIT K.',
+        achievement: 'Ran first marathon at 42',
+        quote: 'I came in overweight and unmotivated. Six months later, I ran my first marathon. Elite made it possible.',
+        img: '/asset/new/20260404_130412.webp',
+    },
+]
 
 const TiltCard = ({ children, index }) => {
     const isStaggered = index % 2 !== 0;
@@ -177,7 +177,7 @@ const TiltCard = ({ children, index }) => {
 
     const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
     const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
-    
+
     // Glossy reflection movement
     const glareX = useTransform(mouseXSpring, [-0.5, 0.5], ["-100%", "100%"]);
     const glareY = useTransform(mouseYSpring, [-0.5, 0.5], ["-100%", "100%"]);
@@ -219,7 +219,7 @@ const TiltCard = ({ children, index }) => {
             </div>
 
             {/* Interactive 3D Glare */}
-            <motion.div 
+            <motion.div
                 className="absolute inset-0 w-[200%] h-[200%] pointer-events-none z-50 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"
                 style={{ x: glareX, y: glareY, rotate: "35deg" }}
             />
@@ -270,7 +270,7 @@ const MobileTransformationDeck = ({ testimonials }) => {
                         >
                             {/* Base Image */}
                             <img src={t.img} alt={t.name} className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-                            
+
                             {/* Gradients */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/70 to-transparent opacity-95 pointer-events-none" />
 
@@ -324,7 +324,7 @@ function TransformationResults() {
                         <TiltCard key={i} index={i}>
                             {/* Base Image */}
                             <img src={t.img} alt={t.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover/card:scale-110" loading="lazy" />
-                            
+
                             {/* Gradients */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/60 to-transparent opacity-90 md:opacity-80" />
                             <div className="absolute inset-0 bg-gradient-to-t from-elite-orange/40 to-transparent opacity-100 md:opacity-0 md:group-hover/card:opacity-100 transition-opacity duration-700 mix-blend-overlay" />

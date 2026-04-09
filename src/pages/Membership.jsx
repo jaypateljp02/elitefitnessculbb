@@ -225,7 +225,7 @@ const MembershipCard = ({ plan, index }) => {
                             className="relative z-20 mt-4 mb-8 text-[10px] text-elite-orange font-black tracking-[0.2em] uppercase flex items-center gap-2 hover:text-white transition-colors"
                             style={{ transform: "translateZ(50px)" }}
                         >
-                            See Beside More Benefits <Sparkles size={12} />
+                            See More Benefits <Sparkles size={12} />
                         </button>
 
                         <a href={`https://wa.me/918888161216?text=Hi! I want to join the ${plan.name} plan.`} target="_blank" rel="noreferrer"

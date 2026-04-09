@@ -284,7 +284,7 @@ function AboutPreview() {
                     <span className="tag-elite mb-6 inline-block">ABOUT US</span>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black mb-8 leading-tight uppercase">More Than<br />Just a <span className="gradient-text">Gym</span></h2>
                     <p className="text-gray-400 text-lg leading-relaxed mb-6 font-light">The Elite Fitness Clubb represents the zenith of premium fitness infrastructure. Conceived for those who refuse to compromise, our facility unites cutting-edge technology, elite-tier coaching, and an ambiance engineered for true transformation.</p>
-                    <p className="text-gray-500 leading-relaxed mb-10 font-light">Whether you seek unparalleled strength development, holistic mindfulness in yoga, or dynamic energy in our group arenas—we provide the absolute best to forge a superior you.</p>
+                    <p className="text-gray-500 leading-relaxed mb-10 font-light">Whether you seek unparalleled strength development, holistic mindfulness in yoga, or dynamic energy in our group arenas, we provide the absolute best to forge a superior you.</p>
                     <div className="grid grid-cols-2 gap-4 mb-10">
                         {[{ icon: Dumbbell, text: 'Premium Equipment' }, { icon: Users, text: 'Expert Trainers' }, { icon: Zap, text: 'Electric Atmosphere' }, { icon: Heart, text: 'Strong Community' }].map((item, i) => (
                             <motion.div

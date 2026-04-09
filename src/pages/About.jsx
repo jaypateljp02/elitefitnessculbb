@@ -1,5 +1,6 @@
 import PageWrapper from '../components/PageWrapper'
 import SectionHeading from '../components/SectionHeading'
+import useSEO from '../hooks/useSEO'
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Check, Droplets, Target, Shield, Users, Clock, Award, Star } from 'lucide-react'
@@ -63,7 +64,7 @@ function LuxuryStats() {
     const stats = [
         { num: '6,000', unit: 'SQ. FT.', label: 'PREMIUM FACILITY', desc: 'A meticulously curated strength and conditioning space. No crowds, no waiting.' },
         { num: '10+', unit: 'COACHES', label: 'EXPERT SPECIALISTS', desc: 'A hand-picked team of Level 3 certified experts focused on your biomechanics.' },
-        { num: '10+', unit: 'YEARS', label: 'EXCELLENT RESULTS', desc: 'Consistently delivering deep transformations for Hindjewadi\'s professionals.' },
+        { num: '10+', unit: 'YEARS', label: 'EXCELLENT RESULTS', desc: 'Consistently delivering deep transformations for Hinjewadi\'s professionals.' },
     ]
 
     return (
@@ -418,6 +419,11 @@ function BoutiqueDifference() {
 }
 
 export default function About() {
+    useSEO({
+        title: 'About Us',
+        description: 'Learn about The Elite Fitness Clubb in Hinjewadi. 6,000 sq. ft. of premium facility, expert coaches, and real transformation stories.',
+        path: '/about'
+    })
     return (
         <PageWrapper>
             <HeroBoutique />

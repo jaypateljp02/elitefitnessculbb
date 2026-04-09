@@ -85,7 +85,7 @@ export default function Footer() {
                                 </div>
                                 <div className="pt-1">
                                     <h4 className="text-white text-sm font-bold tracking-wide mb-1 group-hover:text-elite-orange transition-colors">HEADQUARTERS</h4>
-                                    <p className="text-gray-400 text-sm font-light leading-relaxed">2nd floor, Laxmi Chowk, The Elite Fitness Clubb,<br />above KFC, Phase 1, Hinjawadi,<br />Pune, Maharashtra 411057</p>
+                                    <p className="text-gray-400 text-sm font-light leading-relaxed">2nd floor, Laxmi Chowk, The Elite Fitness Clubb,<br />above KFC, Phase 1, Hinjewadi,<br />Pune, Maharashtra 411057</p>
                                 </div>
                             </a>
 

@@ -1,4 +1,5 @@
 import PageWrapper from '../components/PageWrapper'
+import useSEO from '../hooks/useSEO'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 import { X, Orbit, ZoomIn, ChevronLeft, ChevronRight, PlayCircle, ArrowLeft } from 'lucide-react'
@@ -464,6 +465,11 @@ function GalleryMode({ initialCategory }) {
    MAIN EXPERIENCE HUB
    ======================================= */
 export default function Explore() {
+    useSEO({
+        title: 'Explore Our Gym',
+        description: 'Take a 360° virtual tour or browse the gallery of The Elite Fitness Clubb. See our lifting studio, recovery suite, and premium ambiance.',
+        path: '/explore'
+    })
     const [hasEntered, setHasEntered] = useState(false)
     const [mode, setMode] = useState('360') // '360' or 'gallery'
 

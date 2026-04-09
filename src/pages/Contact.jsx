@@ -1,5 +1,6 @@
 import PageWrapper from '../components/PageWrapper'
 import SectionHeading from '../components/SectionHeading'
+import useSEO from '../hooks/useSEO'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { MapPin, Phone, Mail, Clock, Send, Key, MessageCircle } from 'lucide-react'
@@ -32,7 +33,7 @@ function ContactHero() {
 
 function ContactCards() {
   const contactInfo = [
-    { icon: MapPin, title: 'VISIT US', info: '2nd floor, Laxmi Chowk, The Elite Fitness Clubb, above KFC, Phase 1, Hinjawadi, Maharashtra 411057', detail: '' },
+    { icon: MapPin, title: 'VISIT US', info: '2nd floor, Laxmi Chowk, The Elite Fitness Clubb, above KFC, Phase 1, Hinjewadi, Maharashtra 411057', detail: '' },
     { icon: Phone, title: 'CALL US', info: '+91 8888 161216', link: 'tel:+918888161216', detail: 'Mon-Sat' },
     { icon: Mail, title: 'EMAIL US', info: 'theelitefitnessclubb@gmail.com', link: 'mailto:theelitefitnessclubb@gmail.com', detail: 'We Reply Within 24 Hrs' },
     { icon: Clock, title: 'HOURS', info: 'Mon-Sat: 6AM - 10PM', detail: '' },
@@ -212,6 +213,11 @@ function ContactFormMap() {
 }
 
 export default function Contact() {
+    useSEO({
+        title: 'Contact Us',
+        description: 'Get in touch with The Elite Fitness Clubb in Hinjewadi, Pune. Map, contact details, and inquiry form for memberships or personal training.',
+        path: '/contact'
+    })
   return (
     <PageWrapper>
       <ContactHero />

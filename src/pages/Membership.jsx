@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import PageWrapper from '../components/PageWrapper'
 import SectionHeading from '../components/SectionHeading'
+import useSEO from '../hooks/useSEO'
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion'
 import { Check, Star, Dumbbell, Snowflake, Apple, Users, Crown, Zap, ArrowRight, Shield, Sparkles, Gem } from 'lucide-react'
 
@@ -357,6 +358,11 @@ function Facilities() {
    MEMBERSHIP PAGE EXPORT
    ======================================= */
 export default function Membership() {
+    useSEO({
+        title: 'Gym Membership Plans',
+        description: 'Choose your pass to The Elite Fitness Clubb. Memberships starting from ₹3,000/month with access to premium equipment, recovery suite, and expert coaching.',
+        path: '/membership'
+    })
     return (
         <PageWrapper>
             <MembershipHero />

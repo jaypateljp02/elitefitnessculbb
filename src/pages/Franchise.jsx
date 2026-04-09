@@ -1,5 +1,6 @@
 import PageWrapper from '../components/PageWrapper'
 import SectionHeading from '../components/SectionHeading'
+import useSEO from '../hooks/useSEO'
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { useState, useRef, useEffect } from 'react'
 import { TrendingUp, Shield, RefreshCw, Megaphone, IndianRupee, Store, Crown, ArrowRight, Building, CheckCircle2, Users, Zap, MapPin, Phone, ChevronDown } from 'lucide-react'
@@ -457,6 +458,11 @@ function InvestorForm() {
    FRANCHISE PAGE
    ======================================= */
 export default function Franchise() {
+    useSEO({
+        title: 'Fitness Franchise Opportunities',
+        description: 'Own a premium fitness franchise with The Elite Fitness Clubb. High ROI, turnkey setup, and elite brand backing in Pune.',
+        path: '/franchise'
+    })
     return (
         <PageWrapper>
             <FranchiseHero />

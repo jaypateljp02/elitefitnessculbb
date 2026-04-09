@@ -1,6 +1,7 @@
 import PageWrapper from '../components/PageWrapper'
 import SectionHeading from '../components/SectionHeading'
 import useCountUp from '../hooks/useCountUp'
+import useSEO from '../hooks/useSEO'
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from 'framer-motion'
 import { Dumbbell, Heart, Users, Zap, Trophy, Target, ChevronLeft, ChevronRight, Star, ArrowRight, Sparkles, Shield, Crown, Play } from 'lucide-react'
@@ -712,7 +713,7 @@ function FinalCTA() {
                 </Link>
 
                 <div className="mt-12 flex gap-4 text-gray-400 text-xs sm:text-sm uppercase tracking-widest font-semibold items-center">
-                    <span><Zap size={14} className="inline mr-1 text-elite-orange" /> Open 6 AM - 11 PM</span>
+                    <span><Zap size={14} className="inline mr-1 text-elite-orange" /> Open 6 AM - 10 PM</span>
                     <span>•</span>
                     <span><Zap size={14} className="inline mr-1 text-purple-500" /> Personal Training</span>
                 </div>
@@ -725,6 +726,11 @@ function FinalCTA() {
    HOME PAGE EXPORT
    ======================================= */
 export default function Home() {
+    useSEO({
+        title: 'Best Premium Gym in Hinjewadi, Pune',
+        description: 'The Elite Fitness Clubb - Hinjewadi\'s best premium gym. 6,000 sq. ft. boutique facility, expert trainers, ice bath recovery, personal coaching. Memberships from ₹3,000/month.',
+        path: '/'
+    })
     return (
         <PageWrapper>
             <Hero />

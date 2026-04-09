@@ -1,4 +1,5 @@
 import PageWrapper from '../components/PageWrapper'
+import useSEO from '../hooks/useSEO'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Dumbbell, Snowflake, Zap, Leaf, ArrowRight, MapPin, Maximize2, Check } from 'lucide-react'
@@ -219,6 +220,11 @@ function ZoneSection({ zone, index }) {
    MAIN PAGE
    ======================================= */
 export default function Services() {
+    useSEO({
+        title: 'Amenities & Services',
+        description: 'Discover the elite amenities. Personal training, group masterclasses, ice bath recovery, strength conditioning, and custom diet mapping.',
+        path: '/services'
+    })
     return (
         <PageWrapper>
             {/* Hero */}

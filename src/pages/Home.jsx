@@ -69,7 +69,6 @@ function Hero() {
                     preload="auto"
                     poster="/asset/new/20260404_130238.webp"
                     className="w-full h-full object-cover"
-                    style={{ willChange: 'transform' }}
                 >
                     <source src="/asset/new/gym intro .mp4" type="video/mp4" />
                 </video>
@@ -89,8 +88,8 @@ function Hero() {
                 {/* Hero Text */}
                 <div className="relative mb-8">
                     <motion.div
-                        initial={{ opacity: 0, y: 60, filter: 'blur(8px)' }}
-                        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        initial={{ opacity: 0, y: 60 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
                         className="text-4xl sm:text-6xl lg:text-[6rem] xl:text-[8rem] font-heading font-black leading-[0.85] tracking-tight text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]"
                     >
@@ -98,8 +97,8 @@ function Hero() {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 60, filter: 'blur(8px)' }}
-                        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                        initial={{ opacity: 0, y: 60 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6, duration: 0.8 }}
                         className="relative text-[2.5rem] sm:text-7xl lg:text-[7rem] xl:text-[9rem] font-heading font-black leading-[0.9] tracking-tight"
                     >
@@ -234,9 +233,6 @@ function PhotoMarquee() {
         '/asset/new/20260404_130434 .webp',
         '/asset/new/20260404_130446.webp',
         '/asset/new/20260404_130852.webp',
-        '/asset/new/20260404_130859.webp',
-        '/asset/new/20260404_130917.webp',
-        '/asset/new/20260404_130932.webp',
         '/asset/new/20260404_130940.webp'
     ]
 
@@ -508,7 +504,7 @@ function MembershipPreview() {
 function FranchiseCTA() {
     return (
         <section className="py-16 sm:py-28 px-4 relative overflow-hidden" style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(233,111,73,0.08) 0%, transparent 40%), radial-gradient(ellipse at 70% 50%, rgba(233,111,73,0.06) 0%, transparent 40%)' }}>
-            <motion.div animate={{ scale: [1, 1.5, 1], opacity: [0.08, 0.15, 0.08] }} transition={{ duration: 10, repeat: Infinity }} className="absolute top-1/2 left-1/3 w-[600px] h-[600px] rounded-full bg-elite-orange/10 blur-[150px] -translate-y-1/2" />
+            <div className="absolute top-1/2 left-1/3 w-[600px] h-[600px] rounded-full bg-elite-orange/10 blur-[150px] -translate-y-1/2 pointer-events-none" />
             <div className="relative z-10 max-w-5xl mx-auto text-center">
                 <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                     <span className="tag-elite mb-8 inline-block" style={{ borderColor: 'rgba(124,58,237,0.3)', color: '#a78bfa', background: 'rgba(124,58,237,0.1)' }}>💼 BUSINESS OPPORTUNITY</span>
@@ -659,17 +655,13 @@ function FinalCTA() {
         <section className="py-24 sm:py-40 px-4 relative flex items-center justify-center min-h-[80vh] overflow-hidden">
             {/* Background Video */}
             <div className="absolute inset-0 z-0">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    poster="/asset/new/20260404_130434 .webp"
-                    className="w-full h-full object-cover scale-105"
+                <img
+                    src="/asset/new/20260404_130434 .webp"
+                    alt="Elite Fitness"
+                    className="w-full h-full object-cover"
                     style={{ filter: 'grayscale(30%)' }}
-                >
-                    <source src="/asset/new/gym intro .mp4" type="video/mp4" />
-                </video>
+                    loading="lazy"
+                />
                 
                 {/* Cinematic Overlays */}
                 <div className="absolute inset-0 bg-black/70" />
@@ -680,7 +672,7 @@ function FinalCTA() {
             </div>
 
             {/* Glowing Orbs */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-full max-h-[500px] bg-elite-orange/15 blur-[150px] rounded-full pointer-events-none mix-blend-screen z-0 animate-pulse-glow" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-full max-h-[500px] bg-elite-orange/15 blur-[150px] rounded-full pointer-events-none mix-blend-screen z-0" />
 
             <motion.div initial={{ opacity: 0, y: 50, scale: 0.95 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
                 

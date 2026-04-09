@@ -24,8 +24,8 @@ function FranchiseHero() {
                         <span className="text-purple-400 text-xs font-bold tracking-[0.2em]">FRANCHISE OPPORTUNITY</span>
                     </div>
 
-                    <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-black leading-none mb-6 uppercase">
-                        Own an <span className="gradient-text text-glow">The Elite Fitness</span><br />Clubb Franchise
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-heading font-black leading-none mb-6 uppercase text-center">
+                        Own an<br /><span className="gradient-text text-glow">The Elite Fitness Clubb</span><br />Franchise
                     </h1>
 
                     <p className="text-gray-400 text-lg sm:text-xl font-light leading-relaxed mb-10 max-w-2xl mx-auto">

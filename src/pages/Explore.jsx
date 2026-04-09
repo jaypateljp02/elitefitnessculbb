@@ -51,8 +51,8 @@ function CinematicPortal({ onEnter360, onEnterGallery }) {
                         <Orbit size={32} className="text-purple-400 animate-spin-slow" />
                     </div>
                     <div>
-                        <h1 className="text-5xl sm:text-7xl font-heading font-black tracking-widest text-[#E0E0E0] uppercase text-shadow-glow">
-                            <span className="gradient-text">EXPLORE</span> THE ELITE
+                        <h1 className="text-5xl sm:text-7xl font-heading font-black tracking-widest text-[#E0E0E0] uppercase text-shadow-glow text-center">
+                            <span className="gradient-text">EXPLORE</span><br />THE ELITE
                         </h1>
                         <p className="text-gray-400 font-light tracking-widest uppercase text-xs sm:text-sm mt-2">Interactive 360° & Photo Hub</p>
                     </div>
